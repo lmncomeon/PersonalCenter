@@ -123,6 +123,8 @@
 		BEC179471F00DED800CAE694 /* PersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC179461F00DED800CAE694 /* PersonalCenterViewController.m */; };
 		BEC1794A1F00E49B00CAE694 /* VideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC179491F00E49B00CAE694 /* VideoListViewController.m */; };
 		BEC1794D1F00E4A500CAE694 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1794C1F00E4A500CAE694 /* IntroViewController.m */; };
+		BEF904011F0108980061F3EC /* ControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904001F0108980061F3EC /* ControllerModel.m */; };
+		BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904041F01158F0061F3EC /* VisualEffectViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -353,6 +355,10 @@
 		BEC179491F00E49B00CAE694 /* VideoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListViewController.m; sourceTree = "<group>"; };
 		BEC1794B1F00E4A500CAE694 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		BEC1794C1F00E4A500CAE694 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		BEF903FF1F0108980061F3EC /* ControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerModel.h; sourceTree = "<group>"; };
+		BEF904001F0108980061F3EC /* ControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerModel.m; sourceTree = "<group>"; };
+		BEF904031F01158F0061F3EC /* VisualEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualEffectViewController.h; sourceTree = "<group>"; };
+		BEF904041F01158F0061F3EC /* VisualEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisualEffectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +471,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEF904021F01150D0061F3EC /* 视觉效果 */,
 				BEC179441F00DEC900CAE694 /* 个人中心 */,
 				BEC179381F00DDAB00CAE694 /* OneViewController.h */,
 				BEC179391F00DDAB00CAE694 /* OneViewController.m */,
@@ -504,6 +511,8 @@
 		BEC178101F00DCFA00CAE694 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BEF903FF1F0108980061F3EC /* ControllerModel.h */,
+				BEF904001F0108980061F3EC /* ControllerModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -855,6 +864,15 @@
 			path = "个人中心";
 			sourceTree = "<group>";
 		};
+		BEF904021F01150D0061F3EC /* 视觉效果 */ = {
+			isa = PBXGroup;
+			children = (
+				BEF904031F01158F0061F3EC /* VisualEffectViewController.h */,
+				BEF904041F01158F0061F3EC /* VisualEffectViewController.m */,
+			);
+			path = "视觉效果";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -984,6 +1002,7 @@
 				BEC179221F00DCFA00CAE694 /* MJRefreshConst.m in Sources */,
 				BEC1792D1F00DCFA00CAE694 /* SDWebImageManager.m in Sources */,
 				BEC179251F00DCFA00CAE694 /* UIView+MJExtension.m in Sources */,
+				BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */,
 				BEC178D71F00DCFA00CAE694 /* UIImage+ColorImage.m in Sources */,
 				BEC177D21F00DC6800CAE694 /* main.m in Sources */,
 				BEC178DE1F00DCFA00CAE694 /* SDKJWAlertView.m in Sources */,
@@ -1023,6 +1042,7 @@
 				BEC178E71F00DCFA00CAE694 /* AFURLRequestSerialization.m in Sources */,
 				BEC179111F00DCFA00CAE694 /* NSObject+MJProperty.m in Sources */,
 				BEC178EF1F00DCFA00CAE694 /* UIAlertView+AFNetworking.m in Sources */,
+				BEF904011F0108980061F3EC /* ControllerModel.m in Sources */,
 				BEC178DC1F00DCFA00CAE694 /* SDKCustomLabel.m in Sources */,
 				BEC178F31F00DCFA00CAE694 /* UIRefreshControl+AFNetworking.m in Sources */,
 				BEC1790B1F00DCFA00CAE694 /* MJProperty.m in Sources */,
@@ -1201,6 +1221,7 @@
 				BEC177E61F00DC6800CAE694 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

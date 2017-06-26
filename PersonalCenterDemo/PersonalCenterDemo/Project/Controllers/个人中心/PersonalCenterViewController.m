@@ -39,6 +39,12 @@
         _naviagtionView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth, adaptY(50))];
         _naviagtionView.backgroundColor = [UIColor orangeColor];
         [self.topView addSubview:_naviagtionView];
+        
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = CGRectMake(adaptX(10), adaptY(10), adaptX(20), adaptY(34));
+        [btn setImage:[UIImage imageNamed:@"arrow_back_white"] forState:0];
+        [btn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+        [_naviagtionView addSubview:btn];
     }
     return _naviagtionView;
 }
@@ -144,7 +150,9 @@
     _mainScrollView.contentOffset = CGPointMake(kScreenWidth*index, 0);
 }
 
-
+- (void)backAction {
+    [self.navigationController popViewControllerAnimated:true];
+}
 
 #pragma mark - scrollView delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

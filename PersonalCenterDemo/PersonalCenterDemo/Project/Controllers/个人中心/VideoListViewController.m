@@ -84,6 +84,7 @@
         // 显示
         !_scrollDerictionEvent ? : _scrollDerictionEvent(NO);
     }
+    
 }
 
 @end
