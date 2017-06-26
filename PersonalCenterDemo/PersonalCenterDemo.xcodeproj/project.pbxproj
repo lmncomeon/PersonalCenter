@@ -120,6 +120,9 @@
 		BEC1793D1F00DDB200CAE694 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1793C1F00DDB200CAE694 /* TwoViewController.m */; };
 		BEC179401F00DDBA00CAE694 /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1793F1F00DDBA00CAE694 /* ThreeViewController.m */; };
 		BEC179431F00DDC200CAE694 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC179421F00DDC200CAE694 /* FourViewController.m */; };
+		BEC179471F00DED800CAE694 /* PersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC179461F00DED800CAE694 /* PersonalCenterViewController.m */; };
+		BEC1794A1F00E49B00CAE694 /* VideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC179491F00E49B00CAE694 /* VideoListViewController.m */; };
+		BEC1794D1F00E4A500CAE694 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1794C1F00E4A500CAE694 /* IntroViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -344,6 +347,12 @@
 		BEC1793F1F00DDBA00CAE694 /* ThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
 		BEC179411F00DDC200CAE694 /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
 		BEC179421F00DDC200CAE694 /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
+		BEC179451F00DED800CAE694 /* PersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterViewController.h; sourceTree = "<group>"; };
+		BEC179461F00DED800CAE694 /* PersonalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterViewController.m; sourceTree = "<group>"; };
+		BEC179481F00E49B00CAE694 /* VideoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListViewController.h; sourceTree = "<group>"; };
+		BEC179491F00E49B00CAE694 /* VideoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListViewController.m; sourceTree = "<group>"; };
+		BEC1794B1F00E4A500CAE694 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		BEC1794C1F00E4A500CAE694 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +465,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEC179441F00DEC900CAE694 /* 个人中心 */,
 				BEC179381F00DDAB00CAE694 /* OneViewController.h */,
 				BEC179391F00DDAB00CAE694 /* OneViewController.m */,
 				BEC1793B1F00DDB200CAE694 /* TwoViewController.h */,
@@ -832,6 +842,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BEC179441F00DEC900CAE694 /* 个人中心 */ = {
+			isa = PBXGroup;
+			children = (
+				BEC179451F00DED800CAE694 /* PersonalCenterViewController.h */,
+				BEC179461F00DED800CAE694 /* PersonalCenterViewController.m */,
+				BEC179481F00E49B00CAE694 /* VideoListViewController.h */,
+				BEC179491F00E49B00CAE694 /* VideoListViewController.m */,
+				BEC1794B1F00E4A500CAE694 /* IntroViewController.h */,
+				BEC1794C1F00E4A500CAE694 /* IntroViewController.m */,
+			);
+			path = "个人中心";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -944,6 +967,7 @@
 				BEC1791F1F00DCFA00CAE694 /* MJRefreshNormalHeader.m in Sources */,
 				BEC1791A1F00DCFA00CAE694 /* MJRefreshAutoStateFooter.m in Sources */,
 				BEC178F41F00DCFA00CAE694 /* UIWebView+AFNetworking.m in Sources */,
+				BEC1794A1F00E49B00CAE694 /* VideoListViewController.m in Sources */,
 				BEC178E51F00DCFA00CAE694 /* AFSecurityPolicy.m in Sources */,
 				BEC1792B1F00DCFA00CAE694 /* SDWebImageDownloader.m in Sources */,
 				BEC179181F00DCFA00CAE694 /* MJRefreshAutoGifFooter.m in Sources */,
@@ -967,6 +991,7 @@
 				BEC178F01F00DCFA00CAE694 /* UIButton+AFNetworking.m in Sources */,
 				BEC1793D1F00DDB200CAE694 /* TwoViewController.m in Sources */,
 				BEC179281F00DCFA00CAE694 /* SDImageCache.m in Sources */,
+				BEC179471F00DED800CAE694 /* PersonalCenterViewController.m in Sources */,
 				BEC1790C1F00DCFA00CAE694 /* MJPropertyKey.m in Sources */,
 				BEC178F51F00DCFA00CAE694 /* SDKAboutText.m in Sources */,
 				BEC179151F00DCFA00CAE694 /* MJRefreshComponent.m in Sources */,
@@ -1003,6 +1028,7 @@
 				BEC1790B1F00DCFA00CAE694 /* MJProperty.m in Sources */,
 				BEC178F21F00DCFA00CAE694 /* UIProgressView+AFNetworking.m in Sources */,
 				BEC178E01F00DCFA00CAE694 /* SDKTTooltipView.m in Sources */,
+				BEC1794D1F00E4A500CAE694 /* IntroViewController.m in Sources */,
 				BEC1791E1F00DCFA00CAE694 /* MJRefreshGifHeader.m in Sources */,
 				BEC178D01F00DCFA00CAE694 /* AppDelegate.m in Sources */,
 				BEC178EC1F00DCFA00CAE694 /* SDKNetworkState.m in Sources */,
