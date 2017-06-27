@@ -125,6 +125,8 @@
 		BEC1794D1F00E4A500CAE694 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1794C1F00E4A500CAE694 /* IntroViewController.m */; };
 		BEF904011F0108980061F3EC /* ControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904001F0108980061F3EC /* ControllerModel.m */; };
 		BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904041F01158F0061F3EC /* VisualEffectViewController.m */; };
+		BEF9051D1F01F37E0061F3EC /* PWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF9051C1F01F37E0061F3EC /* PWDViewController.m */; };
+		BEF905201F01F3900061F3EC /* PWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF9051F1F01F3900061F3EC /* PWDView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -359,6 +361,10 @@
 		BEF904001F0108980061F3EC /* ControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerModel.m; sourceTree = "<group>"; };
 		BEF904031F01158F0061F3EC /* VisualEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualEffectViewController.h; sourceTree = "<group>"; };
 		BEF904041F01158F0061F3EC /* VisualEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisualEffectViewController.m; sourceTree = "<group>"; };
+		BEF9051B1F01F37E0061F3EC /* PWDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWDViewController.h; sourceTree = "<group>"; };
+		BEF9051C1F01F37E0061F3EC /* PWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWDViewController.m; sourceTree = "<group>"; };
+		BEF9051E1F01F3900061F3EC /* PWDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWDView.h; sourceTree = "<group>"; };
+		BEF9051F1F01F3900061F3EC /* PWDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWDView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,6 +477,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEF9051A1F01F3750061F3EC /* 密码输入框 */,
 				BEF904021F01150D0061F3EC /* 视觉效果 */,
 				BEC179441F00DEC900CAE694 /* 个人中心 */,
 				BEC179381F00DDAB00CAE694 /* OneViewController.h */,
@@ -873,6 +880,17 @@
 			path = "视觉效果";
 			sourceTree = "<group>";
 		};
+		BEF9051A1F01F3750061F3EC /* 密码输入框 */ = {
+			isa = PBXGroup;
+			children = (
+				BEF9051B1F01F37E0061F3EC /* PWDViewController.h */,
+				BEF9051C1F01F37E0061F3EC /* PWDViewController.m */,
+				BEF9051E1F01F3900061F3EC /* PWDView.h */,
+				BEF9051F1F01F3900061F3EC /* PWDView.m */,
+			);
+			path = "密码输入框";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1002,6 +1020,7 @@
 				BEC179221F00DCFA00CAE694 /* MJRefreshConst.m in Sources */,
 				BEC1792D1F00DCFA00CAE694 /* SDWebImageManager.m in Sources */,
 				BEC179251F00DCFA00CAE694 /* UIView+MJExtension.m in Sources */,
+				BEF9051D1F01F37E0061F3EC /* PWDViewController.m in Sources */,
 				BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */,
 				BEC178D71F00DCFA00CAE694 /* UIImage+ColorImage.m in Sources */,
 				BEC177D21F00DC6800CAE694 /* main.m in Sources */,
@@ -1046,6 +1065,7 @@
 				BEC178DC1F00DCFA00CAE694 /* SDKCustomLabel.m in Sources */,
 				BEC178F31F00DCFA00CAE694 /* UIRefreshControl+AFNetworking.m in Sources */,
 				BEC1790B1F00DCFA00CAE694 /* MJProperty.m in Sources */,
+				BEF905201F01F3900061F3EC /* PWDView.m in Sources */,
 				BEC178F21F00DCFA00CAE694 /* UIProgressView+AFNetworking.m in Sources */,
 				BEC178E01F00DCFA00CAE694 /* SDKTTooltipView.m in Sources */,
 				BEC1794D1F00E4A500CAE694 /* IntroViewController.m in Sources */,

@@ -127,7 +127,16 @@
 // 取出
 #define kgetCommonData(key) [[NSUserDefaults standardUserDefaults] objectForKey:key]
 
-#define statusHH [[NSUserDefaults standardUserDefaults] objectForKey:@"999"]
+//弱引用
+#define HXWeak_(arg) \
+__weak typeof(arg) weak_##arg = arg;
+#define HXStrong_(arg) \
+__strong typeof(weak_##arg) arg = weak_##arg;
+
+#define HXWeak_self \
+HXWeak_(self)
+#define HXStrong_self \
+HXStrong_(self)
 
 // userid
 #define kUserid kgetCommonData(@"userid")
