@@ -117,6 +117,8 @@
     //    [self createTitleView];
     //    [self createViewManagement];
     
+    
+    
 }
 
 - (void)btnAction:(UIButton *)sender {

@@ -79,6 +79,8 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"上滑隐藏导航条 下滑显示" className:@"PersonalCenterViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"视觉效果" className:@"VisualEffectViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"密码输入框" className:@"PWDViewController"]];
+        [_dataList addObject:[ControllerModel modelWithTitle:@"右拉加载" className:@"RightLoadViewController"]];
+        
         
     }
     return _dataList;

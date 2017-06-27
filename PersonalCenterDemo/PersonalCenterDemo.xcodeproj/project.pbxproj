@@ -127,6 +127,9 @@
 		BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904041F01158F0061F3EC /* VisualEffectViewController.m */; };
 		BEF9051D1F01F37E0061F3EC /* PWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF9051C1F01F37E0061F3EC /* PWDViewController.m */; };
 		BEF905201F01F3900061F3EC /* PWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF9051F1F01F3900061F3EC /* PWDView.m */; };
+		BEFFBFED1F02325300A967FD /* RightLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFFBFEC1F02325300A967FD /* RightLoadView.m */; };
+		BEFFBFF01F02329900A967FD /* RightLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFFBFEF1F02329900A967FD /* RightLoadViewController.m */; };
+		BEFFBFF31F02331100A967FD /* RightLoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFFBFF21F02331100A967FD /* RightLoadModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -365,6 +368,12 @@
 		BEF9051C1F01F37E0061F3EC /* PWDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWDViewController.m; sourceTree = "<group>"; };
 		BEF9051E1F01F3900061F3EC /* PWDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWDView.h; sourceTree = "<group>"; };
 		BEF9051F1F01F3900061F3EC /* PWDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWDView.m; sourceTree = "<group>"; };
+		BEFFBFEB1F02325300A967FD /* RightLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightLoadView.h; sourceTree = "<group>"; };
+		BEFFBFEC1F02325300A967FD /* RightLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightLoadView.m; sourceTree = "<group>"; };
+		BEFFBFEE1F02329900A967FD /* RightLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightLoadViewController.h; sourceTree = "<group>"; };
+		BEFFBFEF1F02329900A967FD /* RightLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightLoadViewController.m; sourceTree = "<group>"; };
+		BEFFBFF11F02331100A967FD /* RightLoadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightLoadModel.h; sourceTree = "<group>"; };
+		BEFFBFF21F02331100A967FD /* RightLoadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightLoadModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,6 +486,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEFFBFEA1F02323B00A967FD /* 右拉加载 */,
 				BEF9051A1F01F3750061F3EC /* 密码输入框 */,
 				BEF904021F01150D0061F3EC /* 视觉效果 */,
 				BEC179441F00DEC900CAE694 /* 个人中心 */,
@@ -891,6 +901,19 @@
 			path = "密码输入框";
 			sourceTree = "<group>";
 		};
+		BEFFBFEA1F02323B00A967FD /* 右拉加载 */ = {
+			isa = PBXGroup;
+			children = (
+				BEFFBFEB1F02325300A967FD /* RightLoadView.h */,
+				BEFFBFEC1F02325300A967FD /* RightLoadView.m */,
+				BEFFBFF11F02331100A967FD /* RightLoadModel.h */,
+				BEFFBFF21F02331100A967FD /* RightLoadModel.m */,
+				BEFFBFEE1F02329900A967FD /* RightLoadViewController.h */,
+				BEFFBFEF1F02329900A967FD /* RightLoadViewController.m */,
+			);
+			path = "右拉加载";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1022,6 +1045,7 @@
 				BEC179251F00DCFA00CAE694 /* UIView+MJExtension.m in Sources */,
 				BEF9051D1F01F37E0061F3EC /* PWDViewController.m in Sources */,
 				BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */,
+				BEFFBFED1F02325300A967FD /* RightLoadView.m in Sources */,
 				BEC178D71F00DCFA00CAE694 /* UIImage+ColorImage.m in Sources */,
 				BEC177D21F00DC6800CAE694 /* main.m in Sources */,
 				BEC178DE1F00DCFA00CAE694 /* SDKJWAlertView.m in Sources */,
@@ -1045,6 +1069,7 @@
 				BEC178F71F00DCFA00CAE694 /* SDKFormatJudge.m in Sources */,
 				BEC179241F00DCFA00CAE694 /* UIScrollView+MJRefresh.m in Sources */,
 				BEC178E91F00DCFA00CAE694 /* AFURLSessionManager.m in Sources */,
+				BEFFBFF01F02329900A967FD /* RightLoadViewController.m in Sources */,
 				BEC178ED1F00DCFA00CAE694 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BEC179161F00DCFA00CAE694 /* MJRefreshFooter.m in Sources */,
 				BEC179071F00DCFA00CAE694 /* MBProgressHUD.m in Sources */,
@@ -1053,6 +1078,7 @@
 				BEC179231F00DCFA00CAE694 /* UIScrollView+MJExtension.m in Sources */,
 				BEC179301F00DCFA00CAE694 /* UIImage+GIF.m in Sources */,
 				BEC179431F00DDC200CAE694 /* FourViewController.m in Sources */,
+				BEFFBFF31F02331100A967FD /* RightLoadModel.m in Sources */,
 				BEC178E41F00DCFA00CAE694 /* AFNetworkReachabilityManager.m in Sources */,
 				BEC178FC1F00DCFA00CAE694 /* customHUD.m in Sources */,
 				BEC178E81F00DCFA00CAE694 /* AFURLResponseSerialization.m in Sources */,
