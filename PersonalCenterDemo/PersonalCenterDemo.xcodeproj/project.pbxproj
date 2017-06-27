@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7ED1F02564200465B2B /* LogisticsViewController.m */; };
+		BE69F7F11F02568100465B2B /* FlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F01F02568100465B2B /* FlowView.m */; };
+		BE69F7F41F0256F000465B2B /* FlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F31F0256F000465B2B /* FlowModel.m */; };
 		BEC177D21F00DC6800CAE694 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC177D11F00DC6800CAE694 /* main.m */; };
 		BEC177D81F00DC6800CAE694 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC177D71F00DC6800CAE694 /* ViewController.m */; };
 		BEC177DB1F00DC6800CAE694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC177D91F00DC6800CAE694 /* Main.storyboard */; };
@@ -133,6 +136,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE69F7EC1F02564200465B2B /* LogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsViewController.h; sourceTree = "<group>"; };
+		BE69F7ED1F02564200465B2B /* LogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsViewController.m; sourceTree = "<group>"; };
+		BE69F7EF1F02568100465B2B /* FlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowView.h; sourceTree = "<group>"; };
+		BE69F7F01F02568100465B2B /* FlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowView.m; sourceTree = "<group>"; };
+		BE69F7F21F0256F000465B2B /* FlowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowModel.h; sourceTree = "<group>"; };
+		BE69F7F31F0256F000465B2B /* FlowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowModel.m; sourceTree = "<group>"; };
 		BEC177CD1F00DC6800CAE694 /* PersonalCenterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCenterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC177D11F00DC6800CAE694 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BEC177D61F00DC6800CAE694 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -387,6 +396,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE69F7EB1F02562100465B2B /* 物流 */ = {
+			isa = PBXGroup;
+			children = (
+				BE69F7EC1F02564200465B2B /* LogisticsViewController.h */,
+				BE69F7ED1F02564200465B2B /* LogisticsViewController.m */,
+				BE69F7EF1F02568100465B2B /* FlowView.h */,
+				BE69F7F01F02568100465B2B /* FlowView.m */,
+				BE69F7F21F0256F000465B2B /* FlowModel.h */,
+				BE69F7F31F0256F000465B2B /* FlowModel.m */,
+			);
+			path = "物流";
+			sourceTree = "<group>";
+		};
 		BEC177C41F00DC6800CAE694 = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +508,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE69F7EB1F02562100465B2B /* 物流 */,
 				BEFFBFEA1F02323B00A967FD /* 右拉加载 */,
 				BEF9051A1F01F3750061F3EC /* 密码输入框 */,
 				BEF904021F01150D0061F3EC /* 视觉效果 */,
@@ -1000,6 +1023,7 @@
 				BEC178D81F00DCFA00CAE694 /* UIView+CustomView.m in Sources */,
 				BEC179101F00DCFA00CAE694 /* NSObject+MJKeyValue.m in Sources */,
 				BEC178F61F00DCFA00CAE694 /* SDKAuthJudge.m in Sources */,
+				BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */,
 				BEC178D61F00DCFA00CAE694 /* NSArray+Log.m in Sources */,
 				BEC179291F00DCFA00CAE694 /* SDWebImageCompat.m in Sources */,
 				BEC178D11F00DCFA00CAE694 /* BaseTableViewCell.m in Sources */,
@@ -1042,6 +1066,7 @@
 				BEC179321F00DCFA00CAE694 /* UIImage+WebP.m in Sources */,
 				BEC179221F00DCFA00CAE694 /* MJRefreshConst.m in Sources */,
 				BEC1792D1F00DCFA00CAE694 /* SDWebImageManager.m in Sources */,
+				BE69F7F41F0256F000465B2B /* FlowModel.m in Sources */,
 				BEC179251F00DCFA00CAE694 /* UIView+MJExtension.m in Sources */,
 				BEF9051D1F01F37E0061F3EC /* PWDViewController.m in Sources */,
 				BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */,
@@ -1105,6 +1130,7 @@
 				BEC1792F1F00DCFA00CAE694 /* UIButton+WebCache.m in Sources */,
 				BEC179341F00DCFA00CAE694 /* UIImageView+WebCache.m in Sources */,
 				BEC178D51F00DCFA00CAE694 /* SDKProjectHeader.m in Sources */,
+				BE69F7F11F02568100465B2B /* FlowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
