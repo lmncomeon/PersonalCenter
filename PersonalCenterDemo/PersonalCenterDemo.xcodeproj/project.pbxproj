@@ -10,6 +10,7 @@
 		BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7ED1F02564200465B2B /* LogisticsViewController.m */; };
 		BE69F7F11F02568100465B2B /* FlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F01F02568100465B2B /* FlowView.m */; };
 		BE69F7F41F0256F000465B2B /* FlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F31F0256F000465B2B /* FlowModel.m */; };
+		BE9D21431F034DE90095720B /* KTVCaptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9D21421F034DE90095720B /* KTVCaptionViewController.m */; };
 		BEC177D21F00DC6800CAE694 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC177D11F00DC6800CAE694 /* main.m */; };
 		BEC177D81F00DC6800CAE694 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC177D71F00DC6800CAE694 /* ViewController.m */; };
 		BEC177DB1F00DC6800CAE694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC177D91F00DC6800CAE694 /* Main.storyboard */; };
@@ -142,6 +143,8 @@
 		BE69F7F01F02568100465B2B /* FlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowView.m; sourceTree = "<group>"; };
 		BE69F7F21F0256F000465B2B /* FlowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowModel.h; sourceTree = "<group>"; };
 		BE69F7F31F0256F000465B2B /* FlowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowModel.m; sourceTree = "<group>"; };
+		BE9D21411F034DE90095720B /* KTVCaptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVCaptionViewController.h; sourceTree = "<group>"; };
+		BE9D21421F034DE90095720B /* KTVCaptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVCaptionViewController.m; sourceTree = "<group>"; };
 		BEC177CD1F00DC6800CAE694 /* PersonalCenterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCenterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC177D11F00DC6800CAE694 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BEC177D61F00DC6800CAE694 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -409,6 +412,15 @@
 			path = "物流";
 			sourceTree = "<group>";
 		};
+		BE9D21401F034DC80095720B /* KTV字母效果 */ = {
+			isa = PBXGroup;
+			children = (
+				BE9D21411F034DE90095720B /* KTVCaptionViewController.h */,
+				BE9D21421F034DE90095720B /* KTVCaptionViewController.m */,
+			);
+			path = "KTV字母效果";
+			sourceTree = "<group>";
+		};
 		BEC177C41F00DC6800CAE694 = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +520,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE9D21401F034DC80095720B /* KTV字母效果 */,
 				BE69F7EB1F02562100465B2B /* 物流 */,
 				BEFFBFEA1F02323B00A967FD /* 右拉加载 */,
 				BEF9051A1F01F3750061F3EC /* 密码输入框 */,
@@ -1117,6 +1130,7 @@
 				BEC178F31F00DCFA00CAE694 /* UIRefreshControl+AFNetworking.m in Sources */,
 				BEC1790B1F00DCFA00CAE694 /* MJProperty.m in Sources */,
 				BEF905201F01F3900061F3EC /* PWDView.m in Sources */,
+				BE9D21431F034DE90095720B /* KTVCaptionViewController.m in Sources */,
 				BEC178F21F00DCFA00CAE694 /* UIProgressView+AFNetworking.m in Sources */,
 				BEC178E01F00DCFA00CAE694 /* SDKTTooltipView.m in Sources */,
 				BEC1794D1F00E4A500CAE694 /* IntroViewController.m in Sources */,

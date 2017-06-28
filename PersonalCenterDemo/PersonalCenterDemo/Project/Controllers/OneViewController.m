@@ -81,6 +81,7 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"密码输入框" className:@"PWDViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"右拉加载" className:@"RightLoadViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"物流" className:@"LogisticsViewController"]];
+        [_dataList addObject:[ControllerModel modelWithTitle:@"KTV字幕建议实现" className:@"KTVCaptionViewController"]];
         
         
     }
