@@ -44,6 +44,7 @@
             show.width = background.size.width;
         }];
     });
+    
 }
 
 @end
