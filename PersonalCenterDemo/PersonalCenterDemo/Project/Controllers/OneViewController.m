@@ -44,6 +44,8 @@
     [self.view addSubview:lab];
     
     [self mainTableView];
+    
+    
 }
 
 #pragma mark - tableview datasource
@@ -144,6 +146,8 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"物流" className:@"LogisticsViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"KTV字幕建议实现" className:@"KTVCaptionViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"购物车效果" className:@""]];
+        [_dataList addObject:[ControllerModel modelWithTitle:@"弹性" className:@"SpringViewController"]];
+        
     }
     return _dataList;
 }

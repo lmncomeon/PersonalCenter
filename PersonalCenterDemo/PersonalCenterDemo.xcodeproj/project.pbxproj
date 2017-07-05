@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE019F641F0BA1E9007451B5 /* SpringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE019F631F0BA1E9007451B5 /* SpringViewController.m */; };
 		BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7ED1F02564200465B2B /* LogisticsViewController.m */; };
 		BE69F7F11F02568100465B2B /* FlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F01F02568100465B2B /* FlowView.m */; };
 		BE69F7F41F0256F000465B2B /* FlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F31F0256F000465B2B /* FlowModel.m */; };
@@ -137,6 +138,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE019F621F0BA1E9007451B5 /* SpringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringViewController.h; sourceTree = "<group>"; };
+		BE019F631F0BA1E9007451B5 /* SpringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringViewController.m; sourceTree = "<group>"; };
 		BE69F7EC1F02564200465B2B /* LogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsViewController.h; sourceTree = "<group>"; };
 		BE69F7ED1F02564200465B2B /* LogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsViewController.m; sourceTree = "<group>"; };
 		BE69F7EF1F02568100465B2B /* FlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowView.h; sourceTree = "<group>"; };
@@ -399,6 +402,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE019F611F0BA1C3007451B5 /* 弹性动画 */ = {
+			isa = PBXGroup;
+			children = (
+				BE019F621F0BA1E9007451B5 /* SpringViewController.h */,
+				BE019F631F0BA1E9007451B5 /* SpringViewController.m */,
+			);
+			path = "弹性动画";
+			sourceTree = "<group>";
+		};
 		BE69F7EB1F02562100465B2B /* 物流 */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +532,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE019F611F0BA1C3007451B5 /* 弹性动画 */,
 				BE9D21401F034DC80095720B /* KTV字母效果 */,
 				BE69F7EB1F02562100465B2B /* 物流 */,
 				BEFFBFEA1F02323B00A967FD /* 右拉加载 */,
@@ -1037,6 +1050,7 @@
 				BEC179101F00DCFA00CAE694 /* NSObject+MJKeyValue.m in Sources */,
 				BEC178F61F00DCFA00CAE694 /* SDKAuthJudge.m in Sources */,
 				BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */,
+				BE019F641F0BA1E9007451B5 /* SpringViewController.m in Sources */,
 				BEC178D61F00DCFA00CAE694 /* NSArray+Log.m in Sources */,
 				BEC179291F00DCFA00CAE694 /* SDWebImageCompat.m in Sources */,
 				BEC178D11F00DCFA00CAE694 /* BaseTableViewCell.m in Sources */,

@@ -45,6 +45,35 @@
         }];
     });
     
-}
+    
+    UIView *redView = [[UIView alloc] initWithFrame:CGRectMake(100, 200, adaptX(100), adaptX(100))];
+    redView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:redView];
+    
+    //路径阴影
+    UIBezierPath *path = [UIBezierPath bezierPath];
 
+    CGFloat redViewW = adaptX(100);
+    CGFloat padding  = adaptX(10);
+    
+    [path moveToPoint:CGPointZero];
+    //添加四个二元曲线
+    [path addQuadCurveToPoint:CGPointMake(redViewW, 0)
+                 controlPoint:CGPointMake(redViewW*0.5, -padding)];
+    [path addQuadCurveToPoint:CGPointMake(redViewW, redViewW)
+                 controlPoint:CGPointMake(redViewW+padding, redViewW*0.5)];
+    [path addQuadCurveToPoint:CGPointMake(0, redViewW)
+                 controlPoint:CGPointMake(redViewW*0.5, redViewW+padding)];
+    [path addQuadCurveToPoint:CGPointZero
+                 controlPoint:CGPointMake(-padding, redViewW*0.5)];
+    
+    redView.layer.shadowColor = [UIColor yellowColor].CGColor;
+    redView.layer.shadowOffset = CGSizeZero;
+    redView.layer.shadowRadius = 3;
+    redView.layer.shadowPath = path.CGPath;
+    redView.layer.shadowOpacity = 1;
+
+
+   
+}
 @end
