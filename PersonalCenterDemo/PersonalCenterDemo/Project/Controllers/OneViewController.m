@@ -81,6 +81,7 @@
     Class class = NSClassFromString(self.dataList[indexPath.row].className);
     if (class) {
         SDKBaseViewController *vc = [class new];
+        vc.title = self.dataList[indexPath.row].title;
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:true];
     } else {
@@ -148,7 +149,8 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"购物车效果" className:@""]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"弹性" className:@"SpringViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"仿真" className:@"SimulationEffectViewController"]];
- 
+        [_dataList addObject:[ControllerModel modelWithTitle:@"折叠" className:@"FoldViewController"]];
+        
     }
     return _dataList;
 }
