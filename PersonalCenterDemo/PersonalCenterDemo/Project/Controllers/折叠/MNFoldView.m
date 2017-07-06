@@ -7,27 +7,12 @@
 //
 
 #import "MNFoldView.h"
-#import "SDKProjectHeader.h"
-#import "UIView+CustomView.h"
-#import "SDKCustomLabel.h"
-#import "SDKAboutText.h"
-
-#import "FoldModel.h"
 
 @interface MNFoldView ()
 
-@property (nonatomic, strong) UIView *topView;
-@property (nonatomic, strong) UIView *bottomView;
-
-@property (nonatomic, strong) SDKCustomLabel *topLab;
-@property (nonatomic, strong) SDKCustomLabel *bottomLab;
-
 @property (nonatomic, assign) BOOL currentSpread;
-@property (nonatomic, assign) CGFloat currentBottomH;
 
 @end
-
-#define margin adaptY(10)
 
 @implementation MNFoldView
 
@@ -82,25 +67,7 @@
     if (self) {
         [self bottomView];
         
-        _topLab.text = model.title;
-        _bottomLab.text = model.content;
-        
-        
-        CGFloat topH =  [SDKAboutText calculateTextHeight:model.title maxWidth:_topLab.width font:_topLab.font];
-        _topLab.height = topH;
-        _topView.height = CGRectGetMaxY(_topView.subviews.lastObject.frame) + margin;
-        
-        
-        CGFloat bottomH = [SDKAboutText calculateTextHeight:model.content maxWidth:_bottomLab.width font:_bottomLab.font];
-        _bottomView.y = CGRectGetMaxY(_topView.frame);
-        _bottomLab.height = spread ? bottomH : 0;
-        _bottomView.height = spread ? CGRectGetMaxY(_bottomView.subviews.lastObject.frame) + margin : 0;
-        
-
-        self.height = CGRectGetMaxY(_bottomView.frame);
-        
         _currentSpread = spread;
-        _currentBottomH = bottomH;
     }
     return self;
 }

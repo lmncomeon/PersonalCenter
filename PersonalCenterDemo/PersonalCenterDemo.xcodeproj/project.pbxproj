@@ -138,6 +138,7 @@
 		BEC179471F00DED800CAE694 /* PersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC179461F00DED800CAE694 /* PersonalCenterViewController.m */; };
 		BEC1794A1F00E49B00CAE694 /* VideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC179491F00E49B00CAE694 /* VideoListViewController.m */; };
 		BEC1794D1F00E4A500CAE694 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1794C1F00E4A500CAE694 /* IntroViewController.m */; };
+		BEDCF6D61F0DDCC400F3230D /* OrderFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6D51F0DDCC400F3230D /* OrderFoldView.m */; };
 		BEF904011F0108980061F3EC /* ControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904001F0108980061F3EC /* ControllerModel.m */; };
 		BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904041F01158F0061F3EC /* VisualEffectViewController.m */; };
 		BEF9051D1F01F37E0061F3EC /* PWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF9051C1F01F37E0061F3EC /* PWDViewController.m */; };
@@ -401,6 +402,8 @@
 		BEC179491F00E49B00CAE694 /* VideoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListViewController.m; sourceTree = "<group>"; };
 		BEC1794B1F00E4A500CAE694 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		BEC1794C1F00E4A500CAE694 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		BEDCF6D41F0DDCC400F3230D /* OrderFoldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderFoldView.h; sourceTree = "<group>"; };
+		BEDCF6D51F0DDCC400F3230D /* OrderFoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderFoldView.m; sourceTree = "<group>"; };
 		BEF903FF1F0108980061F3EC /* ControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerModel.h; sourceTree = "<group>"; };
 		BEF904001F0108980061F3EC /* ControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerModel.m; sourceTree = "<group>"; };
 		BEF904031F01158F0061F3EC /* VisualEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualEffectViewController.h; sourceTree = "<group>"; };
@@ -469,6 +472,8 @@
 				BE2907A91F0CCCA1006290B3 /* FoldViewController.m */,
 				BE2907AB1F0CCE40006290B3 /* MNFoldView.h */,
 				BE2907AC1F0CCE40006290B3 /* MNFoldView.m */,
+				BEDCF6D41F0DDCC400F3230D /* OrderFoldView.h */,
+				BEDCF6D51F0DDCC400F3230D /* OrderFoldView.m */,
 				BE2907AE1F0CD093006290B3 /* FoldModel.h */,
 				BE2907AF1F0CD093006290B3 /* FoldModel.m */,
 			);
@@ -1216,6 +1221,7 @@
 				BEC179111F00DCFA00CAE694 /* NSObject+MJProperty.m in Sources */,
 				BEC178EF1F00DCFA00CAE694 /* UIAlertView+AFNetworking.m in Sources */,
 				BEF904011F0108980061F3EC /* ControllerModel.m in Sources */,
+				BEDCF6D61F0DDCC400F3230D /* OrderFoldView.m in Sources */,
 				BEC178DC1F00DCFA00CAE694 /* SDKCustomLabel.m in Sources */,
 				BEC178F31F00DCFA00CAE694 /* UIRefreshControl+AFNetworking.m in Sources */,
 				BEC1790B1F00DCFA00CAE694 /* MJProperty.m in Sources */,

@@ -9,6 +9,7 @@
 #import "FoldViewController.h"
 #import "MNFoldView.h"
 #import "FoldModel.h"
+#import "OrderFoldView.h"
 
 @interface FoldViewController ()
 
@@ -34,17 +35,18 @@
     [self mainScrollView];
  
    
-    FoldModel *model1 = [FoldModel modelWithTitle:@"娜娜的世界哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" content:@"捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹"];
-    FoldModel *model2 = [FoldModel modelWithTitle:@"娜娜的世界哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" content:@"捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹"];
-    FoldModel *model3 = [FoldModel modelWithTitle:@"娜娜的世界哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" content:@"捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹"];
-    FoldModel *model4 = [FoldModel modelWithTitle:@"娜娜的世界哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" content:@"捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹"];
+    FoldModel *model1 = [FoldModel modelWithTitle:@"1娜娜的世界哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" content:@"1捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹"];
+    FoldModel *model2 = [FoldModel modelWithTitle:@"2娜娜的世界哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" content:@"2捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹"];
+    FoldModel *model3 = [FoldModel modelWithTitle:@"3娜娜的世界哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" content:@"3捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹"];
+    FoldModel *model4 = [FoldModel modelWithTitle:@"4娜娜的世界哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" content:@"4捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹捏哦热闹"];
     
     NSArray *tmp = @[model1, model2, model3, model4];
     
     CGFloat cellY = 100;
     for (int i = 0; i < tmp.count; i++) {
-        MNFoldView *cellView = [[MNFoldView alloc] initWithFrame:CGRectMake(0, cellY, kScreenWidth, 0) model:tmp[i] spread:false];
+        OrderFoldView *cellView = [[OrderFoldView alloc] initWithFrame:CGRectMake(0, cellY, kScreenWidth, 0) model:tmp[i] spread:false];
         cellView.backgroundColor = krandomColor;
+        
         [self.mainScrollView addSubview:cellView];
         [self.cellsArray addObject:cellView];
         
@@ -52,7 +54,8 @@
         cellView.updateHeight = ^{
             HXStrong_self
             
-            [self closeOtherCell:i];
+            
+            [self closeOtherCell:i]; // 注释后是另一种效果
             
             [self updateUIHeight];
         };
@@ -65,10 +68,9 @@
 - (void)updateUIHeight {
    __block  CGFloat cellY = 100;
     [UIView animateWithDuration:0.5 animations:^{
-    for (MNFoldView *cell in self.cellsArray) {
+    for (OrderFoldView *cell in self.cellsArray) {
         
-            cell.y = cellY;
-        
+        cell.y = cellY;
         
         cellY += cell.height;
     }

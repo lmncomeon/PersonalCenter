@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDKProjectHeader.h"
+#import "UIView+CustomView.h"
+#import "SDKCustomLabel.h"
+#import "SDKAboutText.h"
 
-@class FoldModel;
+#import "FoldModel.h"
+
+#define margin adaptY(10)
 
 @interface MNFoldView : UIView
 
@@ -17,5 +23,16 @@
 @property (nonatomic, copy) dispatch_block_t updateHeight;
 
 @property (nonatomic, assign) BOOL spread;
+
+
+
+@property (nonatomic, strong) UIView *topView;
+@property (nonatomic, strong) UIView *bottomView;
+
+@property (nonatomic, strong) SDKCustomLabel *topLab;
+@property (nonatomic, strong) SDKCustomLabel *bottomLab;
+
+@property (nonatomic, assign) CGFloat currentBottomH;
+
 
 @end
