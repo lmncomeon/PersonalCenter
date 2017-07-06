@@ -99,16 +99,6 @@
     flag++;
 }
 
-- (void)setSingleTapEvent:(void(^)(void))event{
-    self.userInteractionEnabled = true;
-    if (event) {
-        self.customLabTapEvent = event;
-    }
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labSingleTapAction:)];
-    tap.numberOfTapsRequired = 1;
-    tap.numberOfTouchesRequired = 1;
-    [self addGestureRecognizer:tap];
-}
 
 - (void)labSingleTapAction:(UITapGestureRecognizer *)tap{
     !self.customLabTapEvent ? nil:self.customLabTapEvent();

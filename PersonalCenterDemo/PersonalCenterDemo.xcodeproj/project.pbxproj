@@ -139,6 +139,8 @@
 		BEC1794A1F00E49B00CAE694 /* VideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC179491F00E49B00CAE694 /* VideoListViewController.m */; };
 		BEC1794D1F00E4A500CAE694 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1794C1F00E4A500CAE694 /* IntroViewController.m */; };
 		BEDCF6D61F0DDCC400F3230D /* OrderFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6D51F0DDCC400F3230D /* OrderFoldView.m */; };
+		BEDCF6DA1F0DE23300F3230D /* QQGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6D91F0DE23300F3230D /* QQGroupViewController.m */; };
+		BEDCF6DD1F0DE30A00F3230D /* QQGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6DC1F0DE30A00F3230D /* QQGroupModel.m */; };
 		BEF904011F0108980061F3EC /* ControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904001F0108980061F3EC /* ControllerModel.m */; };
 		BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904041F01158F0061F3EC /* VisualEffectViewController.m */; };
 		BEF9051D1F01F37E0061F3EC /* PWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF9051C1F01F37E0061F3EC /* PWDViewController.m */; };
@@ -404,6 +406,10 @@
 		BEC1794C1F00E4A500CAE694 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 		BEDCF6D41F0DDCC400F3230D /* OrderFoldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderFoldView.h; sourceTree = "<group>"; };
 		BEDCF6D51F0DDCC400F3230D /* OrderFoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderFoldView.m; sourceTree = "<group>"; };
+		BEDCF6D81F0DE23300F3230D /* QQGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQGroupViewController.h; sourceTree = "<group>"; };
+		BEDCF6D91F0DE23300F3230D /* QQGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQGroupViewController.m; sourceTree = "<group>"; };
+		BEDCF6DB1F0DE30A00F3230D /* QQGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQGroupModel.h; sourceTree = "<group>"; };
+		BEDCF6DC1F0DE30A00F3230D /* QQGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQGroupModel.m; sourceTree = "<group>"; };
 		BEF903FF1F0108980061F3EC /* ControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerModel.h; sourceTree = "<group>"; };
 		BEF904001F0108980061F3EC /* ControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerModel.m; sourceTree = "<group>"; };
 		BEF904031F01158F0061F3EC /* VisualEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualEffectViewController.h; sourceTree = "<group>"; };
@@ -601,6 +607,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEDCF6D71F0DE1FF00F3230D /* QQ分组 */,
 				BE2907A71F0CCC85006290B3 /* 折叠 */,
 				BE019F651F0C87EB007451B5 /* 仿真效果 */,
 				BE019F611F0BA1C3007451B5 /* 弹性动画 */,
@@ -1001,6 +1008,17 @@
 			path = "个人中心";
 			sourceTree = "<group>";
 		};
+		BEDCF6D71F0DE1FF00F3230D /* QQ分组 */ = {
+			isa = PBXGroup;
+			children = (
+				BEDCF6D81F0DE23300F3230D /* QQGroupViewController.h */,
+				BEDCF6D91F0DE23300F3230D /* QQGroupViewController.m */,
+				BEDCF6DB1F0DE30A00F3230D /* QQGroupModel.h */,
+				BEDCF6DC1F0DE30A00F3230D /* QQGroupModel.m */,
+			);
+			path = "QQ分组";
+			sourceTree = "<group>";
+		};
 		BEF904021F01150D0061F3EC /* 视觉效果 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1147,6 +1165,7 @@
 				BEC179191F00DCFA00CAE694 /* MJRefreshAutoNormalFooter.m in Sources */,
 				BEC179131F00DCFA00CAE694 /* MJRefreshAutoFooter.m in Sources */,
 				BEC1790D1F00DCFA00CAE694 /* MJPropertyType.m in Sources */,
+				BEDCF6DD1F0DE30A00F3230D /* QQGroupModel.m in Sources */,
 				BEC1792C1F00DCFA00CAE694 /* SDWebImageDownloaderOperation.m in Sources */,
 				BEC179081F00DCFA00CAE694 /* MJDictionaryCache.m in Sources */,
 				BEC1791C1F00DCFA00CAE694 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -1181,6 +1200,7 @@
 				BEC178D71F00DCFA00CAE694 /* UIImage+ColorImage.m in Sources */,
 				BEC177D21F00DC6800CAE694 /* main.m in Sources */,
 				BE019F681F0C881B007451B5 /* SimulationEffectViewController.m in Sources */,
+				BEDCF6DA1F0DE23300F3230D /* QQGroupViewController.m in Sources */,
 				BEC178DE1F00DCFA00CAE694 /* SDKJWAlertView.m in Sources */,
 				BEC179171F00DCFA00CAE694 /* MJRefreshHeader.m in Sources */,
 				BEC178F01F00DCFA00CAE694 /* UIButton+AFNetworking.m in Sources */,

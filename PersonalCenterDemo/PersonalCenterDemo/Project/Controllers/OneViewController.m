@@ -24,7 +24,7 @@
 
 - (UITableView *)mainTableView {
     if (!_mainTableView) {
-        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, (kScreenHeight - 64)) style:UITableViewStyleGrouped];
+        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-84) style:UITableViewStyleGrouped];
         _mainTableView.backgroundColor = [UIColor clearColor];
         _mainTableView.dataSource      = self;
         _mainTableView.delegate  = self;
@@ -38,13 +38,13 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.automaticallyAdjustsScrollViewInsets = false;
     
     SDKCustomLabel *lab = [SDKCustomLabel setLabelTitle:@"测试" setLabelFrame:CGRectMake(0, 0, kScreenWidth, adaptY(20)) setLabelColor:commonBlueColor setLabelFont:kFont(12)];
     lab.textAlignment = 1;
     [self.view addSubview:lab];
     
     [self mainTableView];
-    
     
 }
 
@@ -150,6 +150,7 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"弹性" className:@"SpringViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"仿真" className:@"SimulationEffectViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"折叠" className:@"FoldViewController"]];
+        [_dataList addObject:[ControllerModel modelWithTitle:@"分组" className:@"QQGroupViewController"]];
         
     }
     return _dataList;

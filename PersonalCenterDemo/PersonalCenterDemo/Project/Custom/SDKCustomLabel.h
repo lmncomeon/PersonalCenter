@@ -24,7 +24,6 @@
 
 - (void)setNumberAnimationForValueContent:(double)value;
 
-- (void)setSingleTapEvent:(void(^)(void))event;
 
 + (SDKCustomLabel *)addLineLabel:(CGRect)frame;
 
