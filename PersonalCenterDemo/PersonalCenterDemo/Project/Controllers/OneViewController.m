@@ -151,6 +151,7 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"仿真" className:@"SimulationEffectViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"折叠" className:@"FoldViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"分组" className:@"QQGroupViewController"]];
+        [_dataList addObject:[ControllerModel modelWithTitle:@"按钮系列" className:@"ButtonsViewController"]];
         
     }
     return _dataList;

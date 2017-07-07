@@ -18,6 +18,8 @@
 		BE2907AA1F0CCCA1006290B3 /* FoldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907A91F0CCCA1006290B3 /* FoldViewController.m */; };
 		BE2907AD1F0CCE40006290B3 /* MNFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907AC1F0CCE40006290B3 /* MNFoldView.m */; };
 		BE2907B01F0CD093006290B3 /* FoldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907AF1F0CD093006290B3 /* FoldModel.m */; };
+		BE4386241F0F6B410014593F /* MNSolidButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4386231F0F6B410014593F /* MNSolidButton.m */; };
+		BE4386281F0F6B7D0014593F /* ButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4386271F0F6B7D0014593F /* ButtonsViewController.m */; };
 		BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7ED1F02564200465B2B /* LogisticsViewController.m */; };
 		BE69F7F11F02568100465B2B /* FlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F01F02568100465B2B /* FlowView.m */; };
 		BE69F7F41F0256F000465B2B /* FlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F31F0256F000465B2B /* FlowModel.m */; };
@@ -169,6 +171,10 @@
 		BE2907AC1F0CCE40006290B3 /* MNFoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNFoldView.m; sourceTree = "<group>"; };
 		BE2907AE1F0CD093006290B3 /* FoldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldModel.h; sourceTree = "<group>"; };
 		BE2907AF1F0CD093006290B3 /* FoldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldModel.m; sourceTree = "<group>"; };
+		BE4386221F0F6B410014593F /* MNSolidButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNSolidButton.h; sourceTree = "<group>"; };
+		BE4386231F0F6B410014593F /* MNSolidButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNSolidButton.m; sourceTree = "<group>"; };
+		BE4386261F0F6B7D0014593F /* ButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonsViewController.h; sourceTree = "<group>"; };
+		BE4386271F0F6B7D0014593F /* ButtonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonsViewController.m; sourceTree = "<group>"; };
 		BE69F7EC1F02564200465B2B /* LogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsViewController.h; sourceTree = "<group>"; };
 		BE69F7ED1F02564200465B2B /* LogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsViewController.m; sourceTree = "<group>"; };
 		BE69F7EF1F02568100465B2B /* FlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowView.h; sourceTree = "<group>"; };
@@ -486,6 +492,24 @@
 			path = "折叠";
 			sourceTree = "<group>";
 		};
+		BE4386211F0F6B2E0014593F /* UIbutton */ = {
+			isa = PBXGroup;
+			children = (
+				BE4386221F0F6B410014593F /* MNSolidButton.h */,
+				BE4386231F0F6B410014593F /* MNSolidButton.m */,
+			);
+			path = UIbutton;
+			sourceTree = "<group>";
+		};
+		BE4386251F0F6B6C0014593F /* 按钮系列 */ = {
+			isa = PBXGroup;
+			children = (
+				BE4386261F0F6B7D0014593F /* ButtonsViewController.h */,
+				BE4386271F0F6B7D0014593F /* ButtonsViewController.m */,
+			);
+			path = "按钮系列";
+			sourceTree = "<group>";
+		};
 		BE69F7EB1F02562100465B2B /* 物流 */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +631,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE4386251F0F6B6C0014593F /* 按钮系列 */,
 				BEDCF6D71F0DE1FF00F3230D /* QQ分组 */,
 				BE2907A71F0CCC85006290B3 /* 折叠 */,
 				BE019F651F0C87EB007451B5 /* 仿真效果 */,
@@ -632,6 +657,7 @@
 		BEC177FF1F00DCFA00CAE694 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				BE4386211F0F6B2E0014593F /* UIbutton */,
 				BEC178001F00DCFA00CAE694 /* AdvertisementView.h */,
 				BEC178011F00DCFA00CAE694 /* AdvertisementView.m */,
 				BEC178021F00DCFA00CAE694 /* MNTipView.h */,
@@ -1255,11 +1281,13 @@
 				BEC178EC1F00DCFA00CAE694 /* SDKNetworkState.m in Sources */,
 				BEC179201F00DCFA00CAE694 /* MJRefreshStateHeader.m in Sources */,
 				BEC179091F00DCFA00CAE694 /* MJExtensionConst.m in Sources */,
+				BE4386241F0F6B410014593F /* MNSolidButton.m in Sources */,
 				BE019F771F0C8AF2007451B5 /* WLBallView.m in Sources */,
 				BEC178DD1F00DCFA00CAE694 /* SDkCustomRoundedButton.m in Sources */,
 				BEC178DA1F00DCFA00CAE694 /* MNTipView.m in Sources */,
 				BEC1792F1F00DCFA00CAE694 /* UIButton+WebCache.m in Sources */,
 				BEC179341F00DCFA00CAE694 /* UIImageView+WebCache.m in Sources */,
+				BE4386281F0F6B7D0014593F /* ButtonsViewController.m in Sources */,
 				BEC178D51F00DCFA00CAE694 /* SDKProjectHeader.m in Sources */,
 				BE69F7F11F02568100465B2B /* FlowView.m in Sources */,
 			);

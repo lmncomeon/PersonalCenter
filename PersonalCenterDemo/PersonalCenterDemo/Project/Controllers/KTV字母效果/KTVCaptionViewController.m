@@ -74,6 +74,18 @@
     redView.layer.shadowOpacity = 1;
 
 
-   
+    self.view.layer.contents = (id)[UIImage imageNamed:@"bg.jpg"].CGImage;
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(adaptX(20), adaptY(10), kScreenWidth-2*adaptX(20), adaptY(30));
+    btn.layer.masksToBounds = true;
+    btn.layer.cornerRadius = 5;
+    [btn setTitle:@"我是透明按钮 好看不" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    btn.backgroundColor = commonWhiteColor;
+    btn.alpha = 0.5f;
+    [self.view addSubview:btn];
+    
 }
 @end
