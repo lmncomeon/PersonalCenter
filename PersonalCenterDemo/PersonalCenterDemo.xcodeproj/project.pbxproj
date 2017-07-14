@@ -143,6 +143,11 @@
 		BEDCF6D61F0DDCC400F3230D /* OrderFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6D51F0DDCC400F3230D /* OrderFoldView.m */; };
 		BEDCF6DA1F0DE23300F3230D /* QQGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6D91F0DE23300F3230D /* QQGroupViewController.m */; };
 		BEDCF6DD1F0DE30A00F3230D /* QQGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6DC1F0DE30A00F3230D /* QQGroupModel.m */; };
+		BEEA697B1F18CF1F00C9F990 /* RSAEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEA697A1F18CF1F00C9F990 /* RSAEncrypt.m */; };
+		BEEA697E1F18D61F00C9F990 /* rsa_private_key.p12 in Resources */ = {isa = PBXBuildFile; fileRef = BEEA697C1F18D61F00C9F990 /* rsa_private_key.p12 */; };
+		BEEA697F1F18D61F00C9F990 /* rsa_public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = BEEA697D1F18D61F00C9F990 /* rsa_public_key.der */; };
+		BEEA69821F18D76600C9F990 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEA69811F18D76600C9F990 /* Security.framework */; };
+		BEEA69881F18D93600C9F990 /* RSAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEA69871F18D93600C9F990 /* RSAViewController.m */; };
 		BEF904011F0108980061F3EC /* ControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904001F0108980061F3EC /* ControllerModel.m */; };
 		BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904041F01158F0061F3EC /* VisualEffectViewController.m */; };
 		BEF9051D1F01F37E0061F3EC /* PWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF9051C1F01F37E0061F3EC /* PWDViewController.m */; };
@@ -416,6 +421,13 @@
 		BEDCF6D91F0DE23300F3230D /* QQGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQGroupViewController.m; sourceTree = "<group>"; };
 		BEDCF6DB1F0DE30A00F3230D /* QQGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQGroupModel.h; sourceTree = "<group>"; };
 		BEDCF6DC1F0DE30A00F3230D /* QQGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQGroupModel.m; sourceTree = "<group>"; };
+		BEEA69791F18CF1F00C9F990 /* RSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAEncryptor.h; sourceTree = "<group>"; };
+		BEEA697A1F18CF1F00C9F990 /* RSAEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAEncrypt.m; sourceTree = "<group>"; };
+		BEEA697C1F18D61F00C9F990 /* rsa_private_key.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rsa_private_key.p12; sourceTree = "<group>"; };
+		BEEA697D1F18D61F00C9F990 /* rsa_public_key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = rsa_public_key.der; sourceTree = "<group>"; };
+		BEEA69811F18D76600C9F990 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BEEA69861F18D93600C9F990 /* RSAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAViewController.h; sourceTree = "<group>"; };
+		BEEA69871F18D93600C9F990 /* RSAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAViewController.m; sourceTree = "<group>"; };
 		BEF903FF1F0108980061F3EC /* ControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerModel.h; sourceTree = "<group>"; };
 		BEF904001F0108980061F3EC /* ControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerModel.m; sourceTree = "<group>"; };
 		BEF904031F01158F0061F3EC /* VisualEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualEffectViewController.h; sourceTree = "<group>"; };
@@ -437,6 +449,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEA69821F18D76600C9F990 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +550,7 @@
 			children = (
 				BEC177CF1F00DC6800CAE694 /* PersonalCenterDemo */,
 				BEC177CE1F00DC6800CAE694 /* Products */,
+				BEEA69801F18D76600C9F990 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -631,6 +645,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEEA69781F18CF1000C9F990 /* RSA */,
 				BE4386251F0F6B6C0014593F /* 按钮系列 */,
 				BEDCF6D71F0DE1FF00F3230D /* QQ分组 */,
 				BE2907A71F0CCC85006290B3 /* 折叠 */,
@@ -1045,6 +1060,27 @@
 			path = "QQ分组";
 			sourceTree = "<group>";
 		};
+		BEEA69781F18CF1000C9F990 /* RSA */ = {
+			isa = PBXGroup;
+			children = (
+				BEEA697C1F18D61F00C9F990 /* rsa_private_key.p12 */,
+				BEEA697D1F18D61F00C9F990 /* rsa_public_key.der */,
+				BEEA69791F18CF1F00C9F990 /* RSAEncryptor.h */,
+				BEEA697A1F18CF1F00C9F990 /* RSAEncrypt.m */,
+				BEEA69861F18D93600C9F990 /* RSAViewController.h */,
+				BEEA69871F18D93600C9F990 /* RSAViewController.m */,
+			);
+			path = RSA;
+			sourceTree = "<group>";
+		};
+		BEEA69801F18D76600C9F990 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEEA69811F18D76600C9F990 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BEF904021F01150D0061F3EC /* 视觉效果 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1142,11 +1178,13 @@
 				BEC179211F00DCFA00CAE694 /* MJRefresh.bundle in Resources */,
 				BEC177DD1F00DC6800CAE694 /* Assets.xcassets in Resources */,
 				BEC178FD1F00DCFA00CAE694 /* common-hud1.png in Resources */,
+				BEEA697E1F18D61F00C9F990 /* rsa_private_key.p12 in Resources */,
 				BEC179001F00DCFA00CAE694 /* common-hud3.png in Resources */,
 				BE019F701F0C8AE9007451B5 /* 精灵球.png in Resources */,
 				BE019F6D1F0C8AE9007451B5 /* 大师球.png in Resources */,
 				BEC179041F00DCFA00CAE694 /* common-hud7.png in Resources */,
 				BEC179061F00DCFA00CAE694 /* common-hud9.png in Resources */,
+				BEEA697F1F18D61F00C9F990 /* rsa_public_key.der in Resources */,
 				BE019F6E1F0C8AE9007451B5 /* 超级球.png in Resources */,
 				BEC179031F00DCFA00CAE694 /* common-hud6.png in Resources */,
 				BEC178FF1F00DCFA00CAE694 /* common-hud2.png in Resources */,
@@ -1268,9 +1306,11 @@
 				BEC178EF1F00DCFA00CAE694 /* UIAlertView+AFNetworking.m in Sources */,
 				BEF904011F0108980061F3EC /* ControllerModel.m in Sources */,
 				BEDCF6D61F0DDCC400F3230D /* OrderFoldView.m in Sources */,
+				BEEA69881F18D93600C9F990 /* RSAViewController.m in Sources */,
 				BEC178DC1F00DCFA00CAE694 /* SDKCustomLabel.m in Sources */,
 				BEC178F31F00DCFA00CAE694 /* UIRefreshControl+AFNetworking.m in Sources */,
 				BEC1790B1F00DCFA00CAE694 /* MJProperty.m in Sources */,
+				BEEA697B1F18CF1F00C9F990 /* RSAEncrypt.m in Sources */,
 				BEF905201F01F3900061F3EC /* PWDView.m in Sources */,
 				BE9D21431F034DE90095720B /* KTVCaptionViewController.m in Sources */,
 				BEC178F21F00DCFA00CAE694 /* UIProgressView+AFNetworking.m in Sources */,

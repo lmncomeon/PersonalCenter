@@ -152,6 +152,7 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"折叠" className:@"FoldViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"分组" className:@"QQGroupViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"按钮系列" className:@"ButtonsViewController"]];
+        [_dataList addObject:[ControllerModel modelWithTitle:@"RSA测试" className:@"RSAViewController"]];
         
     }
     return _dataList;
