@@ -114,10 +114,36 @@
         DLog(@"Successfully serialized the dictionary into data.");
         //NSData转换为String
         NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        return jsonString;
+        return [SDKFormatJudge delteEscapeWithString:jsonString];
     }
     return nil;
 }
+
+// 字典转json
++ (NSString*)dictionaryToJson:(NSDictionary *)dic {
+    
+    NSError *parseError = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:&parseError];
+    
+    NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    return [SDKFormatJudge delteEscapeWithString:jsonStr];
+}
+
+#pragma mark - 删除转义字符(\)
++ (NSString *)delteEscapeWithString:(NSString *)jsonStr {
+    NSMutableString *responseString = [NSMutableString stringWithString:jsonStr];
+    NSString *character = nil;
+    for (int i = 0; i < responseString.length; i ++) {
+        character = [responseString substringWithRange:NSMakeRange(i, 1)];
+        if ([character isEqualToString:@"\\"])
+            [responseString deleteCharactersInRange:NSMakeRange(i, 1)];
+    }
+    
+    return responseString.copy;
+}
+
 #pragma mark - 设置默认提示文字
 + (NSMutableAttributedString *)setTipTextWithString:(NSString *)string {
     NSMutableAttributedString *placeHolderString = [[NSMutableAttributedString alloc] initWithString:string];

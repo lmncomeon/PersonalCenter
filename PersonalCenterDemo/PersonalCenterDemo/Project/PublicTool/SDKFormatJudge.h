@@ -35,16 +35,11 @@
  */
 + (BOOL)isValidateEmail:(NSString *)email;
 
-
-#pragma mark - 数据转json
-/**
- *  数据数组转换为String格式
- *
- *  @param tmpArray 要处理的数组
- *
- *  @return 格式化之后的字符串
- */
+#pragma mark - 数组转json
 + (NSString *)arrayBecomeJsonWithArray:(NSArray *)tmpArray;
+
+#pragma mark - 字典转json
++ (NSString*)dictionaryToJson:(NSDictionary *)dic;
 
 #pragma mark - 设置默认提示文字
 + (NSMutableAttributedString *)setTipTextWithString:(NSString *)string;
