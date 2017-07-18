@@ -27,4 +27,13 @@
 
 + (SDKCustomLabel *)addLineLabel:(CGRect)frame;
 
+
+
+
+
+// ****************************** 富文本字符串专用lab ******************************
++(SDKCustomLabel *)setLabelAttrTitle:(NSAttributedString *)attrTitle setLabelFrame:(CGRect)frame;
+
++(SDKCustomLabel *)setLabelAttrTitle:(NSAttributedString *)attrTitle setLabelFrame:(CGRect)frame setAlignment:(NSTextAlignment)alignment;
+
 @end

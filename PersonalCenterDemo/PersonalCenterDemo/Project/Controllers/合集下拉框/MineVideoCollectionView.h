@@ -20,6 +20,8 @@
 
 @property (nonatomic, copy) void (^otherEvent)(NSString *value);
 
-- (void)reloadDataViewWithValue:(NSString *)value;
+- (void)collectionHide;
+
+//- (void)reloadDataViewWithValue:(NSString *)value;
 
 @end

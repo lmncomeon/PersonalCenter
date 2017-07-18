@@ -122,13 +122,13 @@
     }];
 }
 
-- (void)reloadDataViewWithValue:(NSString *)value {
-    [_container.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
-    [self.defaultArr insertObject:value atIndex:2];
-    
-    [self createUIWithFirst:false];
-}
+//- (void)reloadDataViewWithValue:(NSString *)value {
+//    [_container.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//    
+//    [self.defaultArr insertObject:value atIndex:2];
+//    
+//    [self createUIWithFirst:false];
+//}
 
 #pragma mark - lazy load
 - (NSMutableArray *)defaultArr {

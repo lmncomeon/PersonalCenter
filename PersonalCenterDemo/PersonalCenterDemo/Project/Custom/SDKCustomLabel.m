@@ -207,4 +207,29 @@
 }
 
 
+
+
+// ****************************** 富文本字符串专用lab ******************************
++(SDKCustomLabel *)setLabelAttrTitle:(NSAttributedString *)attrTitle setLabelFrame:(CGRect)frame {
+    SDKCustomLabel *lab = [[SDKCustomLabel alloc] initWithFrame:frame];
+    
+    if (attrTitle) {
+        lab.attributedText = attrTitle;
+    }
+    
+    return lab;
+}
+
++(SDKCustomLabel *)setLabelAttrTitle:(NSAttributedString *)attrTitle setLabelFrame:(CGRect)frame setAlignment:(NSTextAlignment)alignment {
+    SDKCustomLabel *lab = [[SDKCustomLabel alloc] initWithFrame:frame];
+    
+    if (attrTitle) {
+        lab.attributedText = attrTitle;
+    }
+    
+    lab.textAlignment = alignment;
+    
+    return lab;
+}
+
 @end

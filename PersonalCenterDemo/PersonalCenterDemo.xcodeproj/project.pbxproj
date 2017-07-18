@@ -151,6 +151,7 @@
 		BEEA698C1F1DA85500C9F990 /* VideoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEA698B1F1DA85500C9F990 /* VideoCollectionViewController.m */; };
 		BEEA698F1F1DA89700C9F990 /* MineVideoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEA698E1F1DA89700C9F990 /* MineVideoCollectionView.m */; };
 		BEEA69921F1DEDE100C9F990 /* MNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEA69911F1DEDE100C9F990 /* MNAlertView.m */; };
+		BEEA69951F1E0A2100C9F990 /* SDKAboutAttributedText.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEA69941F1E0A2100C9F990 /* SDKAboutAttributedText.m */; };
 		BEF904011F0108980061F3EC /* ControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904001F0108980061F3EC /* ControllerModel.m */; };
 		BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904041F01158F0061F3EC /* VisualEffectViewController.m */; };
 		BEF9051D1F01F37E0061F3EC /* PWDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF9051C1F01F37E0061F3EC /* PWDViewController.m */; };
@@ -437,6 +438,8 @@
 		BEEA698E1F1DA89700C9F990 /* MineVideoCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineVideoCollectionView.m; sourceTree = "<group>"; };
 		BEEA69901F1DEDE100C9F990 /* MNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNAlertView.h; sourceTree = "<group>"; };
 		BEEA69911F1DEDE100C9F990 /* MNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNAlertView.m; sourceTree = "<group>"; };
+		BEEA69931F1E0A2100C9F990 /* SDKAboutAttributedText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKAboutAttributedText.h; sourceTree = "<group>"; };
+		BEEA69941F1E0A2100C9F990 /* SDKAboutAttributedText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKAboutAttributedText.m; sourceTree = "<group>"; };
 		BEF903FF1F0108980061F3EC /* ControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerModel.h; sourceTree = "<group>"; };
 		BEF904001F0108980061F3EC /* ControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControllerModel.m; sourceTree = "<group>"; };
 		BEF904031F01158F0061F3EC /* VisualEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualEffectViewController.h; sourceTree = "<group>"; };
@@ -791,6 +794,8 @@
 				BEC178401F00DCFA00CAE694 /* SDKAboutText.h */,
 				BEC178411F00DCFA00CAE694 /* SDKAboutText.m */,
 				BEC178421F00DCFA00CAE694 /* SDKAuthJudge.h */,
+				BEEA69931F1E0A2100C9F990 /* SDKAboutAttributedText.h */,
+				BEEA69941F1E0A2100C9F990 /* SDKAboutAttributedText.m */,
 				BEC178431F00DCFA00CAE694 /* SDKAuthJudge.m */,
 				BEC178441F00DCFA00CAE694 /* SDKFormatJudge.h */,
 				BEC178451F00DCFA00CAE694 /* SDKFormatJudge.m */,
@@ -1264,6 +1269,7 @@
 				BEC1794A1F00E49B00CAE694 /* VideoListViewController.m in Sources */,
 				BEC178E51F00DCFA00CAE694 /* AFSecurityPolicy.m in Sources */,
 				BEC1792B1F00DCFA00CAE694 /* SDWebImageDownloader.m in Sources */,
+				BEEA69951F1E0A2100C9F990 /* SDKAboutAttributedText.m in Sources */,
 				BEEA698F1F1DA89700C9F990 /* MineVideoCollectionView.m in Sources */,
 				BEC179181F00DCFA00CAE694 /* MJRefreshAutoGifFooter.m in Sources */,
 				BEC179261F00DCFA00CAE694 /* MKAnnotationView+WebCache.m in Sources */,
