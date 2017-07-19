@@ -23,4 +23,10 @@
 
 - (void)alertShow;
 
+// ******************** 设置按钮颜色 ****************
+- (void)settingButtonTextColor:(UIColor *)textColor index:(NSInteger)index;
+
+// ******************** 设置按钮字号 ****************************
+- (void)settingButtonFont:(UIFont *)font index:(NSInteger)index;
+
 @end

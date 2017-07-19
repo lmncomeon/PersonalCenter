@@ -84,8 +84,14 @@
 }
 
 - (void)btnAction1 {
-    MNAlertView *alert = [[MNAlertView alloc] initWithTitle:@"提示" content:@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" buttons:@[@"取消"] delegate:(id<MNAlertViewDelegate>)self];
+    MNAlertView *alert = [[MNAlertView alloc] initWithTitle:@"提示" content:@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" buttons:@[@"取消", @"确定", @"取消", @"确定", @"取消", @"确定", @"取消", @"确定"] delegate:(id<MNAlertViewDelegate>)self];
+    
+    [alert settingButtonTextColor:krandomColor index:0];
+    [alert settingButtonTextColor:krandomColor index:2];
+    [alert settingButtonTextColor:krandomColor index:4];
+
     [alert alertShow];
+
 }
 
 - (void)MNAlertView:(MNAlertView *)MNAlertView clickedButtonAtIndex:(NSInteger)buttonIndex {
