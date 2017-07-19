@@ -84,11 +84,16 @@
 }
 
 - (void)btnAction1 {
-    MNAlertView *alert = [[MNAlertView alloc] initWithTitle:@"提示" content:@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" buttons:@[@"取消", @"确定", @"取消", @"确定", @"取消", @"确定", @"取消", @"确定"] delegate:(id<MNAlertViewDelegate>)self];
+    NSMutableArray *tmp = [NSMutableArray array];
+    for (int i = 0; i < 2; i++) {
+        UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 0, adaptY(30))];
+        field.placeholder = [NSString stringWithFormat:@"====%ud===", arc4random_uniform(20)];
+        field.textColor = krandomColor;
+        
+        [tmp addObject:field];
+    }
     
-    [alert settingButtonTextColor:krandomColor index:0];
-    [alert settingButtonTextColor:krandomColor index:2];
-    [alert settingButtonTextColor:krandomColor index:4];
+    MNAlertView *alert = [[MNAlertView alloc] initWithTitle:@"提示" content:@"哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈" buttons:@[@"取消", @"确定", @"取消", @"确定"] textFieldArray:tmp.copy delegate:(id<MNAlertViewDelegate>)self];
 
     [alert alertShow];
 

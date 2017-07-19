@@ -19,9 +19,10 @@
 
 @interface MNAlertView : UIView
 
-- (instancetype)initWithTitle:(NSString *)title content:(NSString *)content buttons:(NSArray <NSString *> *)buttons delegate:(id<MNAlertViewDelegate>)delegate;
+- (instancetype)initWithTitle:(NSString *)title content:(NSString *)content buttons:(NSArray <NSString *> *)buttons textFieldArray:(NSArray <UITextField *> *)textFieldArray delegate:(id<MNAlertViewDelegate>)delegate;
 
 - (void)alertShow;
+
 
 // ******************** 设置按钮颜色 ****************
 - (void)settingButtonTextColor:(UIColor *)textColor index:(NSInteger)index;

@@ -23,6 +23,8 @@
 
 @property (nonatomic, strong) SDKCustomLabel *titleLab; // 标题
 @property (nonatomic, strong) UITextView *contentTextView; // 内容
+@property (nonatomic, strong) UIView *fieldView;
+
 @property (nonatomic, strong) NSMutableArray <UIButton *> *btnsArray;
 
 @property (nonatomic, assign) id<MNAlertViewDelegate> delegate;
@@ -31,7 +33,7 @@
 
 @implementation MNAlertView
 
-- (instancetype)initWithTitle:(NSString *)title content:(NSString *)content buttons:(NSArray <NSString *> *)buttons delegate:(id<MNAlertViewDelegate>)delegate {
+- (instancetype)initWithTitle:(NSString *)title content:(NSString *)content buttons:(NSArray <NSString *> *)buttons textFieldArray:(NSArray <UITextField *> *)textFieldArray delegate:(id<MNAlertViewDelegate>)delegate {
     self = [super init];
     if (self) {
         self.frame = [UIScreen mainScreen].bounds;
@@ -76,9 +78,32 @@
         }
         
         
+        if (textFieldArray) {
+            _fieldView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_contentTextView.frame) + margin, _container.width, 0)];
+            [_container addSubview:_fieldView];
+            
+            for (int i = 0; i < textFieldArray.count; i++) {
+                UITextField *field = textFieldArray[i];
+                field.frame = CGRectMake(adaptX(16), i*field.height, _container.width-2*adaptX(16), field.height);
+                // 边框
+                field.layer.borderWidth = 1;
+                field.layer.borderColor = [UIColor blackColor].CGColor;
+                // 左侧加内边距
+                field.leftView = ({
+                    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, adaptX(10), 0)];
+                    paddingView;
+                });
+                field.leftViewMode = UITextFieldViewModeAlways;
+                [_fieldView addSubview:field];
+            }
+
+            _fieldView.height = CGRectGetMaxY(_fieldView.subviews.lastObject.frame);
+        }
+        
         if (buttons) {
-            UIView *horizontalLine = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_contentTextView.frame) + adaptY(15), _container.width, 0.5f)];
+            UIView *horizontalLine = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_fieldView.frame) + margin, _container.width, 0.5f)];
             horizontalLine.backgroundColor = UIColorFromRGB(0xafafaf);
+            horizontalLine.tag = 5000; // tag
             [_container addSubview:horizontalLine];
             
             CGFloat btnHeight = adaptY(35);
@@ -86,28 +111,34 @@
             if (buttons.count <= 2)
             { // 水平布局
             
+                UIScrollView *buttonsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(horizontalLine.frame), _container.width, btnHeight)];
+                buttonsView.bounces = false;
+                [_container addSubview:buttonsView];
+                
+                
                 for (int i = 0; i < buttons.count; i++) {
                     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-                    btn.frame = CGRectMake(i*(_container.width/buttons.count), CGRectGetMaxY(horizontalLine.frame), _container.width/buttons.count, btnHeight);
+                    btn.frame = CGRectMake(i*(_container.width/buttons.count), 0, _container.width/buttons.count, btnHeight);
                     [btn setTitle:buttons[i] forState:UIControlStateNormal];
                     [btn setTitleColor:commonBlackColor forState:UIControlStateNormal];
                     btn.tag = 1000 + i;//tag;
                     btn.titleLabel.font = kFont(14);
                     btn.titleLabel.textAlignment = 1;
                     [btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-                    [_container addSubview:btn];
+                    [buttonsView addSubview:btn];
                     [self.btnsArray addObject:btn];
                     
                     if (i != buttons.count-1) {
                         UIView *line = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(btn.frame), btn.y, 0.5f, btn.height)];
                         line.backgroundColor = UIColorFromRGB(0xafafaf);
-                        [_container addSubview:line];
+                        [buttonsView addSubview:line];
                     }
                 }
             }
             else
             { // 垂直布局
                 UIScrollView *buttonsView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(horizontalLine.frame), _container.width, 0)];
+                buttonsView.bounces = false;
                 [_container addSubview:buttonsView];
                 
                 
@@ -148,9 +179,22 @@
             }];
         }
         
+        CGFloat subViewY = margin;
+        for (int i = 0; i < _container.subviews.count; i++) {
+            UIView *subView = _container.subviews[i];
+            subView.y = subViewY;
+            
+            if ([subView isKindOfClass:[UIButton class]] || subView.tag == 5000) {
+                subViewY += subView.height;
+            } else {
+                subViewY += subView.height + margin;
+            }
+
+
+        }
+        
         _container.height = CGRectGetMaxY(_container.subviews.lastObject.frame);
         _container.center = CGPointMake(kScreenWidth*0.5, kScreenHeight*0.5);
-        
         
     }
     return self;
