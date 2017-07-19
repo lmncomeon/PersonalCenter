@@ -139,8 +139,18 @@
 
         }
         
+        if (!buttons) {
+            HXWeak_self
+            [self addSingleTapEvent:^{
+                HXStrong_self
+                
+                [self alertHide];
+            }];
+        }
+        
         _container.height = CGRectGetMaxY(_container.subviews.lastObject.frame);
         _container.center = CGPointMake(kScreenWidth*0.5, kScreenHeight*0.5);
+        
         
     }
     return self;
