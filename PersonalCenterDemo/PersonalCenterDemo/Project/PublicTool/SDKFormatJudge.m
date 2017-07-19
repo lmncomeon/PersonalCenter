@@ -192,4 +192,9 @@
     return result;
 }
 
+// 清除首尾空格
++ (NSString *)deleteWhitespace:(NSString *)str {
+    return [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+};
+
 @end

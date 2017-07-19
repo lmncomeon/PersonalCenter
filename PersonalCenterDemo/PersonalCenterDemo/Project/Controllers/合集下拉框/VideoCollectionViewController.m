@@ -41,8 +41,6 @@
     btn.backgroundColor = [UIColor orangeColor];
     [btn addTarget:self action:@selector(btnAction1) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
