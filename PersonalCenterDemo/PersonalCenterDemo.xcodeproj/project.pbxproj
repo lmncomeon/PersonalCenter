@@ -140,6 +140,7 @@
 		BEC179471F00DED800CAE694 /* PersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC179461F00DED800CAE694 /* PersonalCenterViewController.m */; };
 		BEC1794A1F00E49B00CAE694 /* VideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC179491F00E49B00CAE694 /* VideoListViewController.m */; };
 		BEC1794D1F00E4A500CAE694 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1794C1F00E4A500CAE694 /* IntroViewController.m */; };
+		BEDB71C71F20484400E20AFC /* MNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDB71C61F20484400E20AFC /* MNAlertView.m */; };
 		BEDCF6D61F0DDCC400F3230D /* OrderFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6D51F0DDCC400F3230D /* OrderFoldView.m */; };
 		BEDCF6DA1F0DE23300F3230D /* QQGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6D91F0DE23300F3230D /* QQGroupViewController.m */; };
 		BEDCF6DD1F0DE30A00F3230D /* QQGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6DC1F0DE30A00F3230D /* QQGroupModel.m */; };
@@ -148,9 +149,6 @@
 		BEEA697F1F18D61F00C9F990 /* rsa_public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = BEEA697D1F18D61F00C9F990 /* rsa_public_key.der */; };
 		BEEA69821F18D76600C9F990 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEA69811F18D76600C9F990 /* Security.framework */; };
 		BEEA69881F18D93600C9F990 /* RSAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEA69871F18D93600C9F990 /* RSAViewController.m */; };
-		BEEA698C1F1DA85500C9F990 /* VideoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEA698B1F1DA85500C9F990 /* VideoCollectionViewController.m */; };
-		BEEA698F1F1DA89700C9F990 /* MineVideoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEA698E1F1DA89700C9F990 /* MineVideoCollectionView.m */; };
-		BEEA69921F1DEDE100C9F990 /* MNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEA69911F1DEDE100C9F990 /* MNAlertView.m */; };
 		BEEA69951F1E0A2100C9F990 /* SDKAboutAttributedText.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEA69941F1E0A2100C9F990 /* SDKAboutAttributedText.m */; };
 		BEF904011F0108980061F3EC /* ControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904001F0108980061F3EC /* ControllerModel.m */; };
 		BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF904041F01158F0061F3EC /* VisualEffectViewController.m */; };
@@ -419,6 +417,8 @@
 		BEC179491F00E49B00CAE694 /* VideoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListViewController.m; sourceTree = "<group>"; };
 		BEC1794B1F00E4A500CAE694 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		BEC1794C1F00E4A500CAE694 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		BEDB71C51F20484400E20AFC /* MNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNAlertView.h; sourceTree = "<group>"; };
+		BEDB71C61F20484400E20AFC /* MNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNAlertView.m; sourceTree = "<group>"; };
 		BEDCF6D41F0DDCC400F3230D /* OrderFoldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderFoldView.h; sourceTree = "<group>"; };
 		BEDCF6D51F0DDCC400F3230D /* OrderFoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderFoldView.m; sourceTree = "<group>"; };
 		BEDCF6D81F0DE23300F3230D /* QQGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQGroupViewController.h; sourceTree = "<group>"; };
@@ -432,12 +432,6 @@
 		BEEA69811F18D76600C9F990 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BEEA69861F18D93600C9F990 /* RSAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAViewController.h; sourceTree = "<group>"; };
 		BEEA69871F18D93600C9F990 /* RSAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAViewController.m; sourceTree = "<group>"; };
-		BEEA698A1F1DA85500C9F990 /* VideoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewController.h; sourceTree = "<group>"; };
-		BEEA698B1F1DA85500C9F990 /* VideoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionViewController.m; sourceTree = "<group>"; };
-		BEEA698D1F1DA89700C9F990 /* MineVideoCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineVideoCollectionView.h; sourceTree = "<group>"; };
-		BEEA698E1F1DA89700C9F990 /* MineVideoCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineVideoCollectionView.m; sourceTree = "<group>"; };
-		BEEA69901F1DEDE100C9F990 /* MNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNAlertView.h; sourceTree = "<group>"; };
-		BEEA69911F1DEDE100C9F990 /* MNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNAlertView.m; sourceTree = "<group>"; };
 		BEEA69931F1E0A2100C9F990 /* SDKAboutAttributedText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKAboutAttributedText.h; sourceTree = "<group>"; };
 		BEEA69941F1E0A2100C9F990 /* SDKAboutAttributedText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKAboutAttributedText.m; sourceTree = "<group>"; };
 		BEF903FF1F0108980061F3EC /* ControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerModel.h; sourceTree = "<group>"; };
@@ -657,7 +651,6 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BEEA69891F1DA51600C9F990 /* 合集下拉框 */,
 				BEEA69781F18CF1000C9F990 /* RSA */,
 				BE4386251F0F6B6C0014593F /* 按钮系列 */,
 				BEDCF6D71F0DE1FF00F3230D /* QQ分组 */,
@@ -688,6 +681,8 @@
 				BE4386211F0F6B2E0014593F /* UIbutton */,
 				BEC178001F00DCFA00CAE694 /* AdvertisementView.h */,
 				BEC178011F00DCFA00CAE694 /* AdvertisementView.m */,
+				BEDB71C51F20484400E20AFC /* MNAlertView.h */,
+				BEDB71C61F20484400E20AFC /* MNAlertView.m */,
 				BEC178021F00DCFA00CAE694 /* MNTipView.h */,
 				BEC178031F00DCFA00CAE694 /* MNTipView.m */,
 				BEC178041F00DCFA00CAE694 /* PresentAnimationView.h */,
@@ -1096,19 +1091,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BEEA69891F1DA51600C9F990 /* 合集下拉框 */ = {
-			isa = PBXGroup;
-			children = (
-				BEEA698A1F1DA85500C9F990 /* VideoCollectionViewController.h */,
-				BEEA698B1F1DA85500C9F990 /* VideoCollectionViewController.m */,
-				BEEA698D1F1DA89700C9F990 /* MineVideoCollectionView.h */,
-				BEEA698E1F1DA89700C9F990 /* MineVideoCollectionView.m */,
-				BEEA69901F1DEDE100C9F990 /* MNAlertView.h */,
-				BEEA69911F1DEDE100C9F990 /* MNAlertView.m */,
-			);
-			path = "合集下拉框";
-			sourceTree = "<group>";
-		};
 		BEF904021F01150D0061F3EC /* 视觉效果 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1270,7 +1252,6 @@
 				BEC178E51F00DCFA00CAE694 /* AFSecurityPolicy.m in Sources */,
 				BEC1792B1F00DCFA00CAE694 /* SDWebImageDownloader.m in Sources */,
 				BEEA69951F1E0A2100C9F990 /* SDKAboutAttributedText.m in Sources */,
-				BEEA698F1F1DA89700C9F990 /* MineVideoCollectionView.m in Sources */,
 				BEC179181F00DCFA00CAE694 /* MJRefreshAutoGifFooter.m in Sources */,
 				BEC179261F00DCFA00CAE694 /* MKAnnotationView+WebCache.m in Sources */,
 				BEC178D21F00DCFA00CAE694 /* MainTabBarController.m in Sources */,
@@ -1336,7 +1317,6 @@
 				BEC178EF1F00DCFA00CAE694 /* UIAlertView+AFNetworking.m in Sources */,
 				BEF904011F0108980061F3EC /* ControllerModel.m in Sources */,
 				BEDCF6D61F0DDCC400F3230D /* OrderFoldView.m in Sources */,
-				BEEA69921F1DEDE100C9F990 /* MNAlertView.m in Sources */,
 				BEEA69881F18D93600C9F990 /* RSAViewController.m in Sources */,
 				BEC178DC1F00DCFA00CAE694 /* SDKCustomLabel.m in Sources */,
 				BEC178F31F00DCFA00CAE694 /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -1358,8 +1338,8 @@
 				BEC178DA1F00DCFA00CAE694 /* MNTipView.m in Sources */,
 				BEC1792F1F00DCFA00CAE694 /* UIButton+WebCache.m in Sources */,
 				BEC179341F00DCFA00CAE694 /* UIImageView+WebCache.m in Sources */,
-				BEEA698C1F1DA85500C9F990 /* VideoCollectionViewController.m in Sources */,
 				BE4386281F0F6B7D0014593F /* ButtonsViewController.m in Sources */,
+				BEDB71C71F20484400E20AFC /* MNAlertView.m in Sources */,
 				BEC178D51F00DCFA00CAE694 /* SDKProjectHeader.m in Sources */,
 				BE69F7F11F02568100465B2B /* FlowView.m in Sources */,
 			);
