@@ -20,6 +20,9 @@
 		BE2907B01F0CD093006290B3 /* FoldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907AF1F0CD093006290B3 /* FoldModel.m */; };
 		BE4386241F0F6B410014593F /* MNSolidButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4386231F0F6B410014593F /* MNSolidButton.m */; };
 		BE4386281F0F6B7D0014593F /* ButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4386271F0F6B7D0014593F /* ButtonsViewController.m */; };
+		BE69818A1F39572400FAD3D1 /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6981891F39572400FAD3D1 /* AdvertisingView.m */; };
+		BE69818D1F3964A700FAD3D1 /* AdvertisingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69818C1F3964A700FAD3D1 /* AdvertisingTestViewController.m */; };
+		BE69818F1F399A7100FAD3D1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE69818E1F399A7100FAD3D1 /* AVFoundation.framework */; };
 		BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7ED1F02564200465B2B /* LogisticsViewController.m */; };
 		BE69F7F11F02568100465B2B /* FlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F01F02568100465B2B /* FlowView.m */; };
 		BE69F7F41F0256F000465B2B /* FlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F31F0256F000465B2B /* FlowModel.m */; };
@@ -182,6 +185,11 @@
 		BE4386231F0F6B410014593F /* MNSolidButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNSolidButton.m; sourceTree = "<group>"; };
 		BE4386261F0F6B7D0014593F /* ButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonsViewController.h; sourceTree = "<group>"; };
 		BE4386271F0F6B7D0014593F /* ButtonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonsViewController.m; sourceTree = "<group>"; };
+		BE6981881F39572400FAD3D1 /* AdvertisingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingView.h; sourceTree = "<group>"; };
+		BE6981891F39572400FAD3D1 /* AdvertisingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingView.m; sourceTree = "<group>"; };
+		BE69818B1F3964A700FAD3D1 /* AdvertisingTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingTestViewController.h; sourceTree = "<group>"; };
+		BE69818C1F3964A700FAD3D1 /* AdvertisingTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingTestViewController.m; sourceTree = "<group>"; };
+		BE69818E1F399A7100FAD3D1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BE69F7EC1F02564200465B2B /* LogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsViewController.h; sourceTree = "<group>"; };
 		BE69F7ED1F02564200465B2B /* LogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsViewController.m; sourceTree = "<group>"; };
 		BE69F7EF1F02568100465B2B /* FlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowView.h; sourceTree = "<group>"; };
@@ -455,6 +463,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE69818F1F399A7100FAD3D1 /* AVFoundation.framework in Frameworks */,
 				BEEA69821F18D76600C9F990 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +536,17 @@
 				BE4386271F0F6B7D0014593F /* ButtonsViewController.m */,
 			);
 			path = "按钮系列";
+			sourceTree = "<group>";
+		};
+		BE6981871F3956A600FAD3D1 /* 广告页 */ = {
+			isa = PBXGroup;
+			children = (
+				BE69818B1F3964A700FAD3D1 /* AdvertisingTestViewController.h */,
+				BE69818C1F3964A700FAD3D1 /* AdvertisingTestViewController.m */,
+				BE6981881F39572400FAD3D1 /* AdvertisingView.h */,
+				BE6981891F39572400FAD3D1 /* AdvertisingView.m */,
+			);
+			path = "广告页";
 			sourceTree = "<group>";
 		};
 		BE69F7EB1F02562100465B2B /* 物流 */ = {
@@ -651,6 +671,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE6981871F3956A600FAD3D1 /* 广告页 */,
 				BEEA69781F18CF1000C9F990 /* RSA */,
 				BE4386251F0F6B6C0014593F /* 按钮系列 */,
 				BEDCF6D71F0DE1FF00F3230D /* QQ分组 */,
@@ -1086,6 +1107,7 @@
 		BEEA69801F18D76600C9F990 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE69818E1F399A7100FAD3D1 /* AVFoundation.framework */,
 				BEEA69811F18D76600C9F990 /* Security.framework */,
 			);
 			name = Frameworks;
@@ -1296,6 +1318,7 @@
 				BEC178E11F00DCFA00CAE694 /* AFHTTPRequestOperation.m in Sources */,
 				BEC178F71F00DCFA00CAE694 /* SDKFormatJudge.m in Sources */,
 				BEC179241F00DCFA00CAE694 /* UIScrollView+MJRefresh.m in Sources */,
+				BE69818A1F39572400FAD3D1 /* AdvertisingView.m in Sources */,
 				BEC178E91F00DCFA00CAE694 /* AFURLSessionManager.m in Sources */,
 				BEFFBFF01F02329900A967FD /* RightLoadViewController.m in Sources */,
 				BEC178ED1F00DCFA00CAE694 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -1330,6 +1353,7 @@
 				BEC1791E1F00DCFA00CAE694 /* MJRefreshGifHeader.m in Sources */,
 				BEC178D01F00DCFA00CAE694 /* AppDelegate.m in Sources */,
 				BEC178EC1F00DCFA00CAE694 /* SDKNetworkState.m in Sources */,
+				BE69818D1F3964A700FAD3D1 /* AdvertisingTestViewController.m in Sources */,
 				BEC179201F00DCFA00CAE694 /* MJRefreshStateHeader.m in Sources */,
 				BEC179091F00DCFA00CAE694 /* MJExtensionConst.m in Sources */,
 				BE4386241F0F6B410014593F /* MNSolidButton.m in Sources */,

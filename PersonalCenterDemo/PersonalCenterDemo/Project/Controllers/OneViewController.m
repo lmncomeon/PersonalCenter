@@ -153,7 +153,9 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"分组" className:@"QQGroupViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"按钮系列" className:@"ButtonsViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"RSA测试" className:@"RSAViewController"]];
-
+        [_dataList addObject:[ControllerModel modelWithTitle:@"广告测试" className:@"AdvertisingTestViewController"]];
+        
+        
     }
     return _dataList;
 }
