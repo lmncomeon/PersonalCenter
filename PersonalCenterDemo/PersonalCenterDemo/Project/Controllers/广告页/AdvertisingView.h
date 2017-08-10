@@ -14,4 +14,6 @@
 
 - (void)endPlayer;
 
+@property (nonatomic, copy) dispatch_block_t playEndBlock;
+
 @end

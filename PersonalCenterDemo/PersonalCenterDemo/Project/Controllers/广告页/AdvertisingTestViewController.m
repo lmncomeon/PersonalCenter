@@ -39,4 +39,8 @@
     [self.view addSubview:_testView];
 }
 
+- (void)dealloc {
+
+}
+
 @end
