@@ -44,8 +44,8 @@
 
 //屏幕尺寸
 #define kScreenFrame    [UIScreen mainScreen].bounds
-#define kScreenWidth    [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight   [UIScreen mainScreen].bounds.size.height
+#define kScreenWidth    MIN([UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight   MAX([UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width)
 
 // 默认边距
 #define kDefaultPadding adaptX(16)

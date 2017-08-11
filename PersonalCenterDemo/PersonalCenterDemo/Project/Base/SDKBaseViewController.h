@@ -34,6 +34,7 @@
 #import "YYModel.h"
 #import "UIImageView+WebCache.h"
 #import "MJRefresh.h"
+#import "Masonry.h"
 
 
 typedef NS_ENUM(NSInteger, BaseBtnTypeStyle) {

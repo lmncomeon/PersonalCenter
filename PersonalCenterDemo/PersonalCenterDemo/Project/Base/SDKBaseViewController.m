@@ -150,6 +150,24 @@
 
 }
 
+#pragma mark - 处理屏幕方向（默认只能竖屏）
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+//返回支持的方向
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+//由模态推出的视图控制器 优先支持的屏幕方向
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    
+    return UIInterfaceOrientationPortrait;
+}
+
+
 
 @end
 

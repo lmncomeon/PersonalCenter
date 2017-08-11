@@ -57,4 +57,25 @@
     [self addChildViewController:nav];
 }
 
+
+
+#pragma mark - 处理屏幕方向
+- (BOOL)shouldAutorotate{
+    return [self.selectedViewController shouldAutorotate];
+    
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    
+    return [self.selectedViewController supportedInterfaceOrientations];
+    
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    
+    return [self.selectedViewController preferredInterfaceOrientationForPresentation];
+    
+}
+
+
 @end

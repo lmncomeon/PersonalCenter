@@ -59,9 +59,28 @@
     return menuButton;
 }
 
-
 - (void)popself {
     [self popViewControllerAnimated:YES];
+}
+
+
+
+#pragma mark - 处理屏幕方向
+- (BOOL)shouldAutorotate {
+    
+    return [[self.viewControllers lastObject]shouldAutorotate];
+    
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    
+    return [[self.viewControllers lastObject]supportedInterfaceOrientations];
+    
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    
+    return [[self.viewControllers lastObject] preferredInterfaceOrientationForPresentation];
 }
 
 @end

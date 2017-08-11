@@ -8,8 +8,10 @@
 
 #import "AdvertisingView.h"
 #import "SDKCustomRoundedButton.h"
+#import "SDKCustomLabel.h"
 #import "SDKProjectHeader.h"
-#import <AVFoundation/AVFoundation.h>
+#import "Masonry.h"
+
 
 #define defaultValue 5
 
@@ -17,7 +19,9 @@
 
 @property (nonatomic,strong) AVPlayer *player;
 @property (nonatomic,strong) AVPlayerItem *avPlayerItem;
-@property (nonatomic,strong) AVPlayerLayer *avPlayerLayer;
+
+
+@property (nonatomic, strong) SDKCustomLabel *loadingLab;
 
 @property (nonatomic, strong) SDKCustomRoundedButton *closeBtn;
 @property (nonatomic, strong) SDKCustomRoundedButton *timeBtn;
@@ -37,6 +41,11 @@
     if (self) {
         self.frame = frame;
         self.backgroundColor = [UIColor orangeColor];
+        
+        self.loadingLab = [SDKCustomLabel setLabelTitle:@"加载中，请稍后......" setLabelFrame:CGRectMake(0, (frame.size.height-adaptY(20)) * 0.5, frame.size.width, adaptY(20)) setLabelColor:[UIColor whiteColor] setLabelFont:kWeightFont(12, 2) setAlignment:1];
+        self.loadingLab.backgroundColor = [UIColor redColor];
+        [self addSubview:self.loadingLab];
+        
 
         self.currentValue = 0;
         self.recordDuration = duration;
@@ -47,7 +56,6 @@
         self.player = [AVPlayer playerWithPlayerItem:self.avPlayerItem];
         
         self.avPlayerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
-        self.avPlayerLayer.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
         [self.layer addSublayer:self.avPlayerLayer];
    
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playEnd) name:AVPlayerItemDidPlayToEndTimeNotification object:self.avPlayerItem];
@@ -70,9 +78,32 @@
         [self addSubview:_timeBtn];
         
         
+        // mas
+        [self.loadingLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(0);
+            make.height.mas_equalTo(20);
+            make.center.equalTo(self.loadingLab.superview);
+            
+        }];
+        
+        [_timeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(10);
+            make.size.mas_equalTo(CGSizeMake(50, 20));
+            make.right.mas_equalTo(-10);
+        }];
+        
+        [_closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(10);
+            make.right.mas_equalTo(_timeBtn.mas_left).offset(-10);
+            make.size.mas_equalTo(CGSizeMake(50, 20));
+            
+        }];
+        
+        
+        
         // default
-        _timeBtn.hidden  = true;
-        _closeBtn.hidden = true;
+        _timeBtn.hidden = _closeBtn.hidden = true;
+        _loadingLab.hidden = false;
         
     }
     return self;
@@ -87,7 +118,6 @@
 - (void)playEnd {
     [self endPlayer];
 }
-
 
 - (void)changeTime {
     [self handleCloseBtnMethod];
@@ -121,6 +151,7 @@
     {
         if ([self.avPlayerItem status] == AVPlayerItemStatusReadyToPlay) {
             _timeBtn.hidden = false;
+            _loadingLab.hidden = true;
             
             [self startTimer];
         }

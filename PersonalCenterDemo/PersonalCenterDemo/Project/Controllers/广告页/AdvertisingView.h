@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface AdvertisingView : UIView
+
+@property (nonatomic,strong) AVPlayerLayer *avPlayerLayer;
 
 - (instancetype)initWithFrame:(CGRect)frame videoUrl:(NSString *)videoUrl duration:(NSInteger)duration;
 
