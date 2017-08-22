@@ -47,34 +47,44 @@
 - (void)rotateViews:(NSNotification *)note {
     UIDevice* device = [note valueForKey:@"object"];
     
+    if (device.orientation == UIDeviceOrientationUnknown ||
+        device.orientation == UIDeviceOrientationPortraitUpsideDown ||
+        device.orientation == UIDeviceOrientationFaceUp ||
+        device.orientation == UIDeviceOrientationFaceDown)
+        { return;}
+    
+    if (!self.testView) { return; }
+    
+    
     switch (device.orientation) {
         case UIDeviceOrientationLandscapeRight:
         case UIDeviceOrientationLandscapeLeft:
         {
             DLog(@"横屏");
-            [_testView mas_updateConstraints:^(MASConstraintMaker *make) {
+            
+            [self.testView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.top.bottom.left.right.mas_equalTo(0);
             }];
             
-            _testView.avPlayerLayer.frame = [UIScreen mainScreen].bounds;
-
-            [_testView layoutIfNeeded];
+            self.testView.avPlayerLayer.frame = [UIScreen mainScreen].bounds;
+            
+            [self.testView layoutIfNeeded];
            
         } break;
         case UIDeviceOrientationPortrait:
         {
             DLog(@"竖屏");
             
-            [_testView mas_updateConstraints:^(MASConstraintMaker *make) {
+            [self.testView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.top.mas_equalTo(0);
                 make.left.mas_equalTo(0);
                 make.right.mas_equalTo(0);
                 make.bottom.mas_equalTo(-(kScreenHeight-200));
             }];
             
-            _testView.layer.frame = _testView.avPlayerLayer.frame = CGRectMake(0, 0, kScreenWidth, 200);
+            self.testView.layer.frame = _testView.avPlayerLayer.frame = CGRectMake(0, 0, kScreenWidth, 200);
             
-            [_testView layoutIfNeeded];
+            [self.testView layoutIfNeeded];
         } break;
         default:
         { DLog(@"其他");} break;
@@ -89,6 +99,13 @@
     
     _testView = [[AdvertisingView alloc] initWithFrame:CGRectMake(10, 64, kScreenWidth-20, 200) videoUrl:url duration:10];
     [[UIApplication sharedApplication].keyWindow addSubview:_testView];
+    
+    HXWeak_self
+    _testView.playEndBlock = ^{
+        HXStrong_self
+        
+        self.testView = nil;
+    };
     
     [_testView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(0);

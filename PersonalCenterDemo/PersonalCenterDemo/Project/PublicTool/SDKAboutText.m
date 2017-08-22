@@ -52,3 +52,17 @@
 
 
 @end
+
+
+
+
+
+
+
+@implementation SDKAboutAttributedText
+
++ (CGFloat)calculateTextHeight:(NSAttributedString *)attrText maxWidth:(CGFloat)maxWidth {
+    return [attrText boundingRectWithSize:CGSizeMake(maxWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.height;
+}
+
+@end

@@ -154,8 +154,8 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"按钮系列" className:@"ButtonsViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"RSA测试" className:@"RSAViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"广告测试" className:@"AdvertisingTestViewController"]];
-        
-        
+        [_dataList addObject:[ControllerModel modelWithTitle:@"地图" className:@"AddressViewController"]];
+
     }
     return _dataList;
 }

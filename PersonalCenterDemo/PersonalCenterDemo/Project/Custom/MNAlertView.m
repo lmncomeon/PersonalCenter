@@ -12,7 +12,6 @@
 
 #import "SDKCustomLabel.h"
 #import "SDKAboutText.h"
-#import "SDKAboutAttributedText.h"
 
 #define maxContainerH   (kScreenHeight-adaptX(200))
 #define maxbuttonsViewH adaptY(35)*6

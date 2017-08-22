@@ -747,4 +747,29 @@ constructingBodyWithBlock:file
          }];
 }
 
+
+
+#pragma mark - 获取市列表数据
+/**
+ 获取市列表数据
+ */
++ (void)getCityListWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:5];
+
+    AFHTTPRequestOperationManager * manger = [self createObject];
+    DLog(@"接口：%@\n请求参数：%@", @"/json/citylist.json", parameters);
+    
+    [manger GET:[NSString stringWithFormat:@"%@/json/citylist.json", SDK_BaseAPPUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (success) {
+            success(operation, responseObject);
+        }
+    }
+        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            if (failure) {
+                failure(operation, error);
+            }
+        }];
+}
+
 @end

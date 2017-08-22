@@ -22,3 +22,12 @@
 + (NSString *)replaceUnicode:(NSString *)unicodeStr;
 
 @end
+
+
+
+
+@interface SDKAboutAttributedText : NSObject
+
++ (CGFloat)calculateTextHeight:(NSAttributedString *)attrText maxWidth:(CGFloat)maxWidth;
+
+@end

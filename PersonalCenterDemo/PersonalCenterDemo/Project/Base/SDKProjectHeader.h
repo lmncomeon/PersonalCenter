@@ -153,6 +153,7 @@ HXStrong_(self)
 
 // baseURL
 #define BaseAPPUrl @"https://grccore.songzidai.com/sdk"
+#define SDK_BaseAPPUrl @"https://grccore.songzidai.com/sdk"
 
 #define policyAgreement BaseAPPUrl "/privacy_policy.html" // 初审协议
 

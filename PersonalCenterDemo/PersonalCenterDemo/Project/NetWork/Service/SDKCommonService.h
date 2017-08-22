@@ -298,5 +298,16 @@
                            success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                            failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+
+
+
+#pragma mark - 获取市列表数据
+/**
+ 获取市列表数据
+ */
++ (void)getCityListWithSuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+                       failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
+
 @end
 
