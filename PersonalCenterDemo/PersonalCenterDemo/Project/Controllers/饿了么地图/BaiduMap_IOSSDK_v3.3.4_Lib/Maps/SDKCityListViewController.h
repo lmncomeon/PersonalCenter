@@ -10,6 +10,8 @@
 
 @interface SDKCityListViewController : SDKBaseViewController
 
+@property (nonatomic, strong) UITableView *mainTableView;
+
 @property (nonatomic, copy) NSString *currentString;
 
 @property (nonatomic, strong) NSArray *list;

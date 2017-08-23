@@ -235,6 +235,7 @@ static int searchRadius    = 1000;
     if (_showListView) {
         // add
         _cityListVC.view.frame = CGRectMake(0, adaptY(40), kScreenWidth, kScreenHeight-64-adaptY(40));
+        _cityListVC.mainTableView.frame = _cityListVC.view.bounds;
         [self.view addSubview:_cityListVC.view];
         
         // send data

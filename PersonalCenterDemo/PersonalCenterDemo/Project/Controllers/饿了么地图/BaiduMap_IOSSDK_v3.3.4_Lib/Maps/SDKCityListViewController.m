@@ -11,7 +11,6 @@
 
 @interface SDKCityListViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UITableView *mainTableView;
 @property (nonatomic, strong) SDKCustomLabel *currentCityLab;
 
 @end
