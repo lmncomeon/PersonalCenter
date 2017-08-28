@@ -51,6 +51,7 @@
 		BE69818A1F39572400FAD3D1 /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6981891F39572400FAD3D1 /* AdvertisingView.m */; };
 		BE69818D1F3964A700FAD3D1 /* AdvertisingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69818C1F3964A700FAD3D1 /* AdvertisingTestViewController.m */; };
 		BE69818F1F399A7100FAD3D1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE69818E1F399A7100FAD3D1 /* AVFoundation.framework */; };
+		BE69DCA31F540AC300AD815F /* FlipAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69DCA21F540AC300AD815F /* FlipAnimationViewController.m */; };
 		BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7ED1F02564200465B2B /* LogisticsViewController.m */; };
 		BE69F7F11F02568100465B2B /* FlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F01F02568100465B2B /* FlowView.m */; };
 		BE69F7F41F0256F000465B2B /* FlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F31F0256F000465B2B /* FlowModel.m */; };
@@ -267,6 +268,8 @@
 		BE69818B1F3964A700FAD3D1 /* AdvertisingTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingTestViewController.h; sourceTree = "<group>"; };
 		BE69818C1F3964A700FAD3D1 /* AdvertisingTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingTestViewController.m; sourceTree = "<group>"; };
 		BE69818E1F399A7100FAD3D1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BE69DCA11F540AC300AD815F /* FlipAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipAnimationViewController.h; sourceTree = "<group>"; };
+		BE69DCA21F540AC300AD815F /* FlipAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipAnimationViewController.m; sourceTree = "<group>"; };
 		BE69F7EC1F02564200465B2B /* LogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsViewController.h; sourceTree = "<group>"; };
 		BE69F7ED1F02564200465B2B /* LogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsViewController.m; sourceTree = "<group>"; };
 		BE69F7EF1F02568100465B2B /* FlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowView.h; sourceTree = "<group>"; };
@@ -728,6 +731,15 @@
 			path = "广告页";
 			sourceTree = "<group>";
 		};
+		BE69DCA01F540A7C00AD815F /* 翻牌动画 */ = {
+			isa = PBXGroup;
+			children = (
+				BE69DCA11F540AC300AD815F /* FlipAnimationViewController.h */,
+				BE69DCA21F540AC300AD815F /* FlipAnimationViewController.m */,
+			);
+			path = "翻牌动画";
+			sourceTree = "<group>";
+		};
 		BE69F7EB1F02562100465B2B /* 物流 */ = {
 			isa = PBXGroup;
 			children = (
@@ -861,6 +873,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE69DCA01F540A7C00AD815F /* 翻牌动画 */,
 				BE7488E71F53F1CE00A7681C /* 按钮点击扩大 */,
 				BE4D684D1F4C269D00F34DC5 /* 饿了么地图 */,
 				BE6981871F3956A600FAD3D1 /* 广告页 */,
@@ -1564,6 +1577,7 @@
 				BEC179311F00DCFA00CAE694 /* UIImage+MultiFormat.m in Sources */,
 				BEC178DB1F00DCFA00CAE694 /* PresentAnimationView.m in Sources */,
 				BEC178E11F00DCFA00CAE694 /* AFHTTPRequestOperation.m in Sources */,
+				BE69DCA31F540AC300AD815F /* FlipAnimationViewController.m in Sources */,
 				BEC178F71F00DCFA00CAE694 /* SDKFormatJudge.m in Sources */,
 				BE4D68761F4C269D00F34DC5 /* SDKResultTableViewController.m in Sources */,
 				BEC179241F00DCFA00CAE694 /* UIScrollView+MJRefresh.m in Sources */,
