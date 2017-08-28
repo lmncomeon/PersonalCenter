@@ -18,6 +18,7 @@
 		BE2907AA1F0CCCA1006290B3 /* FoldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907A91F0CCCA1006290B3 /* FoldViewController.m */; };
 		BE2907AD1F0CCE40006290B3 /* MNFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907AC1F0CCE40006290B3 /* MNFoldView.m */; };
 		BE2907B01F0CD093006290B3 /* FoldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907AF1F0CD093006290B3 /* FoldModel.m */; };
+		BE3A0F581F4FC3C300A8B5C9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A0F571F4FC3C300A8B5C9 /* Social.framework */; };
 		BE4386241F0F6B410014593F /* MNSolidButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4386231F0F6B410014593F /* MNSolidButton.m */; };
 		BE4386281F0F6B7D0014593F /* ButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4386271F0F6B7D0014593F /* ButtonsViewController.m */; };
 		BE4D68691F4C269D00F34DC5 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D684F1F4C269D00F34DC5 /* AddressViewController.m */; };
@@ -53,6 +54,8 @@
 		BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7ED1F02564200465B2B /* LogisticsViewController.m */; };
 		BE69F7F11F02568100465B2B /* FlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F01F02568100465B2B /* FlowView.m */; };
 		BE69F7F41F0256F000465B2B /* FlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F31F0256F000465B2B /* FlowModel.m */; };
+		BE7488EA1F53F1F100A7681C /* WaterWaveButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7488E91F53F1F100A7681C /* WaterWaveButtonViewController.m */; };
+		BE7488ED1F53F22900A7681C /* MNWaterBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7488EC1F53F22900A7681C /* MNWaterBtn.m */; };
 		BE9D21431F034DE90095720B /* KTVCaptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9D21421F034DE90095720B /* KTVCaptionViewController.m */; };
 		BEC177D21F00DC6800CAE694 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC177D11F00DC6800CAE694 /* main.m */; };
 		BEC177D81F00DC6800CAE694 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC177D71F00DC6800CAE694 /* ViewController.m */; };
@@ -218,6 +221,7 @@
 		BE2907AC1F0CCE40006290B3 /* MNFoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNFoldView.m; sourceTree = "<group>"; };
 		BE2907AE1F0CD093006290B3 /* FoldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldModel.h; sourceTree = "<group>"; };
 		BE2907AF1F0CD093006290B3 /* FoldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldModel.m; sourceTree = "<group>"; };
+		BE3A0F571F4FC3C300A8B5C9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		BE4386221F0F6B410014593F /* MNSolidButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNSolidButton.h; sourceTree = "<group>"; };
 		BE4386231F0F6B410014593F /* MNSolidButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNSolidButton.m; sourceTree = "<group>"; };
 		BE4386261F0F6B7D0014593F /* ButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonsViewController.h; sourceTree = "<group>"; };
@@ -269,6 +273,10 @@
 		BE69F7F01F02568100465B2B /* FlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowView.m; sourceTree = "<group>"; };
 		BE69F7F21F0256F000465B2B /* FlowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowModel.h; sourceTree = "<group>"; };
 		BE69F7F31F0256F000465B2B /* FlowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowModel.m; sourceTree = "<group>"; };
+		BE7488E81F53F1F100A7681C /* WaterWaveButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterWaveButtonViewController.h; sourceTree = "<group>"; };
+		BE7488E91F53F1F100A7681C /* WaterWaveButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterWaveButtonViewController.m; sourceTree = "<group>"; };
+		BE7488EB1F53F22900A7681C /* MNWaterBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNWaterBtn.h; sourceTree = "<group>"; };
+		BE7488EC1F53F22900A7681C /* MNWaterBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNWaterBtn.m; sourceTree = "<group>"; };
 		BE9D21411F034DE90095720B /* KTVCaptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVCaptionViewController.h; sourceTree = "<group>"; };
 		BE9D21421F034DE90095720B /* KTVCaptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVCaptionViewController.m; sourceTree = "<group>"; };
 		BEC177CD1F00DC6800CAE694 /* PersonalCenterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCenterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -560,6 +568,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3A0F581F4FC3C300A8B5C9 /* Social.framework in Frameworks */,
 				BE4D688F1F4C3DAA00F34DC5 /* libstdc++.6.0.9.tbd in Frameworks */,
 				BE4D688D1F4C3DA200F34DC5 /* CoreTelephony.framework in Frameworks */,
 				BE4D688B1F4C3D9B00F34DC5 /* libsqlite3.0.tbd in Frameworks */,
@@ -732,6 +741,17 @@
 			path = "物流";
 			sourceTree = "<group>";
 		};
+		BE7488E71F53F1CE00A7681C /* 按钮点击扩大 */ = {
+			isa = PBXGroup;
+			children = (
+				BE7488E81F53F1F100A7681C /* WaterWaveButtonViewController.h */,
+				BE7488E91F53F1F100A7681C /* WaterWaveButtonViewController.m */,
+				BE7488EB1F53F22900A7681C /* MNWaterBtn.h */,
+				BE7488EC1F53F22900A7681C /* MNWaterBtn.m */,
+			);
+			path = "按钮点击扩大";
+			sourceTree = "<group>";
+		};
 		BE9D21401F034DC80095720B /* KTV字母效果 */ = {
 			isa = PBXGroup;
 			children = (
@@ -841,6 +861,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE7488E71F53F1CE00A7681C /* 按钮点击扩大 */,
 				BE4D684D1F4C269D00F34DC5 /* 饿了么地图 */,
 				BE6981871F3956A600FAD3D1 /* 广告页 */,
 				BEEA69781F18CF1000C9F990 /* RSA */,
@@ -1314,6 +1335,7 @@
 		BEEA69801F18D76600C9F990 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE3A0F571F4FC3C300A8B5C9 /* Social.framework */,
 				BE4D688E1F4C3DAA00F34DC5 /* libstdc++.6.0.9.tbd */,
 				BE4D688C1F4C3DA200F34DC5 /* CoreTelephony.framework */,
 				BE4D688A1F4C3D9B00F34DC5 /* libsqlite3.0.tbd */,
@@ -1480,6 +1502,7 @@
 				BEC178F11F00DCFA00CAE694 /* UIImageView+AFNetworking.m in Sources */,
 				BEC179271F00DCFA00CAE694 /* NSData+ImageContentType.m in Sources */,
 				BEC179191F00DCFA00CAE694 /* MJRefreshAutoNormalFooter.m in Sources */,
+				BE7488ED1F53F22900A7681C /* MNWaterBtn.m in Sources */,
 				BEC179131F00DCFA00CAE694 /* MJRefreshAutoFooter.m in Sources */,
 				BEC1790D1F00DCFA00CAE694 /* MJPropertyType.m in Sources */,
 				BEDCF6DD1F0DE30A00F3230D /* QQGroupModel.m in Sources */,
@@ -1549,6 +1572,7 @@
 				BEFFBFF01F02329900A967FD /* RightLoadViewController.m in Sources */,
 				BEC178ED1F00DCFA00CAE694 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BEC179161F00DCFA00CAE694 /* MJRefreshFooter.m in Sources */,
+				BE7488EA1F53F1F100A7681C /* WaterWaveButtonViewController.m in Sources */,
 				BEC179071F00DCFA00CAE694 /* MBProgressHUD.m in Sources */,
 				BEC1790A1F00DCFA00CAE694 /* MJFoundation.m in Sources */,
 				BEC178D41F00DCFA00CAE694 /* SDKNavigationController.m in Sources */,
@@ -1734,8 +1758,9 @@
 					"$(PROJECT_DIR)/PersonalCenterDemo/Project/Controllers/饿了么地图/BaiduMap_IOSSDK_v3.3.4_Lib/thirdlibs",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lmn.AllDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lmn.PersonalCenterDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
@@ -1758,7 +1783,7 @@
 					"$(PROJECT_DIR)/PersonalCenterDemo/Project/Controllers/饿了么地图/BaiduMap_IOSSDK_v3.3.4_Lib/thirdlibs",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lmn.AllDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lmn.PersonalCenterDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};

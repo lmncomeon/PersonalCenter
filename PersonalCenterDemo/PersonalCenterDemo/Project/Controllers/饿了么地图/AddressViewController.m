@@ -9,6 +9,7 @@
 #import "AddressViewController.h"
 #import "SDKCustomLabel.h"
 #import "MapViewController.h"
+#import <Social/Social.h>
 
 @interface AddressViewController ()
 
@@ -39,6 +40,18 @@
 
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reveiveMapData:) name:@"mpValueNotification" object:nil];
+ 
+    
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)]];
+    
+    
+    
+}
+
+- (void)tap {
+    SLComposeViewController *composeVc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
+    
+    [self presentViewController:composeVc animated:true completion:false];
 }
 
 - (void)btnAction {
