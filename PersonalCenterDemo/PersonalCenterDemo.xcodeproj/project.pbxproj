@@ -753,7 +753,7 @@
 			path = "物流";
 			sourceTree = "<group>";
 		};
-		BE7488E71F53F1CE00A7681C /* 按钮点击扩大 */ = {
+		BE7488E71F53F1CE00A7681C /* 按钮点击水波效果 */ = {
 			isa = PBXGroup;
 			children = (
 				BE7488E81F53F1F100A7681C /* WaterWaveButtonViewController.h */,
@@ -761,6 +761,7 @@
 				BE7488EB1F53F22900A7681C /* MNWaterBtn.h */,
 				BE7488EC1F53F22900A7681C /* MNWaterBtn.m */,
 			);
+			name = "按钮点击水波效果";
 			path = "按钮点击扩大";
 			sourceTree = "<group>";
 		};
@@ -874,7 +875,7 @@
 			isa = PBXGroup;
 			children = (
 				BE69DCA01F540A7C00AD815F /* 翻牌动画 */,
-				BE7488E71F53F1CE00A7681C /* 按钮点击扩大 */,
+				BE7488E71F53F1CE00A7681C /* 按钮点击水波效果 */,
 				BE4D684D1F4C269D00F34DC5 /* 饿了么地图 */,
 				BE6981871F3956A600FAD3D1 /* 广告页 */,
 				BEEA69781F18CF1000C9F990 /* RSA */,
