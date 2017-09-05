@@ -36,7 +36,7 @@
     
     [self initPoiSearch];
     
-    self.navigationItem.leftBarButtonItem = [self createBackButton:@selector(backAction)];
+    self.navigationItem.leftBarButtonItem = [self createBackButton:@selector(backAction) target:self];
     
 }
 

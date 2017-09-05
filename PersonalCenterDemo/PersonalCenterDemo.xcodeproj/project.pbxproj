@@ -188,6 +188,8 @@
 		BEC32B121F3DAF69003A062F /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC32B041F3DAF69003A062F /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		BEC32B131F3DAF69003A062F /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC32B061F3DAF69003A062F /* View+MASAdditions.m */; };
 		BEC32B141F3DAF69003A062F /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC32B091F3DAF69003A062F /* ViewController+MASAdditions.m */; };
+		BEC4F12A1F5E43A60014F449 /* PouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC4F1291F5E43A60014F449 /* PouchViewController.m */; };
+		BEC4F12C1F5E46AE0014F449 /* CityList.json in Resources */ = {isa = PBXBuildFile; fileRef = BEC4F12B1F5E46AE0014F449 /* CityList.json */; };
 		BEDB71C71F20484400E20AFC /* MNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDB71C61F20484400E20AFC /* MNAlertView.m */; };
 		BEDCF6D61F0DDCC400F3230D /* OrderFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6D51F0DDCC400F3230D /* OrderFoldView.m */; };
 		BEDCF6DA1F0DE23300F3230D /* QQGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6D91F0DE23300F3230D /* QQGroupViewController.m */; };
@@ -544,6 +546,9 @@
 		BEC32B071F3DAF69003A062F /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		BEC32B081F3DAF69003A062F /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		BEC32B091F3DAF69003A062F /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		BEC4F1281F5E43A60014F449 /* PouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PouchViewController.h; sourceTree = "<group>"; };
+		BEC4F1291F5E43A60014F449 /* PouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PouchViewController.m; sourceTree = "<group>"; };
+		BEC4F12B1F5E46AE0014F449 /* CityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityList.json; sourceTree = "<group>"; };
 		BEDB71C51F20484400E20AFC /* MNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNAlertView.h; sourceTree = "<group>"; };
 		BEDB71C61F20484400E20AFC /* MNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNAlertView.m; sourceTree = "<group>"; };
 		BEDCF6D41F0DDCC400F3230D /* OrderFoldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderFoldView.h; sourceTree = "<group>"; };
@@ -715,6 +720,7 @@
 				BE2723BB1F5CEED100C13B5A /* NearbyListCell.m */,
 				BE2723BD1F5CEF3600C13B5A /* SDKPoiModel.h */,
 				BE2723BE1F5CEF3600C13B5A /* SDKPoiModel.m */,
+				BEC4F12B1F5E46AE0014F449 /* CityList.json */,
 			);
 			name = Maps;
 			path = BaiduMap_IOSSDK_v3.3.4_Lib/Maps;
@@ -1349,6 +1355,8 @@
 		BEC4F1271F5E42F40014F449 /* 荷包 */ = {
 			isa = PBXGroup;
 			children = (
+				BEC4F1281F5E43A60014F449 /* PouchViewController.h */,
+				BEC4F1291F5E43A60014F449 /* PouchViewController.m */,
 			);
 			path = "荷包";
 			sourceTree = "<group>";
@@ -1507,6 +1515,7 @@
 				BEC179011F00DCFA00CAE694 /* common-hud4.png in Resources */,
 				BEC179051F00DCFA00CAE694 /* common-hud8.png in Resources */,
 				BEC177DB1F00DC6800CAE694 /* Main.storyboard in Resources */,
+				BEC4F12C1F5E46AE0014F449 /* CityList.json in Resources */,
 				BEC178FE1F00DCFA00CAE694 /* common-hud10.png in Resources */,
 				BEC32B0A1F3DAF69003A062F /* Info.plist in Resources */,
 			);
@@ -1597,6 +1606,7 @@
 				BEC178F01F00DCFA00CAE694 /* UIButton+AFNetworking.m in Sources */,
 				BEC1793D1F00DDB200CAE694 /* TwoViewController.m in Sources */,
 				BEC179281F00DCFA00CAE694 /* SDImageCache.m in Sources */,
+				BEC4F12A1F5E43A60014F449 /* PouchViewController.m in Sources */,
 				BEC179471F00DED800CAE694 /* PersonalCenterViewController.m in Sources */,
 				BEC1790C1F00DCFA00CAE694 /* MJPropertyKey.m in Sources */,
 				BEC178F51F00DCFA00CAE694 /* SDKAboutText.m in Sources */,

@@ -75,7 +75,7 @@ typedef NS_ENUM(NSInteger, BaseBtnTypeStyle) {
 
 - (void)setupNavWithTitle:(NSString *)title;
 
-- (UIBarButtonItem *)createBackButton:(SEL)action;
+- (UIBarButtonItem *)createBackButton:(SEL)action target:(id)target;
 
 
 // 字典转json

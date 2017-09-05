@@ -116,13 +116,13 @@
     });
 }
 
-- (UIBarButtonItem *)createBackButton:(SEL)action
+- (UIBarButtonItem *)createBackButton:(SEL)action target:(id)target
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button setImage:[UIImage imageNamed:@"RiskControlBundle.bundle/arrow_back_white"]
+    [button setImage:[UIImage imageNamed:@"arrow_back_white"]
             forState:UIControlStateNormal];
     button.tintColor = commonBlackColor;
-    [button addTarget:self action:action
+    [button addTarget:target action:action
      forControlEvents:UIControlEventTouchUpInside];
     button.frame = CGRectMake(0, (44-adaptX(18))*0.5, adaptX(18), adaptX(18));
     

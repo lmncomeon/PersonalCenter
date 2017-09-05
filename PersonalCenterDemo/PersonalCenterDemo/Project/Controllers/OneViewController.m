@@ -158,8 +158,8 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"按钮点击水波效果" className:@"WaterWaveButtonViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"翻牌动画" className:@"FlipAnimationViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"直播" className:@"LiveViewController"]];
+        [_dataList addObject:[ControllerModel modelWithTitle:@"荷包" className:@"PouchViewController"]];
         
-
     }
     return _dataList;
 }

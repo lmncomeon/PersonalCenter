@@ -170,7 +170,7 @@ static int searchRadius    = 5000;
     
     [self setupNavWithTitle:@"请选择您的地址"];
     
-    self.navigationItem.leftBarButtonItem = [self createBackButton:@selector(backAction)];
+    self.navigationItem.leftBarButtonItem = [self createBackButton:@selector(backAction) target:self];
 
     
     [self mainTableView];
@@ -192,8 +192,7 @@ static int searchRadius    = 5000;
     [self handleCitysArray];
     
     // 获取城市列表
-    [self requestCityListData];
-    
+    [self loadCityListData];
     
     HXWeak_self
     [self.mainTableView setFooter:[MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
@@ -776,75 +775,52 @@ static int searchRadius    = 5000;
 }
 
 #pragma mark - 获取城市列表
-- (void)requestCityListData {
-    [SDKNetworkState WithSuccessBlock:^(BOOL status) {
-        if (status == true)
-        {
-            self.hud = [customHUD new];
-            [self.hud showCustomHUDWithView:self.view];
-            
-            [SDKCommonService getCityListWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-                [self.hud hideCustomHUD];
+- (void)loadCityListData {
+    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"CityList" ofType:@"json"]];
+    
+    NSError *error = nil;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    NSArray *dataList = dic[@"data"];
+
+    if (error || dataList.count == 0 || !dataList) return;
+    
+    // 1.快速分类
+    for (NSString *str in dataList) {
+        // 获取首字母
+        NSString *pinyi = [SDKAboutString transformMandarinToLatin:str];
+        NSString *firstLetter = [[pinyi uppercaseString] substringToIndex:1];
+        
+        // 筛选分类
+        for (NSMutableDictionary *dic in self.citysArray) {
+            if ([firstLetter isEqualToString:[[dic allKeys] firstObject]]) {
+                [[[dic allValues] firstObject] addObject:str];
                 
-                NSArray *dataList = responseObject;
-                
-                if (dataList && dataList.count)
-                {
-                    
-                    // 1.快速分类
-                    for (NSString *str in dataList) {
-                        // 获取首字母
-                        NSString *pinyi = [SDKAboutString transformMandarinToLatin:str];
-                        NSString *firstLetter = [[pinyi uppercaseString] substringToIndex:1];
-                        
-                        // 筛选分类
-                        for (NSMutableDictionary *dic in self.citysArray) {
-                            if ([firstLetter isEqualToString:[[dic allKeys] firstObject]]) {
-                                [[[dic allValues] firstObject] addObject:str];
-                                
-                                break;
-                            }
-                        }
-                        
-                    }
-                    
-                    
-                    // 2.删除无用数据
-                    for (int i = 0; i < self.citysArray.count; i++) {
-                        NSDictionary *obj = self.citysArray[i];
-                        
-                        NSMutableArray *arr = [[obj allValues] firstObject];
-                        
-                        if (!arr.count) {
-                            [self.citysArray removeObject:obj];
-                            i--;
-                        }
-                    }
-                    
-                    // 3.创建索引数据
-                    for (NSMutableDictionary *dic in self.citysArray) {
-                        NSString *key = [[dic allKeys] firstObject];
-                        
-                        [self.indexArray addObject:key];
-                    }
-                    
-                }
-                else
-                {
-                    showTip(@"城市列表无数据")
-                }
-                
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                [self.hud hideCustomHUD];
-                
-            }];
-      
+                break;
+            }
         }
-        else
-        {
-            [self errorRemind:nil];
+        
+    }
+    
+    
+    // 2.删除无用数据
+    for (int i = 0; i < self.citysArray.count; i++) {
+        NSDictionary *obj = self.citysArray[i];
+        
+        NSMutableArray *arr = [[obj allValues] firstObject];
+        
+        if (!arr.count) {
+            [self.citysArray removeObject:obj];
+            i--;
         }
-    }];
+    }
+    
+    // 3.创建索引数据
+    for (NSMutableDictionary *dic in self.citysArray) {
+        NSString *key = [[dic allKeys] firstObject];
+        
+        [self.indexArray addObject:key];
+    }
+    
 }
 
 #pragma mark - other method
