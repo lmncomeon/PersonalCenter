@@ -35,16 +35,17 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        _nameLab = [SDKCustomLabel setLabelTitle:@"" setLabelFrame:CGRectMake(adaptX(16), adaptY(5), kScreenWidth-2*adaptX(16), 0) setLabelColor:[UIColor blackColor] setLabelFont:kFont(14)];
+        
+        _nameLab = [SDKCustomLabel setLabelTitle:@"" setLabelFrame:CGRectMake(adaptX(16), 0, kScreenWidth-2*adaptX(16), 0) setLabelColor:titleTextColor setLabelFont:kFont(14)];
         _nameLab.numberOfLines = 0;
         [self.contentView addSubview:_nameLab];
         
-        _addressLab = [SDKCustomLabel setLabelTitle:@"" setLabelFrame:CGRectMake(adaptX(16), 0, kScreenWidth-2*adaptX(16), 0) setLabelColor:[UIColor grayColor] setLabelFont:kFont(12)];
+        _addressLab = [SDKCustomLabel setLabelTitle:@"" setLabelFrame:CGRectMake(adaptX(16), 0, kScreenWidth-2*adaptX(16), 0) setLabelColor:UIColorFromRGB(0x999999) setLabelFont:kFont(12)];
         _addressLab.numberOfLines = 0;
         [self.contentView addSubview:_addressLab];
         
         CGFloat distaceW = adaptX(70);
-        _distanceLab = [SDKCustomLabel setLabelTitle:@"" setLabelFrame:CGRectMake(kScreenWidth-kDefaultPadding- distaceW, 0, distaceW, adaptY(30)) setLabelColor:[UIColor blackColor] setLabelFont:kFont(12) setAlignment:2];
+        _distanceLab = [SDKCustomLabel setLabelTitle:@"" setLabelFrame:CGRectMake(kScreenWidth-kDefaultPadding- distaceW, 0, distaceW, adaptY(30)) setLabelColor:commonGrayColor setLabelFont:kFont(12) setAlignment:2];
         [self.contentView addSubview:_distanceLab];
         
         _distanceLab.hidden = true;
@@ -60,14 +61,15 @@
     [cell layoutIfNeeded];
     
     CGRect frame = cell.addressLab.frame;
-    return frame.origin.y + frame.size.height;
+    return frame.origin.y + frame.size.height + adaptY(5);
 }
 
 - (void)setModel:(SDKPoiModel *)model {
     _model = model;
     
-    _nameLab.text = model.name;
+    model.address = model.address.length ? model.address : model.name;
     
+    _nameLab.text    = model.name;
     _addressLab.text = model.address;
     
     // update Frame
@@ -110,9 +112,11 @@
     }
     
     
-    _nameLab.attributedText = [self handeText:[model.searchStr lowercaseString] total:[model.name lowercaseString] defaultFont:kFont(14)];
+    model.address = model.address.length ? model.address : model.name;
     
-    _addressLab.attributedText = [self handeText:[model.searchStr lowercaseString] total:[model.address lowercaseString] defaultFont:kFont(12)];
+    _nameLab.attributedText = [self handeText:[model.searchStr lowercaseString] total:[model.name lowercaseString] defaultFont:kFont(14) first:true];
+    
+    _addressLab.attributedText = [self handeText:[model.searchStr lowercaseString] total:[model.address lowercaseString] defaultFont:kFont(12) first:false];
     
     
     
@@ -143,24 +147,25 @@
     [cell layoutIfNeeded];
     
     CGRect frame = cell.addressLab.frame;
-    return frame.origin.y + frame.size.height;
+    return frame.origin.y + frame.size.height + adaptY(5);
 }
 
-- (NSAttributedString *)handeText:(NSString *)str total:(NSString *)total defaultFont:(UIFont *)defaultFont {
-    NSMutableString *string = [[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%@", total]];
+- (NSAttributedString *)handeText:(NSString *)str total:(NSString *)total defaultFont:(UIFont *)defaultFont first:(BOOL)first {
+
+    NSRange mn_range = {0, total.length};
     
-    NSRange range = {0,string.length};
+    NSMutableAttributedString * attr = [[NSMutableAttributedString alloc]initWithString:total];
     
-    NSMutableAttributedString * attr = [[NSMutableAttributedString alloc]initWithString:string];
-    [attr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, total.length)];
-    [attr addAttribute:NSFontAttributeName value:defaultFont range:NSMakeRange(0, total.length)];
+    [attr addAttribute:NSForegroundColorAttributeName value:first ? commonBlackColor : commonGrayColor range:mn_range];
+    [attr addAttribute:NSFontAttributeName value:defaultFont range:mn_range];
+    
     
     NSError * error;
     NSRegularExpression * express = [NSRegularExpression regularExpressionWithPattern:str options:NSRegularExpressionCaseInsensitive error:&error];
-    NSArray<NSTextCheckingResult *> * result = [express matchesInString:string options:0 range:range];
+    NSArray<NSTextCheckingResult *> * result = [express matchesInString:total options:0 range:mn_range];
     for (NSTextCheckingResult * match in result) {
         NSRange range = [match range];
-        [attr addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:range];
+        [attr addAttribute:NSForegroundColorAttributeName value:kOrangeColor range:range];
     }
     NSAttributedString *attrString = [attr copy];
     

@@ -10,17 +10,23 @@
 #import "SDKProjectHeader.h"
 #import "SDKCustomLabel.h"
 #import "UIView+CustomView.h"
-
 #import "SDKPoiModel.h"
 #import "NearbyListCell.h"
 
 
 
-@interface SDKResultTableViewController ()
+@interface SDKResultTableViewController () <BMKGeoCodeSearchDelegate>
 {
     CLGeocoder *_geocoder;
+    
+    // 反编码
+    BMKGeoCodeSearch        *_codeSearch;
+    BMKReverseGeoCodeOption *_reverseGeoCodeSearchOption;
 }
+
 @property (nonatomic, strong) UIView *mapEmptyView;
+
+@property (nonatomic, copy) void (^geoReverseBlock)(BMKAddressComponent *component);
 
 @end
 
@@ -33,11 +39,11 @@ static NSString *const NearbyListCellID = @"NearbyListCellID";
         _mapEmptyView = [[UIView alloc] initWithFrame:self.view.bounds];
         _mapEmptyView.backgroundColor = [UIColor whiteColor];
         
-        UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake((kScreenWidth - adaptX(135))*0.5, adaptY(100)+64, adaptX(135), adaptY(94))];
+        UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake((kScreenWidth - adaptX(135))*0.5, adaptY(55)+64, adaptX(135), adaptY(94))];
         icon.image = [UIImage imageNamed:@"map_nodata"];
         [_mapEmptyView addSubview:icon];
         
-        SDKCustomLabel *tipLab = [SDKCustomLabel setLabelTitle:@"没找到？在地图上拖动试试" setLabelFrame:CGRectMake(0, CGRectGetMaxY(icon.frame) + adaptY(50), kScreenWidth, adaptY(20)) setLabelColor:[UIColor colorWithRed:160/255.0f green:160/255.0f blue:160/255.0f alpha:1.0f] setLabelFont:kFont(14) setAlignment:1];
+        SDKCustomLabel *tipLab = [SDKCustomLabel setLabelTitle:@"没找到？在地图上拖动试试" setLabelFrame:CGRectMake(0, CGRectGetMaxY(icon.frame) + adaptY(25), kScreenWidth, adaptY(20)) setLabelColor:[UIColor colorWithRed:160/255.0f green:160/255.0f blue:160/255.0f alpha:1.0f] setLabelFont:kFont(14) setAlignment:1];
         [_mapEmptyView addSubview:tipLab];
         
         HXWeak_self
@@ -54,12 +60,34 @@ static NSString *const NearbyListCellID = @"NearbyListCellID";
     [super viewDidLoad];
     
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     [self initGeocoder];
+    
+    [self initCodeSearch];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    _codeSearch.delegate = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    _codeSearch.delegate = nil;
 }
 
 - (void)initGeocoder {
     _geocoder = [[CLGeocoder alloc] init];
+}
+
+- (void)initCodeSearch {
+    
+    _codeSearch = [[BMKGeoCodeSearch alloc]init];
+    
+    _reverseGeoCodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
 }
 
 - (void)setResultArray:(NSMutableArray *)resultArray
@@ -71,7 +99,6 @@ static NSString *const NearbyListCellID = @"NearbyListCellID";
     
     if (resultArray.count == 0 || !resultArray) { [self.view addSubview:self.mapEmptyView]; }
 }
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -104,16 +131,27 @@ static NSString *const NearbyListCellID = @"NearbyListCellID";
     
     __weak typeof(self) weakSelf = self;
     
-    [self reverseGeocodeLocation:location resultUsingBlock:^(CLPlacemark *placemark) {
-        
-        NSString *provinces = [NSString stringWithFormat:@"%@ %@ %@", placemark.administrativeArea ? : @"", placemark.locality ? : @"", placemark.subLocality ? : @""];
+//    [self reverseGeocodeLocation:location resultUsingBlock:^(CLPlacemark *placemark) {
+//        
+//        NSString *provinces = [NSString stringWithFormat:@"%@ %@ %@", placemark.administrativeArea ? : @"", placemark.locality ? : @"", placemark.subLocality ? : @""];
+//        
+//        
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"mapValueNotification" object:nil userInfo:@{@"provinces" : provinces, @"address":(info.address ? : @"")}];
+//        
+//        
+//        if (weakSelf.canSendMapDataBlock) {weakSelf.canSendMapDataBlock(); }
+//        
+//    }];
+    
+    
+    [self BMKGeoReverseLocation:location resultUsingBlock:^(BMKAddressComponent *component) {
+        NSString *provinces = [NSString stringWithFormat:@"%@ %@ %@", component.province ? : @"", component.city ? : @"", component.district ? : @""];
         
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"mapValueNotification" object:nil userInfo:@{@"provinces" : provinces, @"address":(info.address ? : @"")}];
         
         
         if (weakSelf.canSendMapDataBlock) {weakSelf.canSendMapDataBlock(); }
-        
     }];
 }
 
@@ -128,6 +166,42 @@ static NSString *const NearbyListCellID = @"NearbyListCellID";
         if (result) {  result(placemark);  }
         
     }];
+}
+
+
+#pragma mark - geo反编码
+- (void)BMKGeoReverseLocation:(CLLocation *)location resultUsingBlock:(void(^)(BMKAddressComponent *component))result {
+    // 记录
+    self.geoReverseBlock = result;
+    
+    //
+    CLLocationCoordinate2D pt = location.coordinate;
+    _reverseGeoCodeSearchOption.reverseGeoPoint = pt;
+    
+    BOOL flag = [_codeSearch reverseGeoCode:_reverseGeoCodeSearchOption];
+    if(flag)
+    {
+        NSLog(@"反geo检索发送成功");
+    }
+    else
+    {
+        NSLog(@"反geo检索发送失败");
+    }
+}
+
+// 接收反向地理编码结果
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error {
+    
+    if (error == BMK_SEARCH_NO_ERROR)
+    {
+        if (self.geoReverseBlock) {
+            self.geoReverseBlock(result.addressDetail);
+        }
+    }
+    else {
+        NSLog(@"抱歉，未找到结果");
+    }
+    
 }
 
 /*

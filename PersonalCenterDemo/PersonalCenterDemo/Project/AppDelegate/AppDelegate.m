@@ -45,6 +45,8 @@
 }
 
 - (void)initBMMap {
+
+    //P2yBCNEsdzWMsa69CtrtqXu4wmVtFlht
     _mapManager = [[BMKMapManager alloc]init];
     BOOL ret = [_mapManager start:@"yKZQZ5Gl449tMc3NzLFcdFXRNs6IUvQD"  generalDelegate:nil];
     if (!ret) {

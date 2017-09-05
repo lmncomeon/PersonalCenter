@@ -10,7 +10,9 @@
 
 @interface SDKSearchViewController : SDKBaseViewController
 
-@property (nonatomic, strong) BMKUserLocation *userLocation;
+@property (nonatomic, assign) CLLocationCoordinate2D searchLocation;
+
+@property (nonatomic, copy) NSString *citySting;
 
 @end
 

@@ -14,13 +14,19 @@
 #import "SDKCityListViewController.h"
 #import "SDKSearchViewController.h"
 
-@interface MapViewController () <UITextFieldDelegate, BMKMapViewDelegate, BMKLocationServiceDelegate, UITableViewDataSource, UITableViewDelegate, BMKPoiSearchDelegate>
+@interface MapViewController () <UITextFieldDelegate, BMKMapViewDelegate, BMKLocationServiceDelegate, UITableViewDataSource, UITableViewDelegate, BMKPoiSearchDelegate, BMKGeoCodeSearchDelegate>
 {
     CLGeocoder   *_geocoder;
     
     BMKPoiSearch *_searcher;
     BMKNearbySearchOption *_option;
     int curPage;
+    
+    // 编码&反编码
+    BMKGeoCodeSearch        *_codeSearch;
+    BMKGeoCodeSearchOption  *_geoCodeSearchOption;
+    BMKReverseGeoCodeOption *_reverseGeoCodeSearchOption;
+    
 }
 @property (nonatomic, strong) UIView *topView;
 @property (nonatomic, strong) SDKCustomLabel *locationLab;
@@ -45,18 +51,28 @@
 @property (nonatomic, strong) NSMutableArray *dataList;
 
 
+// 反编码 & 编码
+@property (nonatomic, copy) void (^geoReverseBlock)(BMKAddressComponent *component);
+@property (nonatomic, copy) void (^geoCodeBlock)(CLLocationCoordinate2D mn_coordinate);
+
+
 @property (nonatomic, strong) SDKCityListViewController *cityListVC;
 @property (nonatomic, assign) BOOL showListView;
 @property (nonatomic, strong) NSMutableArray *citysArray;
 @property (nonatomic, strong) NSMutableArray *indexArray;
 
+
+@property (nonatomic, assign) CLLocationCoordinate2D currentCoordinate;
+
+@property (nonatomic, assign) CLLocationCoordinate2D mapCenterCoordinate;
+
 @end
 
 static NSString *const NearbyListCellID = @"NearbyListCell";
 
-static NSString *defaultKeyWord = @"大厦";
-static int mapPageCapacity = 50;
-static int searchRadius    = 1000;
+static NSString *defaultKeyWord = @"楼盘";
+static int mapPageCapacity = 10;
+static int searchRadius    = 5000;
 
 @implementation MapViewController
 
@@ -65,16 +81,15 @@ static int searchRadius    = 1000;
         _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, adaptY(40))];
         [self.view addSubview:_topView];
         
-        UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(adaptX(16), (_topView.height - adaptY(16.5))*0.5, adaptX(13.5), adaptY(16.5))]; // 1.5X
+        UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(adaptX(16), (_topView.height - adaptY(11))*0.5, adaptX(9), adaptY(11))]; // 1.5X
         icon.image = [UIImage imageNamed:@"map_location_icon"];
         [_topView addSubview:icon];
         
-        _locationLab = [SDKCustomLabel setLabelTitle:@"" setLabelFrame:CGRectMake(CGRectGetMaxX(icon.frame)+ adaptX(5), 0, adaptX(80), _topView.height) setLabelColor:[UIColor blackColor] setLabelFont:kFont(14)];
-        _locationLab.adjustsFontSizeToFitWidth = true;
+        _locationLab = [SDKCustomLabel setLabelTitle:@"" setLabelFrame:CGRectMake(CGRectGetMaxX(icon.frame)+ adaptX(5), 0, adaptX(80), _topView.height) setLabelColor:titleTextColor setLabelFont:kFont(12)];
         [_topView addSubview:_locationLab];
         
-        _arrowImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_locationLab.frame), (_topView.height - adaptY(5.25)) *0.5, adaptX(9), adaptY(5.25))]; // 1.5X
-        _arrowImg.image = [UIImage imageNamed:@"map_bottom_arrow"];
+        _arrowImg = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_locationLab.frame) + adaptX(5), (_topView.height - adaptY(5.25)) *0.5, adaptX(9), adaptY(5.25))]; // 1.5X
+        _arrowImg.image = [UIImage imageNamed:@"map_bottom_arrow_bottom"];
         [_topView addSubview:_arrowImg];
         
         _clearBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -82,8 +97,11 @@ static int searchRadius    = 1000;
         [_clearBtn addTarget:self action:@selector(handleListAction) forControlEvents:UIControlEventTouchUpInside];
         [_topView addSubview:_clearBtn];
         
-        _searchView = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_clearBtn.frame), adaptY(7), kScreenWidth- CGRectGetMaxX(_clearBtn.frame)-adaptX(16), _topView.height-adaptY(14))];
-        _searchView.placeholder = @"查找小区/大厦等";
+        _searchView = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_clearBtn.frame) + adaptX(5), adaptY(7), kScreenWidth- CGRectGetMaxX(_clearBtn.frame)-adaptX(16)-adaptX(5), _topView.height-adaptY(14))];
+        _searchView.font = kFont(12);
+        
+        NSAttributedString *placeAttr = [[NSAttributedString alloc] initWithString:@"查找小区/大厦等" attributes:@{NSFontAttributeName : kFont(12), NSForegroundColorAttributeName : [UIColor colorWithRed:176/255.0f green:176/255.0f blue:179/255.0f alpha:1.0f]}];
+        _searchView.attributedPlaceholder = placeAttr;
         _searchView.delegate = self;
         _searchView.layer.masksToBounds = true;
         _searchView.layer.cornerRadius = _searchView.height*0.5;
@@ -97,7 +115,7 @@ static int searchRadius    = 1000;
             glass;
         });
         _searchView.leftViewMode = UITextFieldViewModeAlways;
-        _searchView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _searchView.backgroundColor = [UIColor colorWithRed:231/255.0f green:231/255.0f blue:231/255.0f alpha:1.0f];
         [_topView addSubview:_searchView];
         
     }
@@ -109,17 +127,19 @@ static int searchRadius    = 1000;
         _mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.topView.frame), kScreenWidth, adaptY(200))];
         [_mapView setMapType:BMKMapTypeStandard];
         [_mapView setZoomLevel:17];
-        _mapView.minZoomLevel = 10;
-        _mapView.maxZoomLevel = 19;
+        _mapView.minZoomLevel = 8;  // 10
+        _mapView.maxZoomLevel = 19; // 19
+        _mapView.showMapScaleBar = true;
+        _mapView.mapScaleBarPosition = CGPointMake(adaptX(10), adaptY(160));
+        _mapView.ChangeWithTouchPointCenterEnabled = true;
         [self.view addSubview:_mapView];
         
-        CGFloat btnWH = adaptX(52);
+        CGFloat btnWH = adaptX(39);
         UIButton *locationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        locationBtn.frame = CGRectMake(adaptX(5), _mapView.height - btnWH-adaptX(20), btnWH, btnWH);
+        locationBtn.frame = CGRectMake(0, _mapView.height - btnWH-adaptX(33), btnWH, btnWH);
         [locationBtn setImage:[UIImage imageNamed:@"locationBtn"] forState:UIControlStateNormal];
         [locationBtn addTarget:self action:@selector(loactionAction) forControlEvents:UIControlEventTouchUpInside];
         [_mapView addSubview:locationBtn];
-        
     }
     return _mapView;
 }
@@ -137,6 +157,7 @@ static int searchRadius    = 1000;
 - (UITableView *)mainTableView {
     if (!_mainTableView) {
         _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.mapView.frame), kScreenWidth, kScreenHeight-CGRectGetMaxY(self.mapView.frame) -64) style:UITableViewStyleGrouped];
+        _mainTableView.separatorColor = cuttingLineColor;
         _mainTableView.dataSource = self;
         _mainTableView.delegate   = self;
         [self.view addSubview:_mainTableView];
@@ -160,6 +181,8 @@ static int searchRadius    = 1000;
     [self initPoiSearch];
     
     [self initGeocoder];
+    
+    [self initCodeSearch];
 
 
 //    _isClickSearch = NO;
@@ -170,6 +193,19 @@ static int searchRadius    = 1000;
     
     // 获取城市列表
     [self requestCityListData];
+    
+    
+    HXWeak_self
+    [self.mainTableView setFooter:[MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        HXStrong_self
+        
+        curPage++;
+        
+        [self startNearbySearchWithLocation:self.mapCenterCoordinate option:_option keyword:defaultKeyWord];
+        
+    }]];
+    
+   
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -182,6 +218,8 @@ static int searchRadius    = 1000;
     _locService.delegate = self;
     
     _searcher.delegate = self;
+    
+    _codeSearch.delegate = self;
     
 //    [_locService startUserLocationService];
 }
@@ -197,6 +235,8 @@ static int searchRadius    = 1000;
     _locService.delegate = nil;
     
     _searcher.delegate = nil;
+    
+    _codeSearch.delegate = nil;
 }
 
 - (void)configLocation {
@@ -215,7 +255,6 @@ static int searchRadius    = 1000;
     _searcher =[[BMKPoiSearch alloc]init];
     
     _option = [[BMKNearbySearchOption alloc]init];
-    _option.pageIndex    = curPage;
     _option.pageCapacity = mapPageCapacity;
     _option.radius       = searchRadius;
     _option.sortType = 1; // 搜索结果排序
@@ -225,31 +264,56 @@ static int searchRadius    = 1000;
     _geocoder = [[CLGeocoder alloc] init];
 }
 
+- (void)initCodeSearch {
+    
+    _codeSearch = [[BMKGeoCodeSearch alloc]init];
+    
+    _geoCodeSearchOption = [[BMKGeoCodeSearchOption alloc]init];
+    
+    _reverseGeoCodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
+
+}
+
 // 处理城市列表
 - (void)handleListAction {
-    [self startRotaionWithTarget:_arrowImg angle:M_PI];
+    if (self.citysArray.count == 0) {
+        showTip(@"城市列表无数据");
+        return;
+    }
+    
+    if (!self.userCurrentString) {
+        return;
+    }
+    
+    //[self startRotaionWithTarget:_arrowImg angle:M_PI];
+    
     
     // show or hide
     _showListView = !_showListView;
+    
+    _arrowImg.image = [UIImage imageNamed:(_showListView ? @"map_bottom_arrow_up" : @"map_bottom_arrow_bottom")];
     
     if (_showListView) {
         // add
         _cityListVC.view.frame = CGRectMake(0, adaptY(40), kScreenWidth, kScreenHeight-64-adaptY(40));
         _cityListVC.mainTableView.frame = _cityListVC.view.bounds;
-        [self.view addSubview:_cityListVC.view];
         
         // send data
         _cityListVC.list          = self.citysArray.copy;
         _cityListVC.indexArray    = self.indexArray.copy;
         _cityListVC.currentString = self.userCurrentString;
+        [self.view addSubview:_cityListVC.view];
+        
         
         HXWeak_self
         _cityListVC.sendValue = ^(NSString *str) {
-            DLog(@"== 收到 %@", str);
-            
+
             HXStrong_self
             self.showListView = false;
-            [self startRotaionWithTarget:self.arrowImg angle:M_PI];
+//            [self startRotaionWithTarget:_arrowImg angle:M_PI];
+            
+            self.arrowImg.image = [UIImage imageNamed:@"map_bottom_arrow_bottom"];
+            
             [self.cityListVC.view removeFromSuperview];
             
             // 赋值
@@ -260,7 +324,12 @@ static int searchRadius    = 1000;
                 HXStrong_self
                 
                 self.mapView.centerCoordinate = placemark.location.coordinate;
+                
+                // 记录
+                self.currentCoordinate = placemark.location.coordinate;
+                
             }];
+            
         };
         
     } else {
@@ -274,11 +343,19 @@ static int searchRadius    = 1000;
 - (void)loactionAction {
     _mapView.centerCoordinate = _userLocation.location.coordinate;
     
+//    HXWeak_self
+//    [self reverseGeocodeLocation:_userLocation.location resultUsingBlock:^(CLPlacemark *placemark) {
+//        HXStrong_self
+//        
+//        self.locationLab.text = placemark.locality ? : @"失败";
+//    }];
+    
+    
     HXWeak_self
-    [self reverseGeocodeLocation:_userLocation.location resultUsingBlock:^(CLPlacemark *placemark) {
-        HXStrong_self
+    [self BMKGeoReverseLocation:_userLocation.location resultUsingBlock:^(BMKAddressComponent *component) {
         
-        self.locationLab.text = placemark.locality ? : @"失败";
+        HXStrong_self
+        self.locationLab.text = component.city ? : @"失败";
     }];
 
 }
@@ -287,22 +364,34 @@ static int searchRadius    = 1000;
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     [textField endEditing:true];
     
-    SDKSearchViewController *sdkSearck = [SDKSearchViewController new];
-    sdkSearck.userLocation = _userLocation;
-    [self.navigationController pushViewController:sdkSearck animated:false];
+    
+    [self BMKGeoReverseLocation:[[CLLocation alloc] initWithLatitude:self.currentCoordinate.latitude longitude:self.currentCoordinate.longitude] resultUsingBlock:^(BMKAddressComponent *component) {
+         
+        // jump
+        SDKSearchViewController *sdkSearck = [SDKSearchViewController new];
+        sdkSearck.searchLocation = self.currentCoordinate;
+        sdkSearck.citySting = component.city;
+        [self.navigationController pushViewController:sdkSearck animated:false];
+        
+    }];
+    
+    
 }
 
 #pragma mark - tableView dataSource & Delegate
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataList.count;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NearbyListCell *cell = [NearbyListCell cellWithTableView:tableView identifier:NearbyListCellID];
     
-    cell.model = self.dataList[indexPath.row];
+    cell.model = self.dataList[indexPath.section];
     
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         [cell settingTextColor:kOrangeColor];
     } else {
         [cell settingTextColor:commonBlackColor];
@@ -320,31 +409,46 @@ static int searchRadius    = 1000;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [NearbyListCell listCellHeightWith:self.dataList[indexPath.row]];
+    return [NearbyListCell listCellHeightWith:self.dataList[indexPath.section]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    SDKPoiModel *poiM = self.dataList[indexPath.row];
+    SDKPoiModel *poiM = self.dataList[indexPath.section];
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:poiM.coordinate2D.latitude longitude:poiM.coordinate2D.longitude];
     
     __weak typeof(self) weakSelf = self;
     
-    [self reverseGeocodeLocation:location resultUsingBlock:^(CLPlacemark *placemark) {
-        
-        NSString *provinces = [NSString stringWithFormat:@"%@ %@ %@", placemark.administrativeArea ? : @"", placemark.locality ? : @"", placemark.subLocality ? : @""];
+//    [self reverseGeocodeLocation:location resultUsingBlock:^(CLPlacemark *placemark) {
+//        
+//        NSString *provinces = [NSString stringWithFormat:@"%@ %@ %@", placemark.administrativeArea ? : @"", placemark.locality ? : @"", placemark.subLocality ? : @""];
+//
+//        !weakSelf.mapValueBlock ? : weakSelf.mapValueBlock(provinces, poiM.address);
+//        
+//        [weakSelf.navigationController popViewControllerAnimated:true];
+//    }];
 
+    
+    [self BMKGeoReverseLocation:location resultUsingBlock:^(BMKAddressComponent *component) {
+        
+        NSString *provinces = [NSString stringWithFormat:@"%@ %@ %@", component.province ? : @"", component.city ?: @"", component.district ?: @""];
+        
         !weakSelf.mapValueBlock ? : weakSelf.mapValueBlock(provinces, poiM.address);
         
         [weakSelf.navigationController popViewControllerAnimated:true];
     }];
-
 }
 
 #pragma mark - 定位相关代理
 - (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
 {
+    // 记录
     _userLocation = userLocation;
+    
+    self.currentCoordinate = userLocation.location.coordinate;
+    self.mapCenterCoordinate = userLocation.location.coordinate;
+    
+    
     [_mapView updateLocationData:userLocation];
     
 }
@@ -353,37 +457,39 @@ static int searchRadius    = 1000;
 {
     NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
 
+    // 记录
     _userLocation = userLocation;
-
-    // 开始检索
-    [self startPoiSearchWithLocation:CLLocationCoordinate2DMake(userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude) option:_option keyword:defaultKeyWord];
     
-    //更新地图上的位置
-    [_mapView updateLocationData:userLocation];
-    
-    //更新当前位置到地图中间
-    _mapView.centerCoordinate = userLocation.location.coordinate;
+    self.currentCoordinate = userLocation.location.coordinate;
+    self.mapCenterCoordinate = userLocation.location.coordinate;
     
     
     // 赋值
     HXWeak_self
-    [self reverseGeocodeLocation:userLocation.location resultUsingBlock:^(CLPlacemark *placemark) {
+    [self BMKGeoReverseLocation:userLocation.location resultUsingBlock:^(BMKAddressComponent *component) {
         HXStrong_self
+        if (!component) return;
         
-        if (!placemark) return;
         
-        NSString *city = placemark.locality;
-        
-        [self topSettingValueAndUpdate:city];
+        [self topSettingValueAndUpdate:component.city];
         
         // 记录
-        self.userCurrentString = city;
+        self.userCurrentString = component.city;
         
-        // 找到了当前位置城市后就关闭服务
-        [self.locService stopUserLocationService];
     }];
-   
-
+    
+    // 开始检索
+    [self startNearbySearchWithLocation:CLLocationCoordinate2DMake(userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude) option:_option keyword:defaultKeyWord];
+    
+    
+    //更新地图上的位置
+    [_mapView updateLocationData:userLocation];
+    
+    //更新地图中间
+    _mapView.centerCoordinate = userLocation.location.coordinate;
+    
+    // 找到了当前位置城市后就关闭服务
+    [self.locService stopUserLocationService];
 }
 
 - (void)topSettingValueAndUpdate:(NSString *)city {
@@ -404,31 +510,6 @@ static int searchRadius    = 1000;
 
 }
 
-// 反编码
-- (void)reverseGeocodeLocation:(CLLocation *)location resultUsingBlock:(void (^)(CLPlacemark *placemark))result {
-    [_geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *array, NSError *error) {
-        
-        CLPlacemark *placemark;
-        
-        if (array.count > 0) { placemark = [array objectAtIndex:0]; }
-        
-        if (result) {  result(placemark);  }
-        
-    }];
-}
-
-// 编码
-- (void)geocodeAddress:(NSString *)address resultUsingBlock:(void(^)(CLPlacemark *placemark))result {
-    [_geocoder geocodeAddressString:address completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        
-        CLPlacemark *placemark;
-        
-        if (placemarks.count > 0) { placemark = [placemarks objectAtIndex:0]; }
-        
-        if (result) {  result(placemark);  }
-    }];
-}
-
 - (void)didStopLocatingUser
 {
     NSLog(@"stop locate");
@@ -444,18 +525,22 @@ static int searchRadius    = 1000;
 {
     [_mapView updateLocationData:_userLocation];
     
+    // 重置
+    curPage = 0;
+    self.mapCenterCoordinate = mapView.centerCoordinate;
+    
     // 开始检索
-    [self startPoiSearchWithLocation:CLLocationCoordinate2DMake(mapView.centerCoordinate.latitude,mapView.centerCoordinate.longitude) option:_option keyword:defaultKeyWord];
+    [self startNearbySearchWithLocation:CLLocationCoordinate2DMake(mapView.centerCoordinate.latitude,mapView.centerCoordinate.longitude) option:_option keyword:defaultKeyWord];
     
     NSLog(@"mapStatusDidChanged");
 }
 
 #pragma mark - 周边检索
-- (void)startPoiSearchWithLocation:(CLLocationCoordinate2D)location option:(BMKNearbySearchOption *)option keyword:(NSString *)keyword {
+- (void)startNearbySearchWithLocation:(CLLocationCoordinate2D)location option:(BMKNearbySearchOption *)option keyword:(NSString *)keyword {
 
-    option.location = location;
-    
-    option.keyword = keyword;
+    option.location  = location;
+    option.pageIndex = curPage;
+    option.keyword   = keyword;
     
     BOOL flag = [_searcher poiSearchNearBy:option];
     
@@ -474,10 +559,11 @@ static int searchRadius    = 1000;
     [_mapView updateLocationData:_userLocation];
     
     
-    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
-    [_mapView removeAnnotations:array];
+//    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
+//    [_mapView removeAnnotations:array];
     
-    if (error == BMK_SEARCH_NO_ERROR) {
+    if (error == BMK_SEARCH_NO_ERROR)
+    {
         
         
         NSLog(@"地址--> %@",result.poiAddressInfoList);
@@ -489,33 +575,58 @@ static int searchRadius    = 1000;
 //        else
 //        {// 没有点击搜索
         
+        if (curPage == 0) {
             [self.dataList removeAllObjects];
+        }
+
+        for (BMKPoiInfo *info in result.poiInfoList) {
             
-            for (BMKPoiInfo *info in result.poiInfoList) {
-                
-                NSLog(@"_name = %@, _address = %@, _city = %@",info.name,info.address,info.city);
-                NSLog(@"lon:%.2f la:%.2f", info.pt.longitude, info.pt.latitude);
-                
-                SDKPoiModel *poiM = [SDKPoiModel new];
-                poiM.name = info.name;
-                poiM.address = info.address;
-                poiM.city = info.city;
-                poiM.coordinate2D = info.pt;
-                
-                [self.dataList addObject:poiM];
-                
-            }
-        [self.mainTableView reloadData];
+            NSLog(@"_name = %@, _address = %@, _city = %@",info.name,info.address,info.city);
             
+            NSLog(@"lon:%.2f la:%.2f", info.pt.longitude, info.pt.latitude);
+            
+            SDKPoiModel *poiM = [SDKPoiModel new];
+            poiM.name = info.name;
+            poiM.address = info.address;
+            poiM.city = info.city;
+            poiM.coordinate2D = info.pt;
+            
+            [self.dataList addObject:poiM];
+            
+        }
+        
+        
 //        }
         
         
         
-    } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
-        NSLog(@"起始点有歧义");
-    } else {
-        // 各种情况的判断。。。
     }
+    else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
+        DLog(@"起始点有歧义");
+        
+        if (curPage == 0) {
+            [self.dataList removeAllObjects];
+        }
+        
+    }
+    else if (error == BMK_SEARCH_RESULT_NOT_FOUND) {
+        DLog(@"没找到");
+        
+        if (curPage == 0) {
+            [self.dataList removeAllObjects];
+        }
+        
+    }
+    else {
+        DLog(@"各种情况的判断");
+        
+        if (curPage == 0) {
+            [self.dataList removeAllObjects];
+        }
+    }
+    
+    [self.mainTableView.footer endRefreshing];
+    [self.mainTableView reloadData];
 }
 
 #pragma mark searchBar delegate
@@ -547,18 +658,116 @@ static int searchRadius    = 1000;
 //    _isClickSearch = NO;
 //}
 
-#pragma mark - BMKGeoCodeSearch 代理方法
-- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
-{
+#pragma mark - geo反编码
+- (void)BMKGeoReverseLocation:(CLLocation *)location resultUsingBlock:(void(^)(BMKAddressComponent *component))result {
+    // 记录
+    self.geoReverseBlock = result;
+    
+    //
+    CLLocationCoordinate2D pt = location.coordinate;
+    _reverseGeoCodeSearchOption.reverseGeoPoint = pt;
+    
+    BOOL flag = [_codeSearch reverseGeoCode:_reverseGeoCodeSearchOption];
+    if(flag)
+    {
+        NSLog(@"反geo检索发送成功");
+    }
+    else
+    {
+        NSLog(@"反geo检索发送失败");
+    }
+}
+
+// 接收反向地理编码结果
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error {
+
+    /*
     BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc] init];
     annotation.coordinate = result.location;
     annotation.title = @"当前位置";
     annotation.subtitle = result.address;
     [_mapView addAnnotation:annotation];
+    
     //使地图显示该位置
     [_mapView setCenterCoordinate:result.location animated:YES];
+    */
+    
+  if (error == BMK_SEARCH_NO_ERROR)
+  {
+      if (self.geoReverseBlock) {
+          self.geoReverseBlock(result.addressDetail);
+      }
+
+  }
+  else {
+      NSLog(@"抱歉，未找到结果");
+  }
+    
 }
 
+#pragma mark geo正编码
+- (void)BMKGeoCodeWithCity:(NSString *)city resultUsingBlock:(void(^)(CLLocationCoordinate2D mn_coordinate))result {
+
+    // 记录
+    self.geoCodeBlock = result;
+    
+    
+    //
+    _geoCodeSearchOption.city = city;
+    
+    BOOL flag = [_codeSearch geoCode:_geoCodeSearchOption];
+    
+    if(flag)
+    {
+        NSLog(@"geo检索发送成功");
+    }
+    else
+    {
+        NSLog(@"geo检索发送失败");
+    }
+}
+
+//接收正向编码结果
+- (void)onGetGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error {
+    
+    if (error == BMK_SEARCH_NO_ERROR) {
+        
+        if (self.geoCodeBlock) {
+            self.geoCodeBlock(result.location);
+        }
+    }
+    else {
+        NSLog(@"抱歉，未找到结果");
+    }
+}
+
+#pragma mark - 系统 编码&反编码
+// 反编码
+- (void)reverseGeocodeLocation:(CLLocation *)location resultUsingBlock:(void (^)(CLPlacemark *placemark))result {
+    [_geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *array, NSError *error) {
+        
+        CLPlacemark *placemark;
+        
+        if (array.count > 0) { placemark = [array objectAtIndex:0]; }
+        
+        if (result) {  result(placemark);  }
+        
+    }];
+    
+    
+}
+
+// 编码
+- (void)geocodeAddress:(NSString *)address resultUsingBlock:(void(^)(CLPlacemark *placemark))result {
+    [_geocoder geocodeAddressString:address completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        
+        CLPlacemark *placemark;
+        
+        if (placemarks.count > 0) { placemark = [placemarks objectAtIndex:0]; }
+        
+        if (result) {  result(placemark);  }
+    }];
+}
 
 //更新搜索结果时会调用的方法
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController
@@ -585,7 +794,7 @@ static int searchRadius    = 1000;
                     // 1.快速分类
                     for (NSString *str in dataList) {
                         // 获取首字母
-                        NSString *pinyi = [SDKAboutString transform:str];
+                        NSString *pinyi = [SDKAboutString transformMandarinToLatin:str];
                         NSString *firstLetter = [[pinyi uppercaseString] substringToIndex:1];
                         
                         // 筛选分类
@@ -627,11 +836,9 @@ static int searchRadius    = 1000;
                 
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 [self.hud hideCustomHUD];
-
-
+                
             }];
-            
-            
+      
         }
         else
         {
@@ -644,7 +851,7 @@ static int searchRadius    = 1000;
 - (void)handleCitysArray {
     [self.citysArray removeAllObjects];
     
-    for (char myChar = 'A'; myChar < 'Z'; myChar++) {
+    for (char myChar = 'A'; myChar <= 'Z'; myChar++) {
         NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:5];
         
         NSString *alpha = [NSString stringWithFormat:@"%c", myChar];

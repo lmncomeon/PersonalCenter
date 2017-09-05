@@ -157,6 +157,8 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"地图" className:@"AddressViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"按钮点击水波效果" className:@"WaterWaveButtonViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"翻牌动画" className:@"FlipAnimationViewController"]];
+        [_dataList addObject:[ControllerModel modelWithTitle:@"直播" className:@"LiveViewController"]];
+        
 
     }
     return _dataList;

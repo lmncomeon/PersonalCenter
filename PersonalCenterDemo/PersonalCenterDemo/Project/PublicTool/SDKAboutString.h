@@ -13,4 +13,7 @@
 // 汉字转拼音
 + (NSString *)transform:(NSString *)chinese;
 
+// 汉字转拼音
++ (NSString *)transformMandarinToLatin:(NSString *)string;
+
 @end

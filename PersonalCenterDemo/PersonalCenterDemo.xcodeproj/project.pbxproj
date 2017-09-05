@@ -15,6 +15,12 @@
 		BE019F701F0C8AE9007451B5 /* 精灵球.png in Resources */ = {isa = PBXBuildFile; fileRef = BE019F6C1F0C8AE9007451B5 /* 精灵球.png */; };
 		BE019F761F0C8AF2007451B5 /* WLBallTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BE019F731F0C8AF2007451B5 /* WLBallTool.m */; };
 		BE019F771F0C8AF2007451B5 /* WLBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE019F751F0C8AF2007451B5 /* WLBallView.m */; };
+		BE2723B61F5CEEC600C13B5A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723AF1F5CEEC600C13B5A /* MapViewController.m */; };
+		BE2723B71F5CEEC600C13B5A /* SDKSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723B11F5CEEC600C13B5A /* SDKSearchViewController.m */; };
+		BE2723B81F5CEEC600C13B5A /* SDKResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723B31F5CEEC600C13B5A /* SDKResultTableViewController.m */; };
+		BE2723B91F5CEEC600C13B5A /* SDKCityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723B51F5CEEC600C13B5A /* SDKCityListViewController.m */; };
+		BE2723BC1F5CEED100C13B5A /* NearbyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723BB1F5CEED100C13B5A /* NearbyListCell.m */; };
+		BE2723BF1F5CEF3600C13B5A /* SDKPoiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723BE1F5CEF3600C13B5A /* SDKPoiModel.m */; };
 		BE2907AA1F0CCCA1006290B3 /* FoldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907A91F0CCCA1006290B3 /* FoldViewController.m */; };
 		BE2907AD1F0CCE40006290B3 /* MNFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907AC1F0CCE40006290B3 /* MNFoldView.m */; };
 		BE2907B01F0CD093006290B3 /* FoldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907AF1F0CD093006290B3 /* FoldModel.m */; };
@@ -30,12 +36,6 @@
 		BE4D686F1F4C269D00F34DC5 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4D68561F4C269D00F34DC5 /* BaiduMapAPI_Search.framework */; };
 		BE4D68701F4C269D00F34DC5 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4D68571F4C269D00F34DC5 /* BaiduMapAPI_Utils.framework */; };
 		BE4D68711F4C269D00F34DC5 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE4D68581F4C269D00F34DC5 /* mapapi.bundle */; };
-		BE4D68721F4C269D00F34DC5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D685B1F4C269D00F34DC5 /* MapViewController.m */; };
-		BE4D68731F4C269D00F34DC5 /* NearbyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D685D1F4C269D00F34DC5 /* NearbyListCell.m */; };
-		BE4D68741F4C269D00F34DC5 /* SDKCityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D685F1F4C269D00F34DC5 /* SDKCityListViewController.m */; };
-		BE4D68751F4C269D00F34DC5 /* SDKPoiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D68611F4C269D00F34DC5 /* SDKPoiModel.m */; };
-		BE4D68761F4C269D00F34DC5 /* SDKResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D68631F4C269D00F34DC5 /* SDKResultTableViewController.m */; };
-		BE4D68771F4C269D00F34DC5 /* SDKSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D68651F4C269D00F34DC5 /* SDKSearchViewController.m */; };
 		BE4D68781F4C269D00F34DC5 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4D68671F4C269D00F34DC5 /* libcrypto.a */; };
 		BE4D68791F4C269D00F34DC5 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4D68681F4C269D00F34DC5 /* libssl.a */; };
 		BE4D687C1F4C27E600F34DC5 /* SDKAboutString.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D687B1F4C27E600F34DC5 /* SDKAboutString.m */; };
@@ -48,10 +48,13 @@
 		BE4D688B1F4C3D9B00F34DC5 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4D688A1F4C3D9B00F34DC5 /* libsqlite3.0.tbd */; };
 		BE4D688D1F4C3DA200F34DC5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4D688C1F4C3DA200F34DC5 /* CoreTelephony.framework */; };
 		BE4D688F1F4C3DAA00F34DC5 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4D688E1F4C3DAA00F34DC5 /* libstdc++.6.0.9.tbd */; };
+		BE674BA41F593C790004D2E1 /* MNPrettyAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE674BA31F593C790004D2E1 /* MNPrettyAvatar.m */; };
 		BE69818A1F39572400FAD3D1 /* AdvertisingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6981891F39572400FAD3D1 /* AdvertisingView.m */; };
 		BE69818D1F3964A700FAD3D1 /* AdvertisingTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69818C1F3964A700FAD3D1 /* AdvertisingTestViewController.m */; };
 		BE69818F1F399A7100FAD3D1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE69818E1F399A7100FAD3D1 /* AVFoundation.framework */; };
 		BE69DCA31F540AC300AD815F /* FlipAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69DCA21F540AC300AD815F /* FlipAnimationViewController.m */; };
+		BE69DCB51F5558F300AD815F /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69DCB41F5558F300AD815F /* LiveViewController.m */; };
+		BE69DCB81F555A1400AD815F /* FMLivePrettyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69DCB71F555A1400AD815F /* FMLivePrettyView.m */; };
 		BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7ED1F02564200465B2B /* LogisticsViewController.m */; };
 		BE69F7F11F02568100465B2B /* FlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F01F02568100465B2B /* FlowView.m */; };
 		BE69F7F41F0256F000465B2B /* FlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE69F7F31F0256F000465B2B /* FlowModel.m */; };
@@ -216,6 +219,18 @@
 		BE019F731F0C8AF2007451B5 /* WLBallTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBallTool.m; sourceTree = "<group>"; };
 		BE019F741F0C8AF2007451B5 /* WLBallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBallView.h; sourceTree = "<group>"; };
 		BE019F751F0C8AF2007451B5 /* WLBallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBallView.m; sourceTree = "<group>"; };
+		BE2723AE1F5CEEC600C13B5A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		BE2723AF1F5CEEC600C13B5A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		BE2723B01F5CEEC600C13B5A /* SDKSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKSearchViewController.h; sourceTree = "<group>"; };
+		BE2723B11F5CEEC600C13B5A /* SDKSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKSearchViewController.m; sourceTree = "<group>"; };
+		BE2723B21F5CEEC600C13B5A /* SDKResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKResultTableViewController.h; sourceTree = "<group>"; };
+		BE2723B31F5CEEC600C13B5A /* SDKResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKResultTableViewController.m; sourceTree = "<group>"; };
+		BE2723B41F5CEEC600C13B5A /* SDKCityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKCityListViewController.h; sourceTree = "<group>"; };
+		BE2723B51F5CEEC600C13B5A /* SDKCityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKCityListViewController.m; sourceTree = "<group>"; };
+		BE2723BA1F5CEED100C13B5A /* NearbyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyListCell.h; sourceTree = "<group>"; };
+		BE2723BB1F5CEED100C13B5A /* NearbyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyListCell.m; sourceTree = "<group>"; };
+		BE2723BD1F5CEF3600C13B5A /* SDKPoiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKPoiModel.h; sourceTree = "<group>"; };
+		BE2723BE1F5CEF3600C13B5A /* SDKPoiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKPoiModel.m; sourceTree = "<group>"; };
 		BE2907A81F0CCCA1006290B3 /* FoldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldViewController.h; sourceTree = "<group>"; };
 		BE2907A91F0CCCA1006290B3 /* FoldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldViewController.m; sourceTree = "<group>"; };
 		BE2907AB1F0CCE40006290B3 /* MNFoldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNFoldView.h; sourceTree = "<group>"; };
@@ -237,18 +252,6 @@
 		BE4D68561F4C269D00F34DC5 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		BE4D68571F4C269D00F34DC5 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
 		BE4D68581F4C269D00F34DC5 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
-		BE4D685A1F4C269D00F34DC5 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		BE4D685B1F4C269D00F34DC5 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		BE4D685C1F4C269D00F34DC5 /* NearbyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyListCell.h; sourceTree = "<group>"; };
-		BE4D685D1F4C269D00F34DC5 /* NearbyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyListCell.m; sourceTree = "<group>"; };
-		BE4D685E1F4C269D00F34DC5 /* SDKCityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKCityListViewController.h; sourceTree = "<group>"; };
-		BE4D685F1F4C269D00F34DC5 /* SDKCityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKCityListViewController.m; sourceTree = "<group>"; };
-		BE4D68601F4C269D00F34DC5 /* SDKPoiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKPoiModel.h; sourceTree = "<group>"; };
-		BE4D68611F4C269D00F34DC5 /* SDKPoiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKPoiModel.m; sourceTree = "<group>"; };
-		BE4D68621F4C269D00F34DC5 /* SDKResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKResultTableViewController.h; sourceTree = "<group>"; };
-		BE4D68631F4C269D00F34DC5 /* SDKResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKResultTableViewController.m; sourceTree = "<group>"; };
-		BE4D68641F4C269D00F34DC5 /* SDKSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKSearchViewController.h; sourceTree = "<group>"; };
-		BE4D68651F4C269D00F34DC5 /* SDKSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKSearchViewController.m; sourceTree = "<group>"; };
 		BE4D68671F4C269D00F34DC5 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		BE4D68681F4C269D00F34DC5 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 		BE4D687A1F4C27E600F34DC5 /* SDKAboutString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKAboutString.h; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 		BE4D688A1F4C3D9B00F34DC5 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		BE4D688C1F4C3DA200F34DC5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BE4D688E1F4C3DAA00F34DC5 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		BE674BA21F593C790004D2E1 /* MNPrettyAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNPrettyAvatar.h; sourceTree = "<group>"; };
+		BE674BA31F593C790004D2E1 /* MNPrettyAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNPrettyAvatar.m; sourceTree = "<group>"; };
 		BE6981881F39572400FAD3D1 /* AdvertisingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingView.h; sourceTree = "<group>"; };
 		BE6981891F39572400FAD3D1 /* AdvertisingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingView.m; sourceTree = "<group>"; };
 		BE69818B1F3964A700FAD3D1 /* AdvertisingTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingTestViewController.h; sourceTree = "<group>"; };
@@ -270,6 +275,10 @@
 		BE69818E1F399A7100FAD3D1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BE69DCA11F540AC300AD815F /* FlipAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipAnimationViewController.h; sourceTree = "<group>"; };
 		BE69DCA21F540AC300AD815F /* FlipAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipAnimationViewController.m; sourceTree = "<group>"; };
+		BE69DCB31F5558F300AD815F /* LiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveViewController.h; sourceTree = "<group>"; };
+		BE69DCB41F5558F300AD815F /* LiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveViewController.m; sourceTree = "<group>"; };
+		BE69DCB61F555A1400AD815F /* FMLivePrettyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMLivePrettyView.h; sourceTree = "<group>"; };
+		BE69DCB71F555A1400AD815F /* FMLivePrettyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMLivePrettyView.m; sourceTree = "<group>"; };
 		BE69F7EC1F02564200465B2B /* LogisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogisticsViewController.h; sourceTree = "<group>"; };
 		BE69F7ED1F02564200465B2B /* LogisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogisticsViewController.m; sourceTree = "<group>"; };
 		BE69F7EF1F02568100465B2B /* FlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowView.h; sourceTree = "<group>"; };
@@ -694,18 +703,18 @@
 			children = (
 				BE4D684E1F4C269D00F34DC5 /* AddressViewController.h */,
 				BE4D684F1F4C269D00F34DC5 /* AddressViewController.m */,
-				BE4D685A1F4C269D00F34DC5 /* MapViewController.h */,
-				BE4D685B1F4C269D00F34DC5 /* MapViewController.m */,
-				BE4D685C1F4C269D00F34DC5 /* NearbyListCell.h */,
-				BE4D685D1F4C269D00F34DC5 /* NearbyListCell.m */,
-				BE4D685E1F4C269D00F34DC5 /* SDKCityListViewController.h */,
-				BE4D685F1F4C269D00F34DC5 /* SDKCityListViewController.m */,
-				BE4D68601F4C269D00F34DC5 /* SDKPoiModel.h */,
-				BE4D68611F4C269D00F34DC5 /* SDKPoiModel.m */,
-				BE4D68621F4C269D00F34DC5 /* SDKResultTableViewController.h */,
-				BE4D68631F4C269D00F34DC5 /* SDKResultTableViewController.m */,
-				BE4D68641F4C269D00F34DC5 /* SDKSearchViewController.h */,
-				BE4D68651F4C269D00F34DC5 /* SDKSearchViewController.m */,
+				BE2723AE1F5CEEC600C13B5A /* MapViewController.h */,
+				BE2723AF1F5CEEC600C13B5A /* MapViewController.m */,
+				BE2723B01F5CEEC600C13B5A /* SDKSearchViewController.h */,
+				BE2723B11F5CEEC600C13B5A /* SDKSearchViewController.m */,
+				BE2723B21F5CEEC600C13B5A /* SDKResultTableViewController.h */,
+				BE2723B31F5CEEC600C13B5A /* SDKResultTableViewController.m */,
+				BE2723B41F5CEEC600C13B5A /* SDKCityListViewController.h */,
+				BE2723B51F5CEEC600C13B5A /* SDKCityListViewController.m */,
+				BE2723BA1F5CEED100C13B5A /* NearbyListCell.h */,
+				BE2723BB1F5CEED100C13B5A /* NearbyListCell.m */,
+				BE2723BD1F5CEF3600C13B5A /* SDKPoiModel.h */,
+				BE2723BE1F5CEF3600C13B5A /* SDKPoiModel.m */,
 			);
 			name = Maps;
 			path = BaiduMap_IOSSDK_v3.3.4_Lib/Maps;
@@ -738,6 +747,19 @@
 				BE69DCA21F540AC300AD815F /* FlipAnimationViewController.m */,
 			);
 			path = "翻牌动画";
+			sourceTree = "<group>";
+		};
+		BE69DCA41F55496500AD815F /* 直播 */ = {
+			isa = PBXGroup;
+			children = (
+				BE69DCB31F5558F300AD815F /* LiveViewController.h */,
+				BE69DCB41F5558F300AD815F /* LiveViewController.m */,
+				BE69DCB61F555A1400AD815F /* FMLivePrettyView.h */,
+				BE69DCB71F555A1400AD815F /* FMLivePrettyView.m */,
+				BE674BA21F593C790004D2E1 /* MNPrettyAvatar.h */,
+				BE674BA31F593C790004D2E1 /* MNPrettyAvatar.m */,
+			);
+			path = "直播";
 			sourceTree = "<group>";
 		};
 		BE69F7EB1F02562100465B2B /* 物流 */ = {
@@ -874,6 +896,8 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEC4F1271F5E42F40014F449 /* 荷包 */,
+				BE69DCA41F55496500AD815F /* 直播 */,
 				BE69DCA01F540A7C00AD815F /* 翻牌动画 */,
 				BE7488E71F53F1CE00A7681C /* 按钮点击水波效果 */,
 				BE4D684D1F4C269D00F34DC5 /* 饿了么地图 */,
@@ -1322,6 +1346,13 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		BEC4F1271F5E42F40014F449 /* 荷包 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "荷包";
+			sourceTree = "<group>";
+		};
 		BEDCF6D71F0DE1FF00F3230D /* QQ分组 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1490,11 +1521,13 @@
 			files = (
 				BEC1792A1F00DCFA00CAE694 /* SDWebImageDecoder.m in Sources */,
 				BEC178D81F00DCFA00CAE694 /* UIView+CustomView.m in Sources */,
+				BE674BA41F593C790004D2E1 /* MNPrettyAvatar.m in Sources */,
 				BEC179101F00DCFA00CAE694 /* NSObject+MJKeyValue.m in Sources */,
 				BEC178F61F00DCFA00CAE694 /* SDKAuthJudge.m in Sources */,
 				BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */,
 				BE019F641F0BA1E9007451B5 /* SpringViewController.m in Sources */,
 				BEC178D61F00DCFA00CAE694 /* NSArray+Log.m in Sources */,
+				BE69DCB81F555A1400AD815F /* FMLivePrettyView.m in Sources */,
 				BEC179291F00DCFA00CAE694 /* SDWebImageCompat.m in Sources */,
 				BEC178D11F00DCFA00CAE694 /* BaseTableViewCell.m in Sources */,
 				BEC179141F00DCFA00CAE694 /* MJRefreshBackFooter.m in Sources */,
@@ -1511,6 +1544,7 @@
 				BEC32B0C1F3DAF69003A062F /* MASConstraint.m in Sources */,
 				BEC179401F00DDBA00CAE694 /* ThreeViewController.m in Sources */,
 				BEC32B0F1F3DAF69003A062F /* MASViewAttribute.m in Sources */,
+				BE2723B81F5CEEC600C13B5A /* SDKResultTableViewController.m in Sources */,
 				BEC1793A1F00DDAB00CAE694 /* OneViewController.m in Sources */,
 				BEC178EB1F00DCFA00CAE694 /* SDKnetwork.m in Sources */,
 				BEC178F11F00DCFA00CAE694 /* UIImageView+AFNetworking.m in Sources */,
@@ -1524,7 +1558,6 @@
 				BEC179081F00DCFA00CAE694 /* MJDictionaryCache.m in Sources */,
 				BEC1791C1F00DCFA00CAE694 /* MJRefreshBackNormalFooter.m in Sources */,
 				BEC178FB1F00DCFA00CAE694 /* GTMBase64.m in Sources */,
-				BE4D68771F4C269D00F34DC5 /* SDKSearchViewController.m in Sources */,
 				BE2907AD1F0CCE40006290B3 /* MNFoldView.m in Sources */,
 				BEC1791F1F00DCFA00CAE694 /* MJRefreshNormalHeader.m in Sources */,
 				BEC1791A1F00DCFA00CAE694 /* MJRefreshAutoStateFooter.m in Sources */,
@@ -1540,12 +1573,12 @@
 				BEC32B131F3DAF69003A062F /* View+MASAdditions.m in Sources */,
 				BEC178D91F00DCFA00CAE694 /* AdvertisementView.m in Sources */,
 				BE2907AA1F0CCCA1006290B3 /* FoldViewController.m in Sources */,
+				BE2723BF1F5CEF3600C13B5A /* SDKPoiModel.m in Sources */,
 				BEC178D31F00DCFA00CAE694 /* SDKBaseViewController.m in Sources */,
 				BEC1792E1F00DCFA00CAE694 /* SDWebImagePrefetcher.m in Sources */,
 				BEC179121F00DCFA00CAE694 /* NSString+MJExtension.m in Sources */,
 				BEC178F81F00DCFA00CAE694 /* UIViewController+KeyboardCorver.m in Sources */,
 				BEC177D81F00DC6800CAE694 /* ViewController.m in Sources */,
-				BE4D68731F4C269D00F34DC5 /* NearbyListCell.m in Sources */,
 				BEC179321F00DCFA00CAE694 /* UIImage+WebP.m in Sources */,
 				BEC179221F00DCFA00CAE694 /* MJRefreshConst.m in Sources */,
 				BEC1792D1F00DCFA00CAE694 /* SDWebImageManager.m in Sources */,
@@ -1571,6 +1604,7 @@
 				BEC1791B1F00DCFA00CAE694 /* MJRefreshBackGifFooter.m in Sources */,
 				BEC178E21F00DCFA00CAE694 /* AFHTTPRequestOperationManager.m in Sources */,
 				BEC178EA1F00DCFA00CAE694 /* SDKCommonService.m in Sources */,
+				BE69DCB51F5558F300AD815F /* LiveViewController.m in Sources */,
 				BEC1790F1F00DCFA00CAE694 /* NSObject+MJCoding.m in Sources */,
 				BEC1790E1F00DCFA00CAE694 /* NSObject+MJClass.m in Sources */,
 				BEC32B101F3DAF69003A062F /* MASViewConstraint.m in Sources */,
@@ -1578,9 +1612,9 @@
 				BEC179311F00DCFA00CAE694 /* UIImage+MultiFormat.m in Sources */,
 				BEC178DB1F00DCFA00CAE694 /* PresentAnimationView.m in Sources */,
 				BEC178E11F00DCFA00CAE694 /* AFHTTPRequestOperation.m in Sources */,
+				BE2723B71F5CEEC600C13B5A /* SDKSearchViewController.m in Sources */,
 				BE69DCA31F540AC300AD815F /* FlipAnimationViewController.m in Sources */,
 				BEC178F71F00DCFA00CAE694 /* SDKFormatJudge.m in Sources */,
-				BE4D68761F4C269D00F34DC5 /* SDKResultTableViewController.m in Sources */,
 				BEC179241F00DCFA00CAE694 /* UIScrollView+MJRefresh.m in Sources */,
 				BE69818A1F39572400FAD3D1 /* AdvertisingView.m in Sources */,
 				BEC178E91F00DCFA00CAE694 /* AFURLSessionManager.m in Sources */,
@@ -1591,7 +1625,6 @@
 				BEC179071F00DCFA00CAE694 /* MBProgressHUD.m in Sources */,
 				BEC1790A1F00DCFA00CAE694 /* MJFoundation.m in Sources */,
 				BEC178D41F00DCFA00CAE694 /* SDKNavigationController.m in Sources */,
-				BE4D68721F4C269D00F34DC5 /* MapViewController.m in Sources */,
 				BEC179231F00DCFA00CAE694 /* UIScrollView+MJExtension.m in Sources */,
 				BEC179301F00DCFA00CAE694 /* UIImage+GIF.m in Sources */,
 				BEC179431F00DDC200CAE694 /* FourViewController.m in Sources */,
@@ -1599,10 +1632,12 @@
 				BEFFBFF31F02331100A967FD /* RightLoadModel.m in Sources */,
 				BEC178E41F00DCFA00CAE694 /* AFNetworkReachabilityManager.m in Sources */,
 				BEC178FC1F00DCFA00CAE694 /* customHUD.m in Sources */,
+				BE2723BC1F5CEED100C13B5A /* NearbyListCell.m in Sources */,
 				BEC178E81F00DCFA00CAE694 /* AFURLResponseSerialization.m in Sources */,
 				BEC179351F00DCFA00CAE694 /* UIView+WebCacheOperation.m in Sources */,
 				BEC178F91F00DCFA00CAE694 /* Base64.m in Sources */,
 				BEC178E71F00DCFA00CAE694 /* AFURLRequestSerialization.m in Sources */,
+				BE2723B91F5CEEC600C13B5A /* SDKCityListViewController.m in Sources */,
 				BEC179111F00DCFA00CAE694 /* NSObject+MJProperty.m in Sources */,
 				BEC178EF1F00DCFA00CAE694 /* UIAlertView+AFNetworking.m in Sources */,
 				BEF904011F0108980061F3EC /* ControllerModel.m in Sources */,
@@ -1613,7 +1648,6 @@
 				BEC178F31F00DCFA00CAE694 /* UIRefreshControl+AFNetworking.m in Sources */,
 				BEC1790B1F00DCFA00CAE694 /* MJProperty.m in Sources */,
 				BEEA697B1F18CF1F00C9F990 /* RSAEncrypt.m in Sources */,
-				BE4D68751F4C269D00F34DC5 /* SDKPoiModel.m in Sources */,
 				BEF905201F01F3900061F3EC /* PWDView.m in Sources */,
 				BE9D21431F034DE90095720B /* KTVCaptionViewController.m in Sources */,
 				BEC178F21F00DCFA00CAE694 /* UIProgressView+AFNetworking.m in Sources */,
@@ -1624,7 +1658,6 @@
 				BEC178EC1F00DCFA00CAE694 /* SDKNetworkState.m in Sources */,
 				BE69818D1F3964A700FAD3D1 /* AdvertisingTestViewController.m in Sources */,
 				BEC179201F00DCFA00CAE694 /* MJRefreshStateHeader.m in Sources */,
-				BE4D68741F4C269D00F34DC5 /* SDKCityListViewController.m in Sources */,
 				BEC179091F00DCFA00CAE694 /* MJExtensionConst.m in Sources */,
 				BE4386241F0F6B410014593F /* MNSolidButton.m in Sources */,
 				BE019F771F0C8AF2007451B5 /* WLBallView.m in Sources */,
@@ -1638,6 +1671,7 @@
 				BEDB71C71F20484400E20AFC /* MNAlertView.m in Sources */,
 				BE4D68691F4C269D00F34DC5 /* AddressViewController.m in Sources */,
 				BEC178D51F00DCFA00CAE694 /* SDKProjectHeader.m in Sources */,
+				BE2723B61F5CEEC600C13B5A /* MapViewController.m in Sources */,
 				BE69F7F11F02568100465B2B /* FlowView.m in Sources */,
 				BE4D687C1F4C27E600F34DC5 /* SDKAboutString.m in Sources */,
 			);

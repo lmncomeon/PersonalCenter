@@ -21,7 +21,7 @@ static NSString *const cellID = @"UITableViewCellID";
 
 - (UITableView *)mainTableView {
     if (!_mainTableView) {
-        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, (kScreenHeight - 64)) style:UITableViewStylePlain];
+        _mainTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _mainTableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         _mainTableView.dataSource      = self;
         _mainTableView.delegate  = self;
