@@ -24,6 +24,8 @@
 		BE2907AA1F0CCCA1006290B3 /* FoldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907A91F0CCCA1006290B3 /* FoldViewController.m */; };
 		BE2907AD1F0CCE40006290B3 /* MNFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907AC1F0CCE40006290B3 /* MNFoldView.m */; };
 		BE2907B01F0CD093006290B3 /* FoldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907AF1F0CD093006290B3 /* FoldModel.m */; };
+		BE36ABF21F5FD26C0051F47C /* MNStatusTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE36ABF11F5FD26C0051F47C /* MNStatusTipView.m */; };
+		BE36ABF41F5FE2800051F47C /* PouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE36ABF31F5FE2800051F47C /* PouchViewController.xib */; };
 		BE3A0F581F4FC3C300A8B5C9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A0F571F4FC3C300A8B5C9 /* Social.framework */; };
 		BE4386241F0F6B410014593F /* MNSolidButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4386231F0F6B410014593F /* MNSolidButton.m */; };
 		BE4386281F0F6B7D0014593F /* ButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4386271F0F6B7D0014593F /* ButtonsViewController.m */; };
@@ -239,6 +241,9 @@
 		BE2907AC1F0CCE40006290B3 /* MNFoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNFoldView.m; sourceTree = "<group>"; };
 		BE2907AE1F0CD093006290B3 /* FoldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldModel.h; sourceTree = "<group>"; };
 		BE2907AF1F0CD093006290B3 /* FoldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldModel.m; sourceTree = "<group>"; };
+		BE36ABF01F5FD26C0051F47C /* MNStatusTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNStatusTipView.h; path = "../Controllers/荷包/MNStatusTipView.h"; sourceTree = "<group>"; };
+		BE36ABF11F5FD26C0051F47C /* MNStatusTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNStatusTipView.m; path = "../Controllers/荷包/MNStatusTipView.m"; sourceTree = "<group>"; };
+		BE36ABF31F5FE2800051F47C /* PouchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PouchViewController.xib; sourceTree = "<group>"; };
 		BE3A0F571F4FC3C300A8B5C9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		BE4386221F0F6B410014593F /* MNSolidButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNSolidButton.h; sourceTree = "<group>"; };
 		BE4386231F0F6B410014593F /* MNSolidButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNSolidButton.m; sourceTree = "<group>"; };
@@ -940,6 +945,8 @@
 				BEC178011F00DCFA00CAE694 /* AdvertisementView.m */,
 				BEDB71C51F20484400E20AFC /* MNAlertView.h */,
 				BEDB71C61F20484400E20AFC /* MNAlertView.m */,
+				BE36ABF01F5FD26C0051F47C /* MNStatusTipView.h */,
+				BE36ABF11F5FD26C0051F47C /* MNStatusTipView.m */,
 				BEC178021F00DCFA00CAE694 /* MNTipView.h */,
 				BEC178031F00DCFA00CAE694 /* MNTipView.m */,
 				BEC178041F00DCFA00CAE694 /* PresentAnimationView.h */,
@@ -1357,6 +1364,7 @@
 			children = (
 				BEC4F1281F5E43A60014F449 /* PouchViewController.h */,
 				BEC4F1291F5E43A60014F449 /* PouchViewController.m */,
+				BE36ABF31F5FE2800051F47C /* PouchViewController.xib */,
 			);
 			path = "荷包";
 			sourceTree = "<group>";
@@ -1509,6 +1517,7 @@
 				BEC179061F00DCFA00CAE694 /* common-hud9.png in Resources */,
 				BEEA697F1F18D61F00C9F990 /* rsa_public_key.der in Resources */,
 				BE019F6E1F0C8AE9007451B5 /* 超级球.png in Resources */,
+				BE36ABF41F5FE2800051F47C /* PouchViewController.xib in Resources */,
 				BEC179031F00DCFA00CAE694 /* common-hud6.png in Resources */,
 				BEC178FF1F00DCFA00CAE694 /* common-hud2.png in Resources */,
 				BE019F6F1F0C8AE9007451B5 /* 高级球.png in Resources */,
@@ -1612,6 +1621,7 @@
 				BEC178F51F00DCFA00CAE694 /* SDKAboutText.m in Sources */,
 				BEC179151F00DCFA00CAE694 /* MJRefreshComponent.m in Sources */,
 				BEC1791B1F00DCFA00CAE694 /* MJRefreshBackGifFooter.m in Sources */,
+				BE36ABF21F5FD26C0051F47C /* MNStatusTipView.m in Sources */,
 				BEC178E21F00DCFA00CAE694 /* AFHTTPRequestOperationManager.m in Sources */,
 				BEC178EA1F00DCFA00CAE694 /* SDKCommonService.m in Sources */,
 				BE69DCB51F5558F300AD815F /* LiveViewController.m in Sources */,
