@@ -20,6 +20,8 @@
 
 @end
 
+#define HEIGHTIPHONE [UIScreen mainScreen].bounds.size.height
+
 @implementation OneViewController
 
 - (UITableView *)mainTableView {
@@ -159,6 +161,7 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"翻牌动画" className:@"FlipAnimationViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"直播" className:@"LiveViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"荷包动画集合" className:@"PouchViewController"]];
+        [_dataList addObject:[ControllerModel modelWithTitle:@"账户" className:@"FMAccountDetailViewController"]];
         
     }
     return _dataList;

@@ -15,6 +15,12 @@
 		BE019F701F0C8AE9007451B5 /* 精灵球.png in Resources */ = {isa = PBXBuildFile; fileRef = BE019F6C1F0C8AE9007451B5 /* 精灵球.png */; };
 		BE019F761F0C8AF2007451B5 /* WLBallTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BE019F731F0C8AF2007451B5 /* WLBallTool.m */; };
 		BE019F771F0C8AF2007451B5 /* WLBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE019F751F0C8AF2007451B5 /* WLBallView.m */; };
+		BE1EEAB41F6A197100F1BFEB /* FMIncomeOrConsumptionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1EEAB31F6A197100F1BFEB /* FMIncomeOrConsumptionDetailViewController.m */; };
+		BE1EEAB71F6A1D7100F1BFEB /* FMDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1EEAB61F6A1D7100F1BFEB /* FMDetailModel.m */; };
+		BE1EEAB91F6A1E8900F1BFEB /* AccountIncome.json in Resources */ = {isa = PBXBuildFile; fileRef = BE1EEAB81F6A1E8900F1BFEB /* AccountIncome.json */; };
+		BE1EEABB1F6A1EA000F1BFEB /* AccountConsumption.json in Resources */ = {isa = PBXBuildFile; fileRef = BE1EEABA1F6A1EA000F1BFEB /* AccountConsumption.json */; };
+		BE1EEABE1F6A5C4B00F1BFEB /* FMIncomeOrConsumptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1EEABD1F6A5C4B00F1BFEB /* FMIncomeOrConsumptionCell.m */; };
+		BE1EEAC11F6B681200F1BFEB /* SDKCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1EEAC01F6B681200F1BFEB /* SDKCommonTools.m */; };
 		BE2723B61F5CEEC600C13B5A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723AF1F5CEEC600C13B5A /* MapViewController.m */; };
 		BE2723B71F5CEEC600C13B5A /* SDKSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723B11F5CEEC600C13B5A /* SDKSearchViewController.m */; };
 		BE2723B81F5CEEC600C13B5A /* SDKResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723B31F5CEEC600C13B5A /* SDKResultTableViewController.m */; };
@@ -24,6 +30,8 @@
 		BE2907AA1F0CCCA1006290B3 /* FoldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907A91F0CCCA1006290B3 /* FoldViewController.m */; };
 		BE2907AD1F0CCE40006290B3 /* MNFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907AC1F0CCE40006290B3 /* MNFoldView.m */; };
 		BE2907B01F0CD093006290B3 /* FoldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2907AF1F0CD093006290B3 /* FoldModel.m */; };
+		BE2BED641F68D85F00BC0668 /* FMRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2BED631F68D85F00BC0668 /* FMRechargeViewController.m */; };
+		BE2BED671F690CAF00BC0668 /* FMRechargeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2BED661F690CAF00BC0668 /* FMRechargeCell.m */; };
 		BE36ABF21F5FD26C0051F47C /* MNStatusTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE36ABF11F5FD26C0051F47C /* MNStatusTipView.m */; };
 		BE36ABF41F5FE2800051F47C /* PouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE36ABF31F5FE2800051F47C /* PouchViewController.xib */; };
 		BE3A0F581F4FC3C300A8B5C9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3A0F571F4FC3C300A8B5C9 /* Social.framework */; };
@@ -192,6 +200,8 @@
 		BEC32B141F3DAF69003A062F /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC32B091F3DAF69003A062F /* ViewController+MASAdditions.m */; };
 		BEC4F12A1F5E43A60014F449 /* PouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC4F1291F5E43A60014F449 /* PouchViewController.m */; };
 		BEC4F12C1F5E46AE0014F449 /* CityList.json in Resources */ = {isa = PBXBuildFile; fileRef = BEC4F12B1F5E46AE0014F449 /* CityList.json */; };
+		BECEB5421F677CF4006DD179 /* FMAccountDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BECEB5411F677CF4006DD179 /* FMAccountDetailViewController.m */; };
+		BECEB54D1F67BC39006DD179 /* FMAccountDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BECEB54C1F67BC39006DD179 /* FMAccountDetailCell.m */; };
 		BEDB71C71F20484400E20AFC /* MNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDB71C61F20484400E20AFC /* MNAlertView.m */; };
 		BEDCF6D61F0DDCC400F3230D /* OrderFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6D51F0DDCC400F3230D /* OrderFoldView.m */; };
 		BEDCF6DA1F0DE23300F3230D /* QQGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDCF6D91F0DE23300F3230D /* QQGroupViewController.m */; };
@@ -223,6 +233,16 @@
 		BE019F731F0C8AF2007451B5 /* WLBallTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBallTool.m; sourceTree = "<group>"; };
 		BE019F741F0C8AF2007451B5 /* WLBallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBallView.h; sourceTree = "<group>"; };
 		BE019F751F0C8AF2007451B5 /* WLBallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBallView.m; sourceTree = "<group>"; };
+		BE1EEAB21F6A197100F1BFEB /* FMIncomeOrConsumptionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMIncomeOrConsumptionDetailViewController.h; sourceTree = "<group>"; };
+		BE1EEAB31F6A197100F1BFEB /* FMIncomeOrConsumptionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMIncomeOrConsumptionDetailViewController.m; sourceTree = "<group>"; };
+		BE1EEAB51F6A1D7100F1BFEB /* FMDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDetailModel.h; sourceTree = "<group>"; };
+		BE1EEAB61F6A1D7100F1BFEB /* FMDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDetailModel.m; sourceTree = "<group>"; };
+		BE1EEAB81F6A1E8900F1BFEB /* AccountIncome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AccountIncome.json; sourceTree = "<group>"; };
+		BE1EEABA1F6A1EA000F1BFEB /* AccountConsumption.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AccountConsumption.json; sourceTree = "<group>"; };
+		BE1EEABC1F6A5C4B00F1BFEB /* FMIncomeOrConsumptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMIncomeOrConsumptionCell.h; sourceTree = "<group>"; };
+		BE1EEABD1F6A5C4B00F1BFEB /* FMIncomeOrConsumptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMIncomeOrConsumptionCell.m; sourceTree = "<group>"; };
+		BE1EEABF1F6B681200F1BFEB /* SDKCommonTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKCommonTools.h; sourceTree = "<group>"; };
+		BE1EEAC01F6B681200F1BFEB /* SDKCommonTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKCommonTools.m; sourceTree = "<group>"; };
 		BE2723AE1F5CEEC600C13B5A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		BE2723AF1F5CEEC600C13B5A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		BE2723B01F5CEEC600C13B5A /* SDKSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKSearchViewController.h; sourceTree = "<group>"; };
@@ -241,6 +261,10 @@
 		BE2907AC1F0CCE40006290B3 /* MNFoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNFoldView.m; sourceTree = "<group>"; };
 		BE2907AE1F0CD093006290B3 /* FoldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldModel.h; sourceTree = "<group>"; };
 		BE2907AF1F0CD093006290B3 /* FoldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldModel.m; sourceTree = "<group>"; };
+		BE2BED621F68D85F00BC0668 /* FMRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRechargeViewController.h; sourceTree = "<group>"; };
+		BE2BED631F68D85F00BC0668 /* FMRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRechargeViewController.m; sourceTree = "<group>"; };
+		BE2BED651F690CAF00BC0668 /* FMRechargeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMRechargeCell.h; sourceTree = "<group>"; };
+		BE2BED661F690CAF00BC0668 /* FMRechargeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMRechargeCell.m; sourceTree = "<group>"; };
 		BE36ABF01F5FD26C0051F47C /* MNStatusTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNStatusTipView.h; path = "../Controllers/荷包/MNStatusTipView.h"; sourceTree = "<group>"; };
 		BE36ABF11F5FD26C0051F47C /* MNStatusTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNStatusTipView.m; path = "../Controllers/荷包/MNStatusTipView.m"; sourceTree = "<group>"; };
 		BE36ABF31F5FE2800051F47C /* PouchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PouchViewController.xib; sourceTree = "<group>"; };
@@ -554,6 +578,10 @@
 		BEC4F1281F5E43A60014F449 /* PouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PouchViewController.h; sourceTree = "<group>"; };
 		BEC4F1291F5E43A60014F449 /* PouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PouchViewController.m; sourceTree = "<group>"; };
 		BEC4F12B1F5E46AE0014F449 /* CityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityList.json; sourceTree = "<group>"; };
+		BECEB5401F677CF4006DD179 /* FMAccountDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMAccountDetailViewController.h; sourceTree = "<group>"; };
+		BECEB5411F677CF4006DD179 /* FMAccountDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMAccountDetailViewController.m; sourceTree = "<group>"; };
+		BECEB54B1F67BC39006DD179 /* FMAccountDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMAccountDetailCell.h; sourceTree = "<group>"; };
+		BECEB54C1F67BC39006DD179 /* FMAccountDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMAccountDetailCell.m; sourceTree = "<group>"; };
 		BEDB71C51F20484400E20AFC /* MNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNAlertView.h; sourceTree = "<group>"; };
 		BEDB71C61F20484400E20AFC /* MNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNAlertView.m; sourceTree = "<group>"; };
 		BEDCF6D41F0DDCC400F3230D /* OrderFoldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderFoldView.h; sourceTree = "<group>"; };
@@ -907,6 +935,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BECEB53F1F677CCB006DD179 /* 账户 */,
 				BEC4F1271F5E42F40014F449 /* 荷包 */,
 				BE69DCA41F55496500AD815F /* 直播 */,
 				BE69DCA01F540A7C00AD815F /* 翻牌动画 */,
@@ -1058,6 +1087,8 @@
 				BEC178431F00DCFA00CAE694 /* SDKAuthJudge.m */,
 				BEC178441F00DCFA00CAE694 /* SDKFormatJudge.h */,
 				BEC178451F00DCFA00CAE694 /* SDKFormatJudge.m */,
+				BE1EEABF1F6B681200F1BFEB /* SDKCommonTools.h */,
+				BE1EEAC01F6B681200F1BFEB /* SDKCommonTools.m */,
 			);
 			path = PublicTool;
 			sourceTree = "<group>";
@@ -1369,6 +1400,29 @@
 			path = "荷包";
 			sourceTree = "<group>";
 		};
+		BECEB53F1F677CCB006DD179 /* 账户 */ = {
+			isa = PBXGroup;
+			children = (
+				BECEB5401F677CF4006DD179 /* FMAccountDetailViewController.h */,
+				BECEB5411F677CF4006DD179 /* FMAccountDetailViewController.m */,
+				BECEB54B1F67BC39006DD179 /* FMAccountDetailCell.h */,
+				BECEB54C1F67BC39006DD179 /* FMAccountDetailCell.m */,
+				BE2BED621F68D85F00BC0668 /* FMRechargeViewController.h */,
+				BE2BED631F68D85F00BC0668 /* FMRechargeViewController.m */,
+				BE2BED651F690CAF00BC0668 /* FMRechargeCell.h */,
+				BE2BED661F690CAF00BC0668 /* FMRechargeCell.m */,
+				BE1EEAB21F6A197100F1BFEB /* FMIncomeOrConsumptionDetailViewController.h */,
+				BE1EEAB31F6A197100F1BFEB /* FMIncomeOrConsumptionDetailViewController.m */,
+				BE1EEABC1F6A5C4B00F1BFEB /* FMIncomeOrConsumptionCell.h */,
+				BE1EEABD1F6A5C4B00F1BFEB /* FMIncomeOrConsumptionCell.m */,
+				BE1EEAB51F6A1D7100F1BFEB /* FMDetailModel.h */,
+				BE1EEAB61F6A1D7100F1BFEB /* FMDetailModel.m */,
+				BE1EEAB81F6A1E8900F1BFEB /* AccountIncome.json */,
+				BE1EEABA1F6A1EA000F1BFEB /* AccountConsumption.json */,
+			);
+			path = "账户";
+			sourceTree = "<group>";
+		};
 		BEDCF6D71F0DE1FF00F3230D /* QQ分组 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1506,6 +1560,7 @@
 				BEC179021F00DCFA00CAE694 /* common-hud5.png in Resources */,
 				BE4D68711F4C269D00F34DC5 /* mapapi.bundle in Resources */,
 				BEC177E01F00DC6800CAE694 /* LaunchScreen.storyboard in Resources */,
+				BE1EEABB1F6A1EA000F1BFEB /* AccountConsumption.json in Resources */,
 				BEC179211F00DCFA00CAE694 /* MJRefresh.bundle in Resources */,
 				BEC177DD1F00DC6800CAE694 /* Assets.xcassets in Resources */,
 				BEC178FD1F00DCFA00CAE694 /* common-hud1.png in Resources */,
@@ -1516,6 +1571,7 @@
 				BEC179041F00DCFA00CAE694 /* common-hud7.png in Resources */,
 				BEC179061F00DCFA00CAE694 /* common-hud9.png in Resources */,
 				BEEA697F1F18D61F00C9F990 /* rsa_public_key.der in Resources */,
+				BE1EEAB91F6A1E8900F1BFEB /* AccountIncome.json in Resources */,
 				BE019F6E1F0C8AE9007451B5 /* 超级球.png in Resources */,
 				BE36ABF41F5FE2800051F47C /* PouchViewController.xib in Resources */,
 				BEC179031F00DCFA00CAE694 /* common-hud6.png in Resources */,
@@ -1540,6 +1596,7 @@
 				BEC1792A1F00DCFA00CAE694 /* SDWebImageDecoder.m in Sources */,
 				BEC178D81F00DCFA00CAE694 /* UIView+CustomView.m in Sources */,
 				BE674BA41F593C790004D2E1 /* MNPrettyAvatar.m in Sources */,
+				BECEB54D1F67BC39006DD179 /* FMAccountDetailCell.m in Sources */,
 				BEC179101F00DCFA00CAE694 /* NSObject+MJKeyValue.m in Sources */,
 				BEC178F61F00DCFA00CAE694 /* SDKAuthJudge.m in Sources */,
 				BE69F7EE1F02564200465B2B /* LogisticsViewController.m in Sources */,
@@ -1547,6 +1604,7 @@
 				BEC178D61F00DCFA00CAE694 /* NSArray+Log.m in Sources */,
 				BE69DCB81F555A1400AD815F /* FMLivePrettyView.m in Sources */,
 				BEC179291F00DCFA00CAE694 /* SDWebImageCompat.m in Sources */,
+				BE1EEABE1F6A5C4B00F1BFEB /* FMIncomeOrConsumptionCell.m in Sources */,
 				BEC178D11F00DCFA00CAE694 /* BaseTableViewCell.m in Sources */,
 				BEC179141F00DCFA00CAE694 /* MJRefreshBackFooter.m in Sources */,
 				BEC1791D1F00DCFA00CAE694 /* MJRefreshBackStateFooter.m in Sources */,
@@ -1569,6 +1627,7 @@
 				BEC179271F00DCFA00CAE694 /* NSData+ImageContentType.m in Sources */,
 				BEC179191F00DCFA00CAE694 /* MJRefreshAutoNormalFooter.m in Sources */,
 				BE7488ED1F53F22900A7681C /* MNWaterBtn.m in Sources */,
+				BE1EEAB41F6A197100F1BFEB /* FMIncomeOrConsumptionDetailViewController.m in Sources */,
 				BEC179131F00DCFA00CAE694 /* MJRefreshAutoFooter.m in Sources */,
 				BEC1790D1F00DCFA00CAE694 /* MJPropertyType.m in Sources */,
 				BEDCF6DD1F0DE30A00F3230D /* QQGroupModel.m in Sources */,
@@ -1577,6 +1636,7 @@
 				BEC1791C1F00DCFA00CAE694 /* MJRefreshBackNormalFooter.m in Sources */,
 				BEC178FB1F00DCFA00CAE694 /* GTMBase64.m in Sources */,
 				BE2907AD1F0CCE40006290B3 /* MNFoldView.m in Sources */,
+				BE2BED671F690CAF00BC0668 /* FMRechargeCell.m in Sources */,
 				BEC1791F1F00DCFA00CAE694 /* MJRefreshNormalHeader.m in Sources */,
 				BEC1791A1F00DCFA00CAE694 /* MJRefreshAutoStateFooter.m in Sources */,
 				BEC178F41F00DCFA00CAE694 /* UIWebView+AFNetworking.m in Sources */,
@@ -1593,6 +1653,7 @@
 				BE2907AA1F0CCCA1006290B3 /* FoldViewController.m in Sources */,
 				BE2723BF1F5CEF3600C13B5A /* SDKPoiModel.m in Sources */,
 				BEC178D31F00DCFA00CAE694 /* SDKBaseViewController.m in Sources */,
+				BECEB5421F677CF4006DD179 /* FMAccountDetailViewController.m in Sources */,
 				BEC1792E1F00DCFA00CAE694 /* SDWebImagePrefetcher.m in Sources */,
 				BEC179121F00DCFA00CAE694 /* NSString+MJExtension.m in Sources */,
 				BEC178F81F00DCFA00CAE694 /* UIViewController+KeyboardCorver.m in Sources */,
@@ -1602,6 +1663,7 @@
 				BEC1792D1F00DCFA00CAE694 /* SDWebImageManager.m in Sources */,
 				BE69F7F41F0256F000465B2B /* FlowModel.m in Sources */,
 				BEC179251F00DCFA00CAE694 /* UIView+MJExtension.m in Sources */,
+				BE1EEAB71F6A1D7100F1BFEB /* FMDetailModel.m in Sources */,
 				BEF9051D1F01F37E0061F3EC /* PWDViewController.m in Sources */,
 				BEF904051F01158F0061F3EC /* VisualEffectViewController.m in Sources */,
 				BEFFBFED1F02325300A967FD /* RightLoadView.m in Sources */,
@@ -1641,6 +1703,7 @@
 				BEFFBFF01F02329900A967FD /* RightLoadViewController.m in Sources */,
 				BEC178ED1F00DCFA00CAE694 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BEC179161F00DCFA00CAE694 /* MJRefreshFooter.m in Sources */,
+				BE2BED641F68D85F00BC0668 /* FMRechargeViewController.m in Sources */,
 				BE7488EA1F53F1F100A7681C /* WaterWaveButtonViewController.m in Sources */,
 				BEC179071F00DCFA00CAE694 /* MBProgressHUD.m in Sources */,
 				BEC1790A1F00DCFA00CAE694 /* MJFoundation.m in Sources */,
@@ -1654,6 +1717,7 @@
 				BEC178FC1F00DCFA00CAE694 /* customHUD.m in Sources */,
 				BE2723BC1F5CEED100C13B5A /* NearbyListCell.m in Sources */,
 				BEC178E81F00DCFA00CAE694 /* AFURLResponseSerialization.m in Sources */,
+				BE1EEAC11F6B681200F1BFEB /* SDKCommonTools.m in Sources */,
 				BEC179351F00DCFA00CAE694 /* UIView+WebCacheOperation.m in Sources */,
 				BEC178F91F00DCFA00CAE694 /* Base64.m in Sources */,
 				BEC178E71F00DCFA00CAE694 /* AFURLRequestSerialization.m in Sources */,

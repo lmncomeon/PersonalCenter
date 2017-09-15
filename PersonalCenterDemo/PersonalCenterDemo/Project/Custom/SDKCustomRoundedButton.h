@@ -15,6 +15,9 @@
 
 + (instancetype)roundedBtnWithTitle:(NSString *)title font:(UIFont *)font titleColor:(UIColor *)titleColor backgroundColor:(UIColor *)backgroundColor;
 
+// 自定义圆角
++ (instancetype)customRoundedBtnWithFrame:(CGRect)frame title:(NSString *)title font:(UIFont *)font titleColor:(UIColor *)titleColor backgroundColor:(UIColor *)backgroundColor cornerRadius:(CGFloat)cornerRadius target:(id)target action:(SEL)action;
+
 @end
 
 

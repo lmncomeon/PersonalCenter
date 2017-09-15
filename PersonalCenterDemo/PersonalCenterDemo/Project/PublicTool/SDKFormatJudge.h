@@ -41,11 +41,6 @@
 #pragma mark - 字典转json
 + (NSString*)dictionaryToJson:(NSDictionary *)dic;
 
-#pragma mark - 设置默认提示文字
-+ (NSMutableAttributedString *)setTipTextWithString:(NSString *)string;
-
-+ (UIImage *)stringWithBankCodeImage:(NSString *)bankCode;
-
 // 清除首尾空格
 + (NSString *)deleteWhitespace:(NSString *)str;
 

@@ -1,0 +1,19 @@
+{
+    "data" : [
+              {
+              "date" : "2017-09-01",
+              "list" : [{"giftName" : "么么哒", "giftCount" : "10", "sended" : "派迫妞"},
+                        {"giftName" : "豪华跑车", "giftCount" : "1", "sended" : "晨间少年"},
+                        {"giftName" : "幸运草", "giftCount" : "6", "sended" : "啾咪baby"}
+                        ]
+              },
+              {
+              "date" : "2017-08-31",
+              "list" : [
+                        {"giftName" : "粟米棒", "giftCount" : "10", "sended" : "MC_李俊毅"},
+                        {"giftName" : "爱心", "giftCount" : "60", "sended" : "韩国俊C欧巴"},
+                        {"giftName" : "棒棒糖", "giftCount" : "60", "sended" : "Ann_米轩迷了路"}
+                        ]
+              }
+              ]
+}

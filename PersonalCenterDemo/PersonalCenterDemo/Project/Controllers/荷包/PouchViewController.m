@@ -22,6 +22,7 @@
     [super viewDidLoad];
     
     [self addAnimation];
+
 }
 
 // *********** 提示 ***********
@@ -36,8 +37,6 @@
     MNTipView *tipView = [MNTipView tipViewWithText:@"hello"];
     [tipView tipViewShow];
 }
-
-
 
 
 // ******* 模仿抖音关注效果 *******

@@ -19,12 +19,14 @@
 // tool
 #import "SDKJWTextField.h"
 #import "SDKCustomLabel.h"
+#import "SDKAboutText.h"
+#import "SDKCustomRoundedButton.h"
+#import "SDKLineView.h"
 #import "UIView+CustomView.h"
 #import "UIImage+ColorImage.h"
-#import "SDKCustomRoundedButton.h"
 #import "SDKFormatJudge.h"
 #import "SDKJWAlertView.h"
-#import "SDKAboutText.h"
+#import "SDKCommonTools.h"
 
 
 // 三方

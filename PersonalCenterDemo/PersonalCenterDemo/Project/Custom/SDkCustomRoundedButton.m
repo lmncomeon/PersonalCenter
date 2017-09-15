@@ -36,6 +36,21 @@
     return btn;
 }
 
+// 自定义圆角
++ (instancetype)customRoundedBtnWithFrame:(CGRect)frame title:(NSString *)title font:(UIFont *)font titleColor:(UIColor *)titleColor backgroundColor:(UIColor *)backgroundColor cornerRadius:(CGFloat)cornerRadius target:(id)target action:(SEL)action {
+    
+    SDKCustomRoundedButton *btn = [SDKCustomRoundedButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = frame;
+    [btn setBackgroundImage:[UIImage imageWithColor:backgroundColor] forState:UIControlStateNormal];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn setTitleColor:titleColor forState:UIControlStateNormal];
+    btn.titleLabel.font = font;
+    btn.layer.cornerRadius  = cornerRadius;
+    btn.layer.masksToBounds = YES;
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return btn;
+}
+
 @end
 
 

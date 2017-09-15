@@ -776,13 +776,13 @@ static int searchRadius    = 5000;
 
 #pragma mark - 获取城市列表
 - (void)loadCityListData {
-    NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"CityList" ofType:@"json"]];
+    NSDictionary *dic = [SDKCommonTools dicFromJsonFileName:@"CityList"];
     
-    NSError *error = nil;
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    if (!dic) return;
+    
     NSArray *dataList = dic[@"data"];
-
-    if (error || dataList.count == 0 || !dataList) return;
+    
+    if (dataList.count == 0 || !dataList) return;
     
     // 1.快速分类
     for (NSString *str in dataList) {
