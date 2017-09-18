@@ -162,6 +162,7 @@
         [_dataList addObject:[ControllerModel modelWithTitle:@"直播" className:@"LiveViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"荷包动画集合" className:@"PouchViewController"]];
         [_dataList addObject:[ControllerModel modelWithTitle:@"账户" className:@"FMAccountDetailViewController"]];
+        [_dataList addObject:[ControllerModel modelWithTitle:@"自定义相册" className:@"MNPhotoAlbumViewController"]];
         
     }
     return _dataList;

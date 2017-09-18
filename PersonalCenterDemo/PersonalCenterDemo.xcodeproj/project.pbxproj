@@ -21,6 +21,9 @@
 		BE1EEABB1F6A1EA000F1BFEB /* AccountConsumption.json in Resources */ = {isa = PBXBuildFile; fileRef = BE1EEABA1F6A1EA000F1BFEB /* AccountConsumption.json */; };
 		BE1EEABE1F6A5C4B00F1BFEB /* FMIncomeOrConsumptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1EEABD1F6A5C4B00F1BFEB /* FMIncomeOrConsumptionCell.m */; };
 		BE1EEAC11F6B681200F1BFEB /* SDKCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1EEAC01F6B681200F1BFEB /* SDKCommonTools.m */; };
+		BE1EEAC51F6BA9A500F1BFEB /* MNPhotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1EEAC41F6BA9A500F1BFEB /* MNPhotoAlbumViewController.m */; };
+		BE1EEAC81F6BB0B400F1BFEB /* MNPhotoAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1EEAC71F6BB0B400F1BFEB /* MNPhotoAlbumCell.m */; };
+		BE1EEACB1F6BB99B00F1BFEB /* MNPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1EEACA1F6BB99B00F1BFEB /* MNPhotoAlbum.m */; };
 		BE2723B61F5CEEC600C13B5A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723AF1F5CEEC600C13B5A /* MapViewController.m */; };
 		BE2723B71F5CEEC600C13B5A /* SDKSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723B11F5CEEC600C13B5A /* SDKSearchViewController.m */; };
 		BE2723B81F5CEEC600C13B5A /* SDKResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE2723B31F5CEEC600C13B5A /* SDKResultTableViewController.m */; };
@@ -243,6 +246,12 @@
 		BE1EEABD1F6A5C4B00F1BFEB /* FMIncomeOrConsumptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMIncomeOrConsumptionCell.m; sourceTree = "<group>"; };
 		BE1EEABF1F6B681200F1BFEB /* SDKCommonTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKCommonTools.h; sourceTree = "<group>"; };
 		BE1EEAC01F6B681200F1BFEB /* SDKCommonTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKCommonTools.m; sourceTree = "<group>"; };
+		BE1EEAC31F6BA9A500F1BFEB /* MNPhotoAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNPhotoAlbumViewController.h; sourceTree = "<group>"; };
+		BE1EEAC41F6BA9A500F1BFEB /* MNPhotoAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNPhotoAlbumViewController.m; sourceTree = "<group>"; };
+		BE1EEAC61F6BB0B400F1BFEB /* MNPhotoAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNPhotoAlbumCell.h; sourceTree = "<group>"; };
+		BE1EEAC71F6BB0B400F1BFEB /* MNPhotoAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNPhotoAlbumCell.m; sourceTree = "<group>"; };
+		BE1EEAC91F6BB99B00F1BFEB /* MNPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNPhotoAlbum.h; sourceTree = "<group>"; };
+		BE1EEACA1F6BB99B00F1BFEB /* MNPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNPhotoAlbum.m; sourceTree = "<group>"; };
 		BE2723AE1F5CEEC600C13B5A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		BE2723AF1F5CEEC600C13B5A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		BE2723B01F5CEEC600C13B5A /* SDKSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKSearchViewController.h; sourceTree = "<group>"; };
@@ -678,6 +687,19 @@
 			path = WLMotionView;
 			sourceTree = "<group>";
 		};
+		BE1EEAC21F6BA98800F1BFEB /* 自定义相册 */ = {
+			isa = PBXGroup;
+			children = (
+				BE1EEAC31F6BA9A500F1BFEB /* MNPhotoAlbumViewController.h */,
+				BE1EEAC41F6BA9A500F1BFEB /* MNPhotoAlbumViewController.m */,
+				BE1EEAC61F6BB0B400F1BFEB /* MNPhotoAlbumCell.h */,
+				BE1EEAC71F6BB0B400F1BFEB /* MNPhotoAlbumCell.m */,
+				BE1EEAC91F6BB99B00F1BFEB /* MNPhotoAlbum.h */,
+				BE1EEACA1F6BB99B00F1BFEB /* MNPhotoAlbum.m */,
+			);
+			path = "自定义相册";
+			sourceTree = "<group>";
+		};
 		BE2907A71F0CCC85006290B3 /* 折叠 */ = {
 			isa = PBXGroup;
 			children = (
@@ -935,6 +957,7 @@
 		BEC177FE1F00DCFA00CAE694 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE1EEAC21F6BA98800F1BFEB /* 自定义相册 */,
 				BECEB53F1F677CCB006DD179 /* 账户 */,
 				BEC4F1271F5E42F40014F449 /* 荷包 */,
 				BE69DCA41F55496500AD815F /* 直播 */,
@@ -1632,6 +1655,7 @@
 				BEC1790D1F00DCFA00CAE694 /* MJPropertyType.m in Sources */,
 				BEDCF6DD1F0DE30A00F3230D /* QQGroupModel.m in Sources */,
 				BEC1792C1F00DCFA00CAE694 /* SDWebImageDownloaderOperation.m in Sources */,
+				BE1EEAC81F6BB0B400F1BFEB /* MNPhotoAlbumCell.m in Sources */,
 				BEC179081F00DCFA00CAE694 /* MJDictionaryCache.m in Sources */,
 				BEC1791C1F00DCFA00CAE694 /* MJRefreshBackNormalFooter.m in Sources */,
 				BEC178FB1F00DCFA00CAE694 /* GTMBase64.m in Sources */,
@@ -1639,6 +1663,7 @@
 				BE2BED671F690CAF00BC0668 /* FMRechargeCell.m in Sources */,
 				BEC1791F1F00DCFA00CAE694 /* MJRefreshNormalHeader.m in Sources */,
 				BEC1791A1F00DCFA00CAE694 /* MJRefreshAutoStateFooter.m in Sources */,
+				BE1EEACB1F6BB99B00F1BFEB /* MNPhotoAlbum.m in Sources */,
 				BEC178F41F00DCFA00CAE694 /* UIWebView+AFNetworking.m in Sources */,
 				BEC1794A1F00E49B00CAE694 /* VideoListViewController.m in Sources */,
 				BEC178E51F00DCFA00CAE694 /* AFSecurityPolicy.m in Sources */,
@@ -1699,6 +1724,7 @@
 				BEC178F71F00DCFA00CAE694 /* SDKFormatJudge.m in Sources */,
 				BEC179241F00DCFA00CAE694 /* UIScrollView+MJRefresh.m in Sources */,
 				BE69818A1F39572400FAD3D1 /* AdvertisingView.m in Sources */,
+				BE1EEAC51F6BA9A500F1BFEB /* MNPhotoAlbumViewController.m in Sources */,
 				BEC178E91F00DCFA00CAE694 /* AFURLSessionManager.m in Sources */,
 				BEFFBFF01F02329900A967FD /* RightLoadViewController.m in Sources */,
 				BEC178ED1F00DCFA00CAE694 /* AFNetworkActivityIndicatorManager.m in Sources */,
